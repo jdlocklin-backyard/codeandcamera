@@ -1,0 +1,54 @@
+site_name: Code and Camera
+site_author: JD Locklin
+site_url: https://codeandcamera.me/
+
+# Configuration
+theme:
+  name: material
+  palette: 
+      # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: indigo
+      accent:  orange
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: indigo
+      accent: deep orange
+
+      font:
+        text: Merriweather Sans
+        code: Red Hat Mono
+
+
+  icon:
+    logo: fontawesome/solid/l
+
+  features:
+    - content.code.annotate
+    - navigation.footer
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg  
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+
+copyright: Copyright &copy; 2025 JD Locklin
