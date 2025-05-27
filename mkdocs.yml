@@ -5,9 +5,9 @@ site_url: https://codeandcamera.me/
 
 nav:
   - Home: index.md
-  - About: about.md
-  - Content by Tags: tags.md
+  - Tags: tags.md
   - Example: mkdownexample.md
+  - Commit: CommittoGithub.md
 
 
 # Configuration
