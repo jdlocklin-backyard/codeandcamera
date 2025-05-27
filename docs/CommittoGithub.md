@@ -2,7 +2,7 @@
 #Commit to Github
 
 
-### 1. Check if a project is initialized as a Git repository, you can use these methods:
+### 1. Check if a project is initialized as a Git repository:
 
 
 ``` py
