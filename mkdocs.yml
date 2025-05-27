@@ -45,6 +45,14 @@ theme:
     - content.code.copy
     - navigation.tracking
 
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.instant.preview
+    - navigation.tabs
+    - navigation.path
+    - navigation.top
+   
+
 markdown_extensions:
   - attr_list
   - pymdownx.emoji:
