@@ -42,9 +42,10 @@ theme:
     - navigation.footer
     - search.highlight
     - search.share
+
+    
     - content.code.copy
     - navigation.tracking
-
     - navigation.instant
     - navigation.instant.progress
     - navigation.instant.preview
@@ -52,6 +53,8 @@ theme:
     - navigation.path
     - navigation.top
     - navigation.tabs.sticky
+    - toc.follow
+  
    
 
 markdown_extensions:
@@ -79,6 +82,11 @@ plugins:
       tags_hierarchy: true
       tags_sort_reverse: true
       listings_toc: false
+
+extra:
+  social:
+    - icon: fontawesome/brands/github 
+      link: https://github.com/jdlocklin-backyard
 
 
 copyright: Copyright &copy; 2025 codeandcamera
