@@ -51,6 +51,7 @@ theme:
     - navigation.tabs
     - navigation.path
     - navigation.top
+    - navigation.tabs.sticky
    
 
 markdown_extensions:
