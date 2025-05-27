@@ -2,6 +2,14 @@ site_name: Code and Camera
 site_author: JD Locklin
 site_url: https://codeandcamera.me/
 
+
+nav:
+  - Home: index.md
+  - About: about.md
+  - Content by Tags: tags.md
+  - Example: mkdownexample.md
+
+
 # Configuration
 theme:
   name: material
@@ -9,14 +17,14 @@ theme:
       # Dark Mode
     - scheme: slate
       toggle:
-        icon: material/weather-sunny
+        icon: material/lightbulb
         name: Dark mode
       primary: indigo
       accent:  orange
     # Light Mode
     - scheme: default
       toggle:
-        icon: material/weather-night
+        icon: material/lightbulb-outline
         name: Light mode
       primary: indigo
       accent: deep orange
@@ -32,6 +40,10 @@ theme:
   features:
     - content.code.annotate
     - navigation.footer
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - navigation.tracking
 
 markdown_extensions:
   - attr_list
@@ -50,5 +62,15 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 
+plugins:
+  - meta
+  - search
+  - tags:
+      tags_slugify_format: "tag:{slug}"
+      tags_hierarchy: true
+      tags_sort_reverse: true
+      listings_toc: false
 
-copyright: Copyright &copy; 2025 JD Locklin
+
+copyright: Copyright &copy; 2025 codeandcamera
+

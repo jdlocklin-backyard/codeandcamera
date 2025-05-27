@@ -1,5 +1,4 @@
 
-#Markdown Examples
 
 ## Heading Level 2
 ### Heading Level 3
@@ -26,7 +25,7 @@
 
 
 
-###Code
+### Code
 
 ``` py
 import tensorflow as tf
