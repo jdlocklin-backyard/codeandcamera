@@ -42,18 +42,20 @@ theme:
     - navigation.footer
     - search.highlight
     - search.share
-
-    
     - content.code.copy
     - navigation.tracking
-    - navigation.instant
-    - navigation.instant.progress
     - navigation.instant.preview
     - navigation.tabs
     - navigation.path
     - navigation.top
     - navigation.tabs.sticky
     - toc.follow
+
+    - navigation.sections
+    - navigation.expand
+
+   # - header.autohide
+   
   
    
 
