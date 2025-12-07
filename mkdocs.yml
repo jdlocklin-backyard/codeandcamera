@@ -7,16 +7,16 @@ site_url: https://codeandcamera.me/
 # Main navigation menu for the documentation site
 nav:
   - Home: index.md
-  - Arduino Projects: arduino.md
-  - Gardening & Growing: gardening.md
-  - Home Lab: homelab.md
-  - Automation: automation.md
-  - AI & Machine Learning: ai.md
+  - Arduino Projects: arduino/index.md
+  - Gardening & Growing: gardening/index.md
+  - Home Lab: homelab/index.md
+  - Automation: automation/index.md
+  - AI & Machine Learning: ai/index.md
   - Admin:
-      - Getting Started: getting-started.md
-      - Markdown Examples: mkdownexample.md
-      - Commit Guide: commit-to-github.md
-      - Tags: tags.md
+      - Getting Started: admin/getting-started.md
+      - Markdown Examples: admin/markdown-examples.md
+      - Commit Guide: admin/commit-to-github.md
+      - Tags: admin/tags.md
 
 # Material theme with dark/light mode toggle and custom fonts
 theme:
