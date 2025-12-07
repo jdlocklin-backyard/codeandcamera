@@ -3,8 +3,8 @@ tags:
   - admin
 ---
 
-# Tags Page
+# Tags
 
-Displays all tags used throughout the documentation, excluding 'foo' and 'templates' tags.
+Browse all content by topic. Click any tag to see related pages.
 
-<!-- material/tags { exclude: [foo, templates] } -->
+[TAGS]

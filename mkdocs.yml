@@ -2,7 +2,12 @@
 site_name: Code and Camera
 site_author: JD Locklin
 site_url: https://codeandcamera.me/
+site_description: Where Technology Meets Hands-On Innovation - Arduino, Gardening, Home Lab, Automation, and AI
 
+# Repository information for edit links
+repo_name: jdlocklin-backyard/codeandcamera
+repo_url: https://github.com/jdlocklin-backyard/codeandcamera
+edit_uri: edit/main/docs/
 
 # Main navigation menu for the documentation site
 nav:
@@ -18,83 +23,161 @@ nav:
       - Commit Guide: admin/commit-to-github.md
       - Tags: admin/tags.md
 
-# Material theme with dark/light mode toggle and custom fonts
+# Material theme configuration
 theme:
   name: material
-  palette: 
-      # Dark Mode
-    - scheme: slate
+  
+  # Custom color palette - Teal/Cyan scheme for tech + nature feel
+  palette:
+    # Dark Mode - Deep teal with amber accents
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
       toggle:
-        icon: material/lightbulb
-        name: Dark mode
-      primary: indigo
-      accent:  orange
-    # Light Mode
-    - scheme: default
-      toggle:
-        icon: material/lightbulb-outline
-        name: Light mode
-      primary: indigo
+        icon: material/weather-sunny
+        name: Switch to light mode
+    # Light Mode - Fresh teal with deep orange accents
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
       accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
 
-      font:
-        text: Merriweather Sans
-        code: Red Hat Mono
+  # Typography - Modern, readable fonts
+  font:
+    text: Inter
+    code: JetBrains Mono
 
-
+  # Custom branding
   icon:
-    logo: fontawesome/solid/l
+    logo: material/code-braces-box
+    repo: fontawesome/brands/github
+    admonition:
+      note: fontawesome/solid/note-sticky
+      tip: fontawesome/solid/lightbulb
+      warning: fontawesome/solid/triangle-exclamation
+      danger: fontawesome/solid/skull
 
+  # Feature flags for enhanced UX
   features:
-  features:
-    - content.code.annotate
-    - navigation.footer
-    - search.highlight
-    - search.share
-    - content.code.copy
-    - navigation.tracking
-    - navigation.instant.preview
+    # Navigation
     - navigation.tabs
-    - navigation.path
-    - navigation.top
     - navigation.tabs.sticky
-    - toc.follow
     - navigation.sections
     - navigation.expand
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    
+    # Table of contents
+    - toc.follow
+    - toc.integrate
+    
+    # Search
+    - search.highlight
+    - search.share
+    - search.suggest
+    
+    # Content
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    
+    # Header
+    - header.autohide
+    - announce.dismiss
 
-# Extensions for markdown formatting, emojis, code highlighting, and syntax features
+# Markdown extensions for rich content
 markdown_extensions:
+  # Basic formatting
+  - abbr
   - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg  
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      permalink_title: Link to this section
+  
+  # Admonitions (callouts)
   - admonition
   - pymdownx.details
+  
+  # Code blocks
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+      auto_title: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  
+  # Content tabs
   - pymdownx.tabbed:
       alternate_style: true
-# Plugins for metadata, search functionality, and hierarchical tag organization
-plugins:
-  - meta
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
+      combine_header_slug: true
+  
+  # Formatting helpers
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.smartsymbols
+  - pymdownx.keys
+  
+  # Emoji support
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  
+  # Task lists
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
-# Plugins for metadata, search functionality, and hierarchical tag organization
+# Plugins for enhanced functionality
+plugins:
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - meta
+  - tags:
+      tags_file: admin/tags.md
+      tags_slugify_format: "tag:{slug}"
+      tags_hierarchy: true
       tags_sort_reverse: true
       listings_toc: false
 
+# Extra configuration
 extra:
+  # Social links in footer
   social:
-    - icon: fontawesome/brands/github 
+    - icon: fontawesome/brands/github
       link: https://github.com/jdlocklin-backyard
+      name: GitHub
+  
+  # Status indicators for pages
+  status:
+    new: Recently added
+    deprecated: Deprecated
 
+# Custom CSS for additional styling
+extra_css:
+  - stylesheets/extra.css
 
-copyright: Copyright &copy; 2025 codeandcamera
+# Copyright notice
+copyright: Copyright &copy; 2025 Code and Camera | JD Locklin
 
