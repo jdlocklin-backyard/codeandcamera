@@ -1,12 +1,13 @@
+# Automated CI/CD workflow that builds and deploys MkDocs site to GitHub Pages on push to master/main
 name: ci 
-on:
+on:  # Trigger on push events to master or main branches
   push:
     branches:
       - master 
       - main
-permissions:
+permissions:  # Grant write access for GitHub Pages deployment
   contents: write
-jobs:
+jobs:  # Build and deploy job using Ubuntu runner
   deploy:
     runs-on: ubuntu-latest
     steps:

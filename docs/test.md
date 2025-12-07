@@ -1,5 +1,7 @@
 # MkDocs Configuration Example
 
+Reference example of a complete MkDocs configuration with Material theme, multiple extensions, and plugins.
+
 ```yaml
 # Project information
 site_name: Complete MkDocs Example

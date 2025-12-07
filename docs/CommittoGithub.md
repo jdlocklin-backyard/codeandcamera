@@ -1,5 +1,7 @@
 
-#Commit to Github
+# Commit to Github
+
+A guide for committing and pushing changes to the GitHub repository.
 
 
 ### 1. Check if a project is initialized as a Git repository:
