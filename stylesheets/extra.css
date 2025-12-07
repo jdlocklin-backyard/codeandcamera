@@ -1,0 +1,124 @@
+/* Custom styles for Code and Camera documentation site */
+
+/* Primary color variables override for custom branding */
+:root {
+  --md-primary-fg-color: #009688;
+  --md-primary-fg-color--light: #4db6ac;
+  --md-primary-fg-color--dark: #00796b;
+  --md-accent-fg-color: #ff6e40;
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #1a1a2e;
+  --md-default-fg-color--light: #e0e0e0;
+}
+
+/* Custom header gradient */
+.md-header {
+  background: linear-gradient(90deg, #00796b 0%, #009688 50%, #26a69a 100%);
+}
+
+/* Smooth transitions for theme toggle */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Enhanced code blocks */
+.highlight code {
+  border-radius: 6px;
+}
+
+/* Custom admonition colors */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: #00bfa5;
+}
+
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  background-color: rgba(0, 191, 165, 0.1);
+}
+
+/* Card-like styling for content sections */
+.md-typeset h2 {
+  border-bottom: 2px solid var(--md-primary-fg-color);
+  padding-bottom: 0.5rem;
+}
+
+/* Improved table styling */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color);
+  color: white;
+}
+
+/* Navigation tab enhancements */
+.md-tabs__link--active {
+  font-weight: 600;
+}
+
+/* Footer styling */
+.md-footer {
+  background: linear-gradient(90deg, #004d40 0%, #00695c 100%);
+}
+
+/* Hover effects for links */
+.md-typeset a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--md-default-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--md-primary-fg-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--md-primary-fg-color--dark);
+}
+
+/* Tag styling enhancements */
+.md-tag {
+  border-radius: 16px;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
+
+.md-tag:hover {
+  transform: scale(1.05);
+}
+
+/* Content tabs styling */
+.md-typeset .tabbed-labels > label {
+  border-radius: 4px 4px 0 0;
+}
+
+/* Search bar enhancement */
+.md-search__input {
+  border-radius: 20px;
+}
+
+/* Print-friendly styles */
+@media print {
+  .md-header, .md-footer, .md-sidebar {
+    display: none;
+  }
+}
