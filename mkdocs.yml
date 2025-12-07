@@ -63,6 +63,7 @@ theme:
     - navigation.expand
 
 # Extensions for markdown formatting, emojis, code highlighting, and syntax features
+markdown_extensions:
   - attr_list
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
