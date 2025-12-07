@@ -82,7 +82,6 @@ markdown_extensions:
 plugins:
   - meta
   - search
-  - tags:h
   - tags:
       tags_slugify_format: "tag:{slug}"
       tags_hierarchy: true
