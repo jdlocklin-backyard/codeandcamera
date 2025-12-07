@@ -15,12 +15,11 @@ nav:
   - Admin:
       - Getting Started: getting-started.md
       - Markdown Examples: mkdownexample.md
-      - Commit Guide: CommittoGithub.md
+      - Commit Guide: commit-to-github.md
       - Tags: tags.md
 
 # Material theme with dark/light mode toggle and custom fonts
 theme:
-  name: material
   name: material
   palette: 
       # Dark Mode
@@ -47,6 +46,7 @@ theme:
     logo: fontawesome/solid/l
 
   features:
+  features:
     - content.code.annotate
     - navigation.footer
     - search.highlight
@@ -59,17 +59,10 @@ theme:
     - navigation.top
     - navigation.tabs.sticky
     - toc.follow
-
     - navigation.sections
     - navigation.expand
 
-   # - header.autohide
-   
-  
-   
-
 # Extensions for markdown formatting, emojis, code highlighting, and syntax features
-markdown_extensions:
   - attr_list
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -88,10 +81,11 @@ markdown_extensions:
 # Plugins for metadata, search functionality, and hierarchical tag organization
 plugins:
   - meta
-  - search
-  - tags:
-      tags_slugify_format: "tag:{slug}"
-      tags_hierarchy: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+# Plugins for metadata, search functionality, and hierarchical tag organization
       tags_sort_reverse: true
       listings_toc: false
 

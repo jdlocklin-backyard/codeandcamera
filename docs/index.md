@@ -26,7 +26,7 @@ Explore artificial intelligence from concepts to implementation. Understand larg
 ## Quick Navigation
 
 - **[Getting Started](getting-started.md)** - Learn the basics
-- **[Git & Deployment](CommittoGithub.md)** - Commit and push your work
+- **[Git & Deployment](commit-to-github.md)** - Commit and push your work
 - **[Markdown Examples](mkdownexample.md)** - Master documentation formatting
 - **[Browse by Tags](tags.md)** - Find content by topic
 
