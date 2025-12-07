@@ -1,3 +1,8 @@
+---
+tags:
+  - admin
+---
+
 # Markdown Examples
 
 Comprehensive examples of markdown syntax including headings, colors, code blocks, callouts, and content tabs.

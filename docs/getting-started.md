@@ -1,3 +1,8 @@
+---
+tags:
+  - admin
+---
+
 # Welcome to MkDocs
 
 This is the homepage for the Code and Camera documentation site. For full MkDocs documentation visit [mkdocs.org](https://www.mkdocs.org).

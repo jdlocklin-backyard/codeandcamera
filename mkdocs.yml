@@ -12,9 +12,11 @@ nav:
   - Home Lab: homelab.md
   - Automation: automation.md
   - AI & Machine Learning: ai.md
-  - Examples: mkdownexample.md
-  - Tags: tags.md
-  - Commit Guide: CommittoGithub.md
+  - Admin:
+      - Getting Started: getting-started.md
+      - Markdown Examples: mkdownexample.md
+      - Commit Guide: CommittoGithub.md
+      - Tags: tags.md
 
 # Material theme with dark/light mode toggle and custom fonts
 theme:
