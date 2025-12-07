@@ -4,11 +4,6 @@ site_author: JD Locklin
 site_url: https://codeandcamera.me/
 site_description: Where Technology Meets Hands-On Innovation - Arduino, Gardening, Home Lab, Automation, and AI
 
-# Repository information for edit links
-repo_name: jdlocklin-backyard/codeandcamera
-repo_url: https://github.com/jdlocklin-backyard/codeandcamera
-edit_uri: edit/main/docs/
-
 # Main navigation menu for the documentation site
 nav:
   - Home: index.md
@@ -166,18 +161,12 @@ extra:
   # Social links in footer
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/jdlocklin-backyard
-      name: GitHub
-  
+# Extra configuration
+extra:
   # Status indicators for pages
   status:
     new: Recently added
     deprecated: Deprecated
-
-# Custom CSS for additional styling
-extra_css:
-  - stylesheets/extra.css
-
 # Copyright notice
 copyright: Copyright &copy; 2025 Code and Camera | JD Locklin
 

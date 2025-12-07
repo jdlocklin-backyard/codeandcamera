@@ -1,42 +1,63 @@
 # Code and Camera
 
-A documentation site built with MkDocs and the Material theme, containing guides for code commits, markdown examples, and various technical documentation topics.
+A documentation site built with MkDocs and the Material theme, covering Arduino projects, gardening automation, home lab infrastructure, DevOps automation, and AI/machine learning.
 
 ## Project Structure
 
 ```
 codeandcamera/
-├── mkdocs.yml              # MkDocs configuration file
+├── mkdocs.yml                      # MkDocs configuration file
 ├── .github/
 │   └── workflows/
-│       └── ci.yml          # GitHub Actions CI/CD workflow for automated deployment
-├── .gitignore              # Git ignore rules
-├── docs/                   # Documentation source directory
-│   ├── index.md            # Homepage
-│   ├── CommittoGithub.md   # Git commit and push guide
-│   ├── mkdownexample.md    # Markdown formatting examples
-│   ├── tags.md             # Tags page
-│   ├── test.md             # MkDocs configuration examples
-│   ├── ansible/            # Ansible-related documentation
-│   ├── gardening/          # Gardening-related documentation
-│   ├── assets/             # Media and asset files
-│   └── templates/          # Reusable documentation templates
-└── README.md               # This file
+│       └── ci.yml                  # GitHub Actions CI/CD workflow
+├── .gitignore                      # Git ignore rules
+├── docs/                           # Documentation source directory
+│   ├── index.md                    # Homepage
+│   ├── stylesheets/
+│   │   └── extra.css               # Custom CSS styling
+│   ├── arduino/                    # Arduino projects
+│   │   ├── index.md                # Arduino landing page
+│   │   └── led-button-control.md   # Sample project
+│   ├── gardening/                  # Gardening & growing
+│   │   ├── index.md                # Gardening landing page
+│   │   └── auto-watering-system.md # Sample project
+│   ├── homelab/                    # Home lab infrastructure
+│   │   ├── index.md                # Home lab landing page
+│   │   └── proxmox-setup.md        # Sample project
+│   ├── automation/                 # DevOps & automation
+│   │   ├── index.md                # Automation landing page
+│   │   ├── backup-script.md        # Sample project
+│   │   └── ansible/                # Ansible resources
+│   ├── ai/                         # AI & machine learning
+│   │   ├── index.md                # AI landing page
+│   │   └── local-chatbot-ollama.md # Sample project
+│   ├── admin/                      # Site administration
+│   │   ├── getting-started.md      # MkDocs basics
+│   │   ├── markdown-examples.md    # Markdown reference
+│   │   ├── commit-to-github.md     # Git workflow guide
+│   │   └── tags.md                 # Tags page
+│   ├── templates/                  # Reusable templates
+│   │   └── project-template.md     # Project page template
+│   └── assets/                     # Media and asset files
+└── README.md                       # This file
+```
 
 ## Features
 
-- **Material Theme**: Modern, responsive documentation theme
-- **Dark/Light Mode**: Automatic theme toggle
-- **Search**: Full-text search functionality
+- **Material Theme**: Modern, responsive documentation with teal color scheme
+- **Dark/Light Mode**: Automatic theme toggle based on system preference
+- **Search**: Full-text search with suggestions
 - **Tag System**: Hierarchical tag organization
 - **CI/CD**: Automated deployment to GitHub Pages
-- **Code Highlighting**: Syntax highlighting for multiple languages
+- **Code Highlighting**: Syntax highlighting with copy button
+- **Mermaid Diagrams**: Flowcharts and diagrams in markdown
+- **Content Tabs**: Tabbed content sections
 
 ## Setup
 
 1. Install Python and required dependencies:
    ```bash
-   pip install mkdocs-material
+   pip install mkdocs-material pymdown-extensions
    ```
 
 2. Serve documentation locally:
@@ -59,4 +80,4 @@ JD Locklin
 
 ## License
 
-Copyright © 2025 codeandcamera
+Copyright © 2025 Code and Camera
