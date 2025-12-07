@@ -1,5 +1,5 @@
 
-##Gardening
+##Tech
 
 ## Heading Level 2
 ### Heading Level 3
@@ -81,10 +81,7 @@ print('The sum is:', result)
 
 [OpenAI](https://www.openai.com)
 
-[Local Link](./local_file.md)
-
-
-
+[Local Link](./gardening/markdown_examples.md)
 
 
 
