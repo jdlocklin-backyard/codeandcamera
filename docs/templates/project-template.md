@@ -20,6 +20,9 @@ estimated_time: "2 hours"  # Time needed to complete or understand the project
 
 # Project Title
 
+!!! info "About Projects"
+    Projects are comprehensive, step-by-step guides designed to teach practical skills through hands-on learning. Each project provides everything you need—from prerequisites and materials to detailed instructions and troubleshooting—to successfully build, implement, or understand a specific solution.
+
 !!! info "Publication Status"
     **Status:** Draft - This page is under development and not yet published.
     

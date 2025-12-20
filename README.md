@@ -42,6 +42,18 @@ codeandcamera/
 └── README.md                       # This file
 ```
 
+## What Are Projects?
+
+**Projects** are the heart of Code and Camera. Each project is a comprehensive, step-by-step guide that teaches practical skills across five main categories:
+
+- **Arduino**: Electronics and microcontroller projects for IoT and embedded systems
+- **Gardening**: Technology-enhanced growing and automation solutions
+- **Home Lab**: Infrastructure setup, virtualization, and self-hosting guides
+- **Automation**: DevOps workflows, scripting, and task automation
+- **AI & Machine Learning**: Practical AI implementations and machine learning projects
+
+Projects follow a consistent template structure with prerequisites, materials lists, detailed instructions, troubleshooting tips, and resources for further learning. They're designed to be educational, practical, and adaptable to your specific needs.
+
 ## Features
 
 - **Material Theme**: Modern, responsive documentation with teal color scheme
