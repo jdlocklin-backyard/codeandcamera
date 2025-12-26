@@ -76,7 +76,7 @@ print('The sum is:', result)
 ```
 
 
-###Callouts
+### Callouts
 
 !!! note "Callout"
 
@@ -107,7 +107,7 @@ print('The sum is:', result)
 
 [OpenAI](https://www.openai.com)
 
-[Local Link](./local_file.md)
+[Local Link](./getting-started.md)
 
 
 

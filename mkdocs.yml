@@ -7,11 +7,21 @@ site_description: Where Technology Meets Hands-On Innovation - Arduino, Gardenin
 # Main navigation menu for the documentation site
 nav:
   - Home: index.md
-  - Arduino Projects: arduino/index.md
-  - Gardening & Growing: gardening/index.md
-  - Home Lab: homelab/index.md
-  - Automation: automation/index.md
-  - AI & Machine Learning: ai/index.md
+  - Arduino Projects:
+      - arduino/index.md
+      - LED Button Control: arduino/led-button-control.md
+  - Gardening & Growing:
+      - gardening/index.md
+      - Auto Watering System: gardening/auto-watering-system.md
+  - Home Lab:
+      - homelab/index.md
+      - Proxmox Setup: homelab/proxmox-setup.md
+  - Automation:
+      - automation/index.md
+      - Backup Script: automation/backup-script.md
+  - AI & Machine Learning:
+      - ai/index.md
+      - Local Chatbot with Ollama: ai/local-chatbot-ollama.md
   - Admin:
       - Getting Started: admin/getting-started.md
       - Markdown Examples: admin/markdown-examples.md
@@ -161,12 +171,14 @@ extra:
   # Social links in footer
   social:
     - icon: fontawesome/brands/github
-# Extra configuration
-extra:
   # Status indicators for pages
   status:
     new: Recently added
     deprecated: Deprecated
+# Custom CSS
+extra_css:
+  - stylesheets/extra.css
+
 # Copyright notice
 copyright: Copyright &copy; 2025 Code and Camera | JD Locklin
 
