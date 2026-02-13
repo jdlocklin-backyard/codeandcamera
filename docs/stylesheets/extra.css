@@ -1,83 +1,216 @@
-/* Custom styles for Code and Camera documentation site */
+/* ============================================================================
+   Custom Styles for Code and Camera Documentation Site
+   Theme: Indigo & Yellow (Bold, Modern, Upbeat)
+   ============================================================================ */
 
-/* Primary color variables override for custom branding */
+/* ----------------------------------------------------------------------------
+   Color Variables - Indigo/Yellow Theme
+   ---------------------------------------------------------------------------- */
 :root {
-  --md-primary-fg-color: #009688;
-  --md-primary-fg-color--light: #4db6ac;
-  --md-primary-fg-color--dark: #00796b;
-  --md-accent-fg-color: #ff6e40;
+  /* Primary colors - Indigo spectrum */
+  --md-primary-fg-color: #3f51b5;           /* Indigo 500 - Main brand color */
+  --md-primary-fg-color--light: #7986cb;     /* Indigo 300 - Lighter variant */
+  --md-primary-fg-color--dark: #303f9f;      /* Indigo 700 - Darker variant */
+  
+  /* Accent colors - Yellow/Amber for energy */
+  --md-accent-fg-color: #ffc107;             /* Amber 500 - Light mode accent */
+  --md-accent-fg-color--dark: #ffeb3b;       /* Yellow 500 - High contrast for dark mode */
+  
+  /* Custom gradient colors */
+  --gradient-start: #303f9f;                 /* Indigo 700 */
+  --gradient-mid: #3f51b5;                   /* Indigo 500 */
+  --gradient-end: #5c6bc0;                   /* Indigo 400 */
 }
 
-/* Dark mode adjustments */
+/* ----------------------------------------------------------------------------
+   Dark Mode Color Adjustments
+   ---------------------------------------------------------------------------- */
 [data-md-color-scheme="slate"] {
-  --md-default-bg-color: #1a1a2e;
-  --md-default-fg-color--light: #e0e0e0;
+  /* Darker background for better contrast with indigo/yellow */
+  --md-default-bg-color: #0d1117;            /* Deep dark background */
+  --md-default-fg-color--light: #e3e3e3;     /* Slightly brighter text */
+  
+  /* Use brighter yellow accent in dark mode for visibility */
+  --md-accent-fg-color: #ffeb3b;             /* Yellow 500 - pops in dark mode */
 }
 
-/* Custom header gradient */
+/* ----------------------------------------------------------------------------
+   Header Styling - Indigo Gradient
+   ---------------------------------------------------------------------------- */
 .md-header {
-  background: linear-gradient(90deg, #00796b 0%, #009688 50%, #26a69a 100%);
+  /* Bold indigo gradient from dark to light */
+  background: linear-gradient(
+    90deg, 
+    var(--gradient-start) 0%, 
+    var(--gradient-mid) 50%, 
+    var(--gradient-end) 100%
+  );
+  box-shadow: 0 2px 8px rgba(63, 81, 181, 0.3);
 }
 
-/* Smooth transitions for theme toggle */
+/* ----------------------------------------------------------------------------
+   Footer Styling - Matching Indigo Theme
+   ---------------------------------------------------------------------------- */
+.md-footer {
+  /* Darker indigo gradient for footer */
+  background: linear-gradient(
+    90deg, 
+    #1a237e 0%,                              /* Indigo 900 */
+    #283593 100%                             /* Indigo 800 */
+  );
+}
+
+/* ----------------------------------------------------------------------------
+   Smooth Theme Transitions
+   ---------------------------------------------------------------------------- */
 body {
-  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Smooth color transitions when switching themes */
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Enhanced code blocks */
+/* ----------------------------------------------------------------------------
+   Typography Enhancements
+   ---------------------------------------------------------------------------- */
+/* Section headers with indigo accent underline */
+.md-typeset h2 {
+  border-bottom: 3px solid var(--md-primary-fg-color);
+  padding-bottom: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+/* Bold navigation tabs */
+.md-tabs__link--active {
+  font-weight: 700;
+  border-bottom: 3px solid var(--md-accent-fg-color);
+}
+
+/* ----------------------------------------------------------------------------
+   Code Block Styling
+   ---------------------------------------------------------------------------- */
 .highlight code {
-  border-radius: 6px;
+  border-radius: 8px;                        /* Rounded corners for modern look */
 }
 
-/* Custom admonition colors */
+/* Syntax highlighting - enhanced with indigo tones */
+.md-typeset code {
+  background-color: rgba(63, 81, 181, 0.08); /* Subtle indigo tint */
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* ----------------------------------------------------------------------------
+   Admonition (Callout) Styling - Yellow/Amber Accents
+   ---------------------------------------------------------------------------- */
+/* Tip admonitions use yellow accent */
 .md-typeset .admonition.tip,
 .md-typeset details.tip {
-  border-color: #00bfa5;
+  border-color: var(--md-accent-fg-color);
 }
 
 .md-typeset .tip > .admonition-title,
 .md-typeset .tip > summary {
-  background-color: rgba(0, 191, 165, 0.1);
+  background-color: rgba(255, 193, 7, 0.12);
 }
 
-/* Card-like styling for content sections */
-.md-typeset h2 {
-  border-bottom: 2px solid var(--md-primary-fg-color);
-  padding-bottom: 0.5rem;
+/* Note admonitions use indigo */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: var(--md-primary-fg-color);
 }
 
-/* Improved table styling */
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary {
+  background-color: rgba(63, 81, 181, 0.12);
+}
+
+/* ----------------------------------------------------------------------------
+   Table Styling - Indigo Headers
+   ---------------------------------------------------------------------------- */
 .md-typeset table:not([class]) {
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
+/* Table headers with indigo background */
 .md-typeset table:not([class]) th {
   background-color: var(--md-primary-fg-color);
   color: white;
-}
-
-/* Navigation tab enhancements */
-.md-tabs__link--active {
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-/* Footer styling */
-.md-footer {
-  background: linear-gradient(90deg, #004d40 0%, #00695c 100%);
+/* Alternating row colors for readability */
+.md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background-color: rgba(63, 81, 181, 0.04);
 }
 
-/* Hover effects for links */
+/* ----------------------------------------------------------------------------
+   Link Styling - Yellow Accent on Hover
+   ---------------------------------------------------------------------------- */
+.md-typeset a {
+  transition: all 0.2s ease;
+}
+
 .md-typeset a:hover {
+  color: var(--md-accent-fg-color);
   text-decoration: underline;
   text-decoration-thickness: 2px;
+  text-decoration-color: var(--md-accent-fg-color);
 }
 
-/* Custom scrollbar for webkit browsers */
+/* ----------------------------------------------------------------------------
+   Tag Styling - Playful & Interactive
+   ---------------------------------------------------------------------------- */
+.md-tag {
+  border-radius: 20px;                       /* Pill-shaped tags */
+  padding: 0.3rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: var(--md-primary-fg-color);
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Tags lift on hover for playful interaction */
+.md-tag:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 8px rgba(63, 81, 181, 0.3);
+}
+
+/* ----------------------------------------------------------------------------
+   Search Bar Enhancement
+   ---------------------------------------------------------------------------- */
+.md-search__input {
+  border-radius: 24px;                       /* Rounded search bar */
+  border: 2px solid var(--md-primary-fg-color--light);
+  transition: border-color 0.3s ease;
+}
+
+.md-search__input:focus {
+  border-color: var(--md-accent-fg-color);
+}
+
+/* ----------------------------------------------------------------------------
+   Content Tabs Styling
+   ---------------------------------------------------------------------------- */
+.md-typeset .tabbed-labels > label {
+  border-radius: 6px 6px 0 0;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.md-typeset .tabbed-labels > label:hover {
+  background-color: rgba(63, 81, 181, 0.08);
+}
+
+/* ----------------------------------------------------------------------------
+   Custom Scrollbar - Indigo Theme
+   ---------------------------------------------------------------------------- */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -86,39 +219,76 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: var(--md-primary-fg-color);
-  border-radius: 4px;
+  border-radius: 5px;
+  transition: background 0.2s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--md-primary-fg-color--dark);
 }
 
-/* Tag styling enhancements */
-.md-tag {
-  border-radius: 16px;
-  padding: 0.2rem 0.8rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  transition: transform 0.2s ease;
+/* ----------------------------------------------------------------------------
+   Button & Interactive Element Styling
+   ---------------------------------------------------------------------------- */
+.md-button {
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
-.md-tag:hover {
-  transform: scale(1.05);
+.md-button--primary {
+  background-color: var(--md-accent-fg-color);
+  color: rgba(0, 0, 0, 0.87);
 }
 
-/* Content tabs styling */
-.md-typeset .tabbed-labels > label {
-  border-radius: 4px 4px 0 0;
+.md-button--primary:hover {
+  background-color: var(--md-accent-fg-color--dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3);
 }
 
-/* Search bar enhancement */
-.md-search__input {
-  border-radius: 20px;
+/* ----------------------------------------------------------------------------
+   Card-Style Content Blocks
+   ---------------------------------------------------------------------------- */
+/* Add subtle elevation to main content */
+.md-content {
+  background-color: var(--md-default-bg-color);
+  border-radius: 8px;
 }
 
-/* Print-friendly styles */
+/* ----------------------------------------------------------------------------
+   Print Styles - Clean Output
+   ---------------------------------------------------------------------------- */
 @media print {
-  .md-header, .md-footer, .md-sidebar {
-    display: none;
+  /* Hide navigation elements when printing */
+  .md-header, 
+  .md-footer, 
+  .md-sidebar,
+  .md-tabs {
+    display: none !important;
+  }
+  
+  /* Ensure content uses full width */
+  .md-content {
+    max-width: 100%;
   }
 }
+
+/* ----------------------------------------------------------------------------
+   Accessibility Enhancements
+   ---------------------------------------------------------------------------- */
+/* Ensure focus states are visible */
+*:focus-visible {
+  outline: 3px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
+}
+
+/* Skip to content link for keyboard navigation */
+.md-skip {
+  background-color: var(--md-accent-fg-color);
+  color: rgba(0, 0, 0, 0.87);
+}
+
+/* ============================================================================
+   End of Custom Styles
+   ============================================================================ */

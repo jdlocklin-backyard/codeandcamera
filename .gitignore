@@ -121,6 +121,9 @@ venv.bak/
 # mkdocs documentation
 /site
 
+# Local files (not for GitHub)
+SITE_TREE.txt
+
 # mypy
 .mypy_cache/
 .dmypy.json

@@ -2,51 +2,40 @@
 site_name: Code and Camera
 site_author: JD Locklin
 site_url: https://codeandcamera.me/
-site_description: Where Technology Meets Hands-On Innovation - Arduino, Gardening, Home Lab, Automation, and AI
+site_description: Where Technology Meets Hands-On Innovation - Gardening, Home Lab, Automation, and AI
 
 # Main navigation menu for the documentation site
 nav:
   - Home: index.md
-  - Arduino Projects:
-      - arduino/index.md
-      - LED Button Control: arduino/led-button-control.md
-  - Gardening & Growing:
-      - gardening/index.md
-      - Auto Watering System: gardening/auto-watering-system.md
-  - Home Lab:
-      - homelab/index.md
-      - Proxmox Setup: homelab/proxmox-setup.md
-  - Automation:
-      - automation/index.md
-      - Backup Script: automation/backup-script.md
-  - AI & Machine Learning:
-      - ai/index.md
-      - Local Chatbot with Ollama: ai/local-chatbot-ollama.md
+  - Gardening & Growing: gardening/index.md
+  - Home Lab: homelab/index.md
+  - Automation: automation/index.md
+  - AI & Machine Learning: ai/index.md
   - Admin:
       - Getting Started: admin/getting-started.md
       - Markdown Examples: admin/markdown-examples.md
-      - Commit Guide: admin/commit-to-github.md
+      - Git Workflow: admin/commit-to-github.md
       - Tags: admin/tags.md
 
 # Material theme configuration
 theme:
   name: material
   
-  # Custom color palette - Teal/Cyan scheme for tech + nature feel
+  # Custom color palette - Indigo/Yellow scheme for bold, upbeat feel
   palette:
-    # Dark Mode - Deep teal with amber accents
+    # Dark Mode - Indigo with Yellow accents
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: teal
-      accent: amber
+      primary: indigo
+      accent: yellow
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-    # Light Mode - Fresh teal with deep orange accents
+    # Light Mode - Indigo with Amber accents
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: teal
-      accent: deep orange
+      primary: indigo
+      accent: amber
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
