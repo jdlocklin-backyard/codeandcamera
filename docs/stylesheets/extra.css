@@ -20,6 +20,11 @@
   --gradient-start: #303f9f;                 /* Indigo 700 */
   --gradient-mid: #3f51b5;                   /* Indigo 500 */
   --gradient-end: #5c6bc0;                   /* Indigo 400 */
+  
+  /* Override Material theme success/info colors to use indigo instead of green */
+  --md-success-fg-color: #3f51b5;            /* Success = Indigo instead of green */
+  --md-info-fg-color: #5c6bc0;               /* Info = Light Indigo */
+  --md-typeset-a-color: #3f51b5;             /* Link color = Indigo */
 }
 
 /* ----------------------------------------------------------------------------
@@ -98,6 +103,28 @@ body {
   border-radius: 4px;
 }
 
+/* Override any green syntax highlighting colors */
+.highlight .o,  /* Operators */
+.highlight .k,  /* Keywords */
+.highlight .kc, /* Keyword constants */
+.highlight .kd, /* Keyword declarations */
+.highlight .kn, /* Keyword namespaces */
+.highlight .kp, /* Keyword pseudo */
+.highlight .kr, /* Keyword reserved */
+.highlight .kt  /* Keyword types */ {
+  color: var(--md-primary-fg-color) !important;
+}
+
+/* String colors use amber/yellow instead of green */
+.highlight .s,   /* Strings */
+.highlight .s1,  /* String single quote */
+.highlight .s2,  /* String double quote */
+.highlight .sb,  /* String backtick */
+.highlight .sc,  /* String char */
+.highlight .sd   /* String doc */ {
+  color: #f57c00 !important; /* Deep orange instead of green */
+}
+
 /* ----------------------------------------------------------------------------
    Admonition (Callout) Styling - Yellow/Amber Accents
    ---------------------------------------------------------------------------- */
@@ -121,6 +148,39 @@ body {
 .md-typeset .note > .admonition-title,
 .md-typeset .note > summary {
   background-color: rgba(63, 81, 181, 0.12);
+}
+
+/* Success/Check admonitions use indigo instead of green */
+.md-typeset .admonition.success,
+.md-typeset .admonition.check,
+.md-typeset details.success,
+.md-typeset details.check {
+  border-color: var(--md-primary-fg-color);
+}
+
+.md-typeset .success > .admonition-title,
+.md-typeset .success > summary,
+.md-typeset .check > .admonition-title,
+.md-typeset .check > summary {
+  background-color: rgba(63, 81, 181, 0.12);
+}
+
+.md-typeset .admonition.success > .admonition-title::before,
+.md-typeset .admonition.check > .admonition-title::before,
+.md-typeset details.success > summary::before,
+.md-typeset details.check > summary::before {
+  background-color: var(--md-primary-fg-color);
+}
+
+/* Info admonitions use indigo */
+.md-typeset .admonition.info,
+.md-typeset details.info {
+  border-color: var(--md-primary-fg-color--light);
+}
+
+.md-typeset .info > .admonition-title,
+.md-typeset .info > summary {
+  background-color: rgba(121, 134, 203, 0.12);
 }
 
 /* ----------------------------------------------------------------------------
