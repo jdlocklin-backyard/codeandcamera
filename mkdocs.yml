@@ -8,7 +8,9 @@ site_description: Where Technology Meets Hands-On Innovation - Gardening, Home L
 nav:
   - Home: index.md
   - Gardening & Growing: gardening/index.md
-  - Home Lab: homelab/index.md
+  - Home Lab:
+      - homelab/index.md
+      - AI-Powered Proxmox MCP: homelab/mcp-proxmox-infrastructure.md
   - Automation: automation/index.md
   - AI & Machine Learning: ai/index.md
   - Admin:
