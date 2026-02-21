@@ -78,7 +78,6 @@ theme:
     
     # Table of contents
     - toc.follow
-    - toc.integrate
     
     # Search
     - search.highlight
