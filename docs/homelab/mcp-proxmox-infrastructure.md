@@ -77,7 +77,7 @@ The friction wasn't in any single step — it was the constant context switching
 
 ```mermaid
 flowchart LR
-    subgraph before["BEFORE: Manual Workflow"]
+    subgraph before["⛔ BEFORE: Manual Workflow"]
         direction TB
         B1["Need to check\na container"] --> B2["Open terminal\nor browser"]
         B2 --> B3["SSH or login\nto Proxmox UI"]
@@ -86,16 +86,13 @@ flowchart LR
         B5 --> B6["Switch back\nto what I was doing"]
     end
 
-    subgraph after["AFTER: AI-Powered"]
+    subgraph after["✅ AFTER: AI-Powered"]
         direction TB
         A1["Need to check\na container"] --> A2["Ask Claude\nin plain English"]
         A2 --> A3["Get instant\nanswer"]
     end
 
     before ~~~ after
-
-    style before fill:#1a1a2e,stroke:#e94560,color:#eee
-    style after fill:#1a1a2e,stroke:#0f3460,color:#eee
 ```
 
 ---
@@ -142,33 +139,29 @@ Here's how the pieces fit together:
 
 ```mermaid
 flowchart TB
-    subgraph tools["AI Tools"]
+    subgraph tools["🤖 AI Tools"]
         CC["Claude Code"]
         CD["Claude Desktop"]
         VSC["VS Code +\nGitHub Copilot"]
     end
 
-    subgraph mcp["MCP Infrastructure (Docker)"]
+    subgraph mcp["🐳 MCP Infrastructure · Docker"]
         SSE["SSE Server\nPort 8812"]
         REST["REST API\nPort 8811"]
     end
 
-    subgraph proxmox["Proxmox VE"]
+    subgraph proxmox["🖥️ Proxmox VE"]
         API["Proxmox API\n10.0.0.130:8006"]
         VMS["VMs & LXC Containers\nwordpress · cloudflare · vikunja"]
     end
 
-    CC -->|"SSE Transport"| SSE
-    CD -->|"SSE Transport"| SSE
-    VSC -->|"HTTP Transport"| REST
+    CC -- "SSE" --> SSE
+    CD -- "SSE" --> SSE
+    VSC -- "HTTP" --> REST
 
     SSE --> API
     REST --> API
     API --> VMS
-
-    style tools fill:#1a1a2e,stroke:#e2e2e2,color:#eee
-    style mcp fill:#16213e,stroke:#0f3460,color:#eee
-    style proxmox fill:#0f3460,stroke:#e94560,color:#eee
 ```
 
 **31 tools** are available through this infrastructure — everything from VM lifecycle management to snapshot creation, storage monitoring, and executing commands inside containers.
@@ -430,21 +423,21 @@ Here's the startup chain:
 
 ```mermaid
 sequenceDiagram
-    participant WB as Windows Boot
-    participant DD as Docker Desktop
-    participant API as REST Container (8811)
-    participant SSE as SSE Container (8812)
-    participant AI as Any AI Tool
+    participant Boot as 🖥️ Windows
+    participant Docker as 🐳 Docker
+    participant REST as REST · 8811
+    participant SSE as SSE · 8812
+    participant AI as 🤖 AI Tool
 
-    WB->>DD: Auto-start (Windows registry)
-    DD->>API: Start (restart: unless-stopped)
-    DD->>SSE: Start (restart: unless-stopped)
-    API->>API: Health check ✓
+    Boot->>Docker: Auto-start on login
+    Docker->>REST: Start container
+    Docker->>SSE: Start container
+    REST->>REST: Health check ✓
     SSE->>SSE: Health check ✓
-    Note over API,SSE: Ports 8811 + 8812 live
-    AI->>API: Connect via REST ✓
-    AI->>SSE: Connect via SSE ✓
-    Note over AI: All MCP tools available
+    Note over REST,SSE: Both ports live
+    AI->>REST: Connect (VS Code)
+    AI->>SSE: Connect (Claude)
+    Note over AI: 31 Proxmox tools available ✓
 ```
 
 - **Docker Desktop** auto-starts on Windows boot (configured in Settings)
