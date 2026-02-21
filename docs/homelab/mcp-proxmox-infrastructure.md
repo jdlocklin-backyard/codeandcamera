@@ -79,17 +79,17 @@ The friction wasn't in any single step — it was the constant context switching
 flowchart LR
     subgraph before["⛔ BEFORE: Manual Workflow"]
         direction TB
-        B1["Need to check\na container"] --> B2["Open terminal\nor browser"]
-        B2 --> B3["SSH or login\nto Proxmox UI"]
-        B3 --> B4["Navigate to\nthe right place"]
-        B4 --> B5["Run command\nor click buttons"]
-        B5 --> B6["Switch back\nto what I was doing"]
+        B1["Need to check<br/>a container"] --> B2["Open terminal<br/>or browser"]
+        B2 --> B3["SSH or login<br/>to Proxmox UI"]
+        B3 --> B4["Navigate to<br/>the right place"]
+        B4 --> B5["Run command<br/>or click buttons"]
+        B5 --> B6["Switch back to<br/>what I was doing"]
     end
 
     subgraph after["✅ AFTER: AI-Powered"]
         direction TB
-        A1["Need to check\na container"] --> A2["Ask Claude\nin plain English"]
-        A2 --> A3["Get instant\nanswer"]
+        A1["Need to check<br/>a container"] --> A2["Ask Claude<br/>in plain English"]
+        A2 --> A3["Get instant<br/>answer"]
     end
 
     before ~~~ after
@@ -142,17 +142,17 @@ flowchart TB
     subgraph tools["🤖 AI Tools"]
         CC["Claude Code"]
         CD["Claude Desktop"]
-        VSC["VS Code +\nGitHub Copilot"]
+        VSC["VS Code +<br/>GitHub Copilot"]
     end
 
     subgraph mcp["🐳 MCP Infrastructure · Docker"]
-        SSE["SSE Server\nPort 8812"]
-        REST["REST API\nPort 8811"]
+        SSE["SSE Server<br/>Port 8812"]
+        REST["REST API<br/>Port 8811"]
     end
 
     subgraph proxmox["🖥️ Proxmox VE"]
-        API["Proxmox API\n10.0.0.130:8006"]
-        VMS["VMs & LXC Containers\nwordpress · cloudflare · vikunja"]
+        API["Proxmox API<br/>10.0.0.130:8006"]
+        VMS["VMs & LXC Containers<br/>wordpress · cloudflare · vikunja"]
     end
 
     CC -- "SSE" --> SSE
