@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**Code and Camera** is a comprehensive documentation site built with MkDocs and the Material theme. It covers hands-on technical projects spanning Arduino, gardening automation, home lab infrastructure, DevOps automation, and AI/machine learning.
+**Code and Camera** is a comprehensive documentation site built with MkDocs and the Material theme. It covers hands-on technical projects spanning gardening automation, home lab infrastructure, DevOps automation, and AI/machine learning.
 
 **Author**: JD Locklin
 **Site URL**: https://codeandcamera.me/
@@ -11,7 +11,6 @@
 ## Project Purpose
 
 This documentation site serves as a knowledge base and project portfolio for:
-- Arduino electronics projects
 - Gardening and growing automation systems
 - Home lab infrastructure and server management
 - DevOps automation and scripting
@@ -31,14 +30,16 @@ This documentation site serves as a knowledge base and project portfolio for:
 ```
 codeandcamera/
 ├── mkdocs.yml              # MkDocs configuration
-├── README.md               # Developer documentation
+├── requirements.txt        # Pinned Python dependencies
+├── readme.md               # Developer documentation
 ├── CLAUDE.MD               # This file - AI assistant guide
 ├── DEPLOYMENT.md           # Deployment instructions
-├── .github/workflows/      # CI/CD workflows
+├── .github/
+│   ├── copilot-instructions.md  # GitHub Copilot instructions
+│   └── workflows/ci.yml        # CI/CD: strict build + deploy
 ├── docs/                   # Documentation content
 │   ├── index.md            # Homepage
 │   ├── stylesheets/        # Custom CSS
-│   ├── arduino/            # Arduino projects
 │   ├── gardening/          # Gardening automation
 │   ├── homelab/            # Home lab infrastructure
 │   ├── automation/         # DevOps and scripts
@@ -53,31 +54,27 @@ codeandcamera/
 
 ### Main Content Sections
 
-1. **Arduino Projects** (`docs/arduino/`)
-   - Hardware tutorials and code examples
-   - LED control, sensors, actuators
-
-2. **Gardening & Growing** (`docs/gardening/`)
+1. **Gardening & Growing** (`docs/gardening/`)
    - Automated watering systems
    - Environmental monitoring
    - IoT gardening projects
 
-3. **Home Lab** (`docs/homelab/`)
+2. **Home Lab** (`docs/homelab/`)
    - Proxmox VE setup and configuration
    - Server infrastructure
    - Networking and storage
 
-4. **Automation** (`docs/automation/`)
+3. **Automation** (`docs/automation/`)
    - Backup scripts
    - Ansible playbooks
    - DevOps workflows
 
-5. **AI & Machine Learning** (`docs/ai/`)
+4. **AI & Machine Learning** (`docs/ai/`)
    - Local chatbot implementations
    - Ollama and LLM projects
    - ML experiments
 
-6. **Admin** (`docs/admin/`)
+5. **Admin** (`docs/admin/`)
    - MkDocs getting started guide
    - Markdown examples
    - Git commit workflow
@@ -399,7 +396,6 @@ plugins:
 ```
 
 Common tag categories:
-- `arduino:*` - Arduino-related projects
 - `gardening:*` - Gardening projects
 - `homelab:*` - Home lab infrastructure
 - `automation:*` - Automation scripts

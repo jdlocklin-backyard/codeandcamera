@@ -4,7 +4,7 @@ title: "Project Title"
 description: "A brief description of what this project is about"
 tags:
   - template
-  - arduino  # Change to: arduino, gardening, homelab, automation, ai
+  - homelab  # Change to: gardening, homelab, automation, ai
   - project
   
 # Publication Control - Set published to true when ready to go live
@@ -37,7 +37,7 @@ Provide a compelling summary of what this project accomplishes and why someone s
 |--------|-------------|
 | **Difficulty** | Beginner |
 | **Time Required** | 2 hours |
-| **Category** | Arduino / Gardening / Home Lab / Automation / AI |
+| **Category** | Gardening / Home Lab / Automation / AI |
 | **Last Updated** | December 7, 2024 |
 
 ---
