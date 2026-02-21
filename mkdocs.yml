@@ -12,7 +12,9 @@ nav:
       - homelab/index.md
       - AI-Powered Proxmox MCP: homelab/mcp-proxmox-infrastructure.md
   - Automation: automation/index.md
-  - AI & Machine Learning: ai/index.md
+  - AI & Machine Learning:
+      - ai/index.md
+      - Multi-Agent Instructions: ai/multi-agent-instructions.md
   - Admin:
       - Getting Started: admin/getting-started.md
       - Markdown Examples: admin/markdown-examples.md
