@@ -3,6 +3,8 @@ site_name: Code and Camera
 site_author: JD Locklin
 site_url: https://codeandcamera.me/
 site_description: Where Technology Meets Hands-On Innovation - Gardening, Home Lab, Automation, and AI
+repo_url: https://github.com/jdlocklin-backyard/codeandcamera
+repo_name: jdlocklin-backyard/codeandcamera
 
 # Main navigation menu for the documentation site
 nav:
@@ -153,17 +155,15 @@ plugins:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - meta
   - tags:
-      tags_file: admin/tags.md
       tags_slugify_format: "tag:{slug}"
-      tags_hierarchy: true
       tags_sort_reverse: true
-      listings_toc: false
 
 # Extra configuration
 extra:
   # Social links in footer
   social:
     - icon: fontawesome/brands/github
+      link: https://github.com/jdlocklin-backyard
   # Status indicators for pages
   status:
     new: Recently added
@@ -173,5 +173,5 @@ extra_css:
   - stylesheets/extra.css
 
 # Copyright notice
-copyright: Copyright &copy; 2025 Code and Camera | JD Locklin
+copyright: Copyright &copy; 2026 Code and Camera | JD Locklin
 

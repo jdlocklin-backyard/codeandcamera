@@ -26,5 +26,6 @@ jobs:  # Build and deploy job using Ubuntu runner
           path: .cache 
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material 
+      - run: pip install -r requirements.txt
+      - run: mkdocs build --strict
       - run: mkdocs gh-deploy --force

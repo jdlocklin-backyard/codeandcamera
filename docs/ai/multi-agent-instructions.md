@@ -5,7 +5,6 @@ tags:
   - ai
   - automation
   - intermediate
-published: false
 author: "JD Locklin"
 date_created: "2026-02-21"
 date_updated: "2026-02-21"
@@ -398,12 +397,4 @@ The tools for configuring AI assistants are evolving fast. What's a manual markd
 - [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) — The documentation framework used in this post's examples
 - [Mermaid Diagram Syntax](https://mermaid.js.org/syntax/flowchart.html) — Reference for the diagram examples
 
----
 
-## Notes for Future Development
-
-!!! note "Maintainer Notes"
-    - Add screenshot of CLAUDE.md in project root
-    - Add screenshot showing AI following instructions correctly vs without
-    - Consider adding a downloadable starter template for CLAUDE.md
-    - Update resource links as tool documentation evolves

@@ -1,0 +1,3 @@
+# MkDocs and Material theme - pinned to known working versions
+mkdocs-material==9.6.14
+pymdown-extensions==10.15

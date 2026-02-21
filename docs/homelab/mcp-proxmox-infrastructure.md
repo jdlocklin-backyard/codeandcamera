@@ -8,7 +8,6 @@ tags:
   - proxmox
   - docker
   - advanced
-published: false
 author: "JD Locklin"
 date_created: "2026-02-21"
 date_updated: "2026-02-21"
@@ -559,12 +558,4 @@ I'm actively exploring these ideas in my own lab. The intersection of AI tooling
 - [Proxmox VE Documentation](https://pve.proxmox.com/pve-docs/) — Official Proxmox docs
 - [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) — What this site is built with
 
----
 
-## Notes for Future Development
-
-!!! note "Maintainer Notes"
-    - Add screenshots: status script output, Claude conversation, Docker containers, Proxmox UI
-    - Consider adding a video walkthrough of the setup process
-    - Update when ProxmoxMCP-Plus releases new versions with additional tools
-    - Future post: Advanced automation workflows building on this infrastructure
