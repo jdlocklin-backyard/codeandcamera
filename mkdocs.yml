@@ -14,6 +14,7 @@ nav:
       - homelab/index.md
       - AI-Powered Proxmox MCP: homelab/mcp-proxmox-infrastructure.md
       - ProxmoxMCP-Plus Setup Guide: homelab/proxmox-mcp-setup.md
+      - Proxmox Slack Bot: homelab/proxmox-slack-bot.md
   - Automation: automation/index.md
   - AI & Machine Learning:
       - ai/index.md
