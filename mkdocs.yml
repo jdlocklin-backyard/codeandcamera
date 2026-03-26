@@ -19,11 +19,7 @@ nav:
   - AI & Machine Learning:
       - ai/index.md
       - Multi-Agent Instructions: ai/multi-agent-instructions.md
-  - Admin:
-      - Getting Started: admin/getting-started.md
-      - Markdown Examples: admin/markdown-examples.md
-      - Git Workflow: admin/commit-to-github.md
-      - Tags: admin/tags.md
+
 
 # Material theme configuration
 theme:
