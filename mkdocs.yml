@@ -15,7 +15,9 @@ nav:
       - AI-Powered Proxmox MCP: homelab/mcp-proxmox-infrastructure.md
       - ProxmoxMCP-Plus Setup Guide: homelab/proxmox-mcp-setup.md
       - Proxmox Slack Bot: homelab/proxmox-slack-bot.md
-  - Automation: automation/index.md
+  - Automation:
+      - automation/index.md
+      - Upgrading to Slack Block Kit: automation/slack-block-kit-upgrade.md
   - AI & Machine Learning:
       - ai/index.md
       - Multi-Agent Instructions: ai/multi-agent-instructions.md
