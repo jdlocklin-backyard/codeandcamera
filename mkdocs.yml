@@ -18,6 +18,7 @@ nav:
   - Automation:
       - automation/index.md
       - Upgrading to Slack Block Kit: automation/slack-block-kit-upgrade.md
+      - Scheduled Proxmox Updates: automation/n8n-scheduled-proxmox-updates.md
   - AI & Machine Learning:
       - ai/index.md
       - Multi-Agent Instructions: ai/multi-agent-instructions.md
