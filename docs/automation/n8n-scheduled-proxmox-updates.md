@@ -8,7 +8,7 @@ tags:
   - proxmox
   - ai-assisted
   - intermediate
-published: false
+published: true
 author: "JD Locklin"
 date_created: "2026-04-19"
 date_updated: "2026-04-19"
