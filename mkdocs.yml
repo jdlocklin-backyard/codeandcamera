@@ -22,6 +22,7 @@ nav:
   - AI & Machine Learning:
       - ai/index.md
       - Multi-Agent Instructions: ai/multi-agent-instructions.md
+      - WakaTime with OpenCode: ai/wakatime-opencode-setup.md
 
 
 # Material theme configuration
