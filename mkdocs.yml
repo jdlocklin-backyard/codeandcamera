@@ -24,6 +24,7 @@ nav:
       - ai/index.md
       - Multi-Agent Instructions: ai/multi-agent-instructions.md
       - WakaTime with OpenCode: ai/wakatime-opencode-setup.md
+      - AI That Writes About What It Built: ai/openclaw-automated-blog-posts.md
 
 
 # Material theme configuration
