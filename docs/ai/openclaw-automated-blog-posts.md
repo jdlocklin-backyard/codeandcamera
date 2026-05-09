@@ -27,6 +27,8 @@ This is that post.
 
     **AFTER:** The AI assistant that did the work drafts the post immediately. It already knows every step, every error, every decision. I review and publish.
 
+---
+
 | Detail | Information |
 |--------|-------------|
 | **Difficulty** | Intermediate |
