@@ -59,8 +59,6 @@ In the left sidebar:
 
 > **Datacenter** → **Permissions** → **API Tokens** → **Add**
 
-![Proxmox API Tokens location in sidebar](../assets/proxmox-api-token-nav.png)
-
 ---
 
 ## Step 3: Fill In the Token Details
