@@ -48,6 +48,28 @@ Tokens are scoped, revocable, and auditable. This takes five minutes and you'll 
 
 ---
 
+## Revoke and Rotate Tokens Safely
+
+In Proxmox VE, go to **Datacenter -> Permissions -> API Tokens**, or open **Datacenter -> Permissions -> Users**, select the user, and view that user's tokens.
+
+To **revoke** a token, find the token you want to retire, select it, and click **Remove**. That invalidates the token immediately, which is what you want if a secret leaked or a tool no longer needs access.
+
+To **rotate** a token, use a simple remove-and-recreate flow:
+
+1. Create a new token first if you need to avoid downtime.
+2. Update your script, MCP server, n8n credential, or secret store to use the new token value.
+3. Test the new token.
+4. Remove the old token.
+
+A practical naming pattern is `<tool>-<env>-<date>` such as `n8n-homelab-2026-05` or `ansible-prod-v2`. That makes it obvious what can be removed later and gives you a lightweight rotation history.
+
+!!! tip "Rotation habit"
+    Use one token per tool or workflow, not one shared token for everything. That way you can rotate or revoke one integration without breaking the rest of your automation.
+
+Also remember: Proxmox only shows the token secret when you create it. Store it in your password manager or secret manager right away, because rotation means generating a new secret and updating every place that uses it.
+
+---
+
 ## The Problem
 
 At some point every homelab builder does this:
