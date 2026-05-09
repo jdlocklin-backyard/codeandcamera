@@ -493,6 +493,8 @@ Common issues:
 - ✅ Add a "What's Next" section with vague but compelling future teasers
 - ✅ Set `published: false` on new posts for author review
 - ✅ Create asset directories for screenshots even if images aren't ready yet
+- ✅ **Verify all image/asset paths exist in the repo before referencing them in markdown**
+- ✅ Use `<!-- TODO: Add screenshot: docs/assets/<section>/<post>/<name>.png -->` for missing images
 
 ### DON'T:
 - ❌ Create orphan pages (not in navigation)
@@ -506,6 +508,7 @@ Common issues:
 - ❌ Use `\n` for line breaks in Mermaid nodes (use `<br/>`)
 - ❌ Commit posts with `published: true` without author approval
 - ❌ Make future post teasers too specific or commit to timelines
+- ❌ **Reference image files that don't exist in the repo — always check `docs/assets/` first or use a TODO comment**
 
 ## File Naming Conventions
 
