@@ -65,7 +65,7 @@ Everything in this setup was built in a single session with OpenClaw acting auto
 - **Setting up the Docker MCP Gateway** with four servers (filesystem, fetch, time, sequentialthinking)
 - **Wiring GitHub MCP** using the existing `gh` auth token
 - **Cloning and configuring** ProxmoxMCP-Plus with dual-transport containers (REST on 8811, SSE on 8812)
-- **Connecting Slack** (`joesbot` on Locklin Sandbox)
+- **Connecting Slack** (bot account on workspace)
 - **Adding YouTube transcript** support via `mcp-youtube-transcript`
 - **Creating the homelab-sync repo** as a cross-machine config exchange point
 - **Writing and pushing** the Proxmox API token blog post — including fixing a broken image reference that failed CI under `--strict` mode
@@ -99,7 +99,7 @@ flowchart TB
         ST["sequentialthinking"]
     end
 
-    subgraph prox["🖧 Proxmox VE (10.0.0.130)"]
+    subgraph prox["🖧 Proxmox VE (LAN)"]
         PVE["pve node<br/>11 VMs"]
     end
 
@@ -242,8 +242,8 @@ openclaw mcp set slack '{
   "command": "npx",
   "args": ["-y", "@modelcontextprotocol/server-slack"],
   "env": {
-    "SLACK_BOT_TOKEN": "xoxb-YOUR-TOKEN",
-    "SLACK_TEAM_ID": "YOUR-TEAM-ID"
+    "SLACK_BOT_TOKEN": "xoxb-YOUR-TOKEN-HERE",
+    "SLACK_TEAM_ID": "YOUR-TEAM-ID-HERE"
   }
 }'
 ```
@@ -334,10 +334,10 @@ Sample Proxmox query:
 > "List my nodes and VMs."
 
 ```
-Node: pve — Online, 8 cores, 24.7/31.1 GB RAM (79.6%)
+Node: pve — Online, 8 cores, 25.1/32.0 GB RAM (78.4%)
 
-VMs: ansible1-4 (running), aap-controller (running, 90% mem),
-prod-server01-03 (running), haos17.0 (stopped), ubuntu-gui-vscode (stopped)
+VMs: 8 running (automation cluster, controller, production servers),
+3 stopped (home assistant, dev box, template)
 ```
 
 <!-- TODO: Add screenshot: docs/assets/ai/openclaw-automated-posts/mcp-list.png -->

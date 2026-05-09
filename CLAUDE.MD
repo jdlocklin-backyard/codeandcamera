@@ -481,6 +481,7 @@ Common issues:
 ## Important Guidelines
 
 ### DO:
+- ✅ **Obfuscate all personal/infrastructure details before publishing** — replace real IPs, hostnames, VM names, token names, bot names, workspace names, team IDs, and usernames with generic placeholders (e.g. `YOUR_PROXMOX_IP`, `your-bot`, `Your Workspace`, `192.168.x.x`). Slightly vary any real numbers (RAM, CPU %, etc.) to avoid fingerprinting.
 - ✅ Follow the existing style and structure
 - ✅ Include complete, tested code examples
 - ✅ Add appropriate tags to all pages
