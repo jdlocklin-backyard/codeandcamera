@@ -1,167 +1,113 @@
 ---
-# Project Metadata - Used by MkDocs and plugins
 title: "Project Title"
-description: "A brief description of what this project is about"
+description: "One sentence for SEO and social sharing"
 tags:
-  - template
-  - homelab  # Change to: gardening, homelab, automation, ai
-  - project
-  
-# Publication Control - Set published to true when ready to go live
-published: false  # Change to true to publish the page
-
-# Project Information - Customize these details
-author: "Your Name"
-date_created: "2024-12-07"
-date_updated: "2024-12-07"
-difficulty: "Beginner"  # Options: Beginner, Intermediate, Advanced
-estimated_time: "2 hours"  # Time needed to complete or understand the project
+  - homelab
+  - beginner
+published: false
+author: "JD Locklin"
+date_created: "YYYY-MM-DD"
+date_updated: "YYYY-MM-DD"
+difficulty: "Beginner"
+estimated_time: "X hours"
 ---
 
 # Project Title
 
-!!! info "Publication Status"
-    **Status:** Draft - This page is under development and not yet published.
-    
-    To publish this project, change `published: true` in the file metadata above.
-
 ## Overview
 
-Provide a compelling summary of what this project accomplishes and why someone should care about it. Keep this to 2-3 sentences that immediately communicate value.
+2-3 sentences. What it does, why it matters. Scannable in 10 seconds.
 
----
-
-## Project Details
+!!! success "What You'll End Up With"
+    One sentence: the concrete before/after transformation.
 
 | Detail | Information |
 |--------|-------------|
 | **Difficulty** | Beginner |
-| **Time Required** | 2 hours |
-| **Category** | Gardening / Home Lab / Automation / AI |
-| **Last Updated** | December 7, 2024 |
+| **Time Required** | X hours |
+| **Category** | Home Lab |
+| **Last Updated** | Month YYYY |
 
 ---
 
 ## What You'll Learn
 
-- Learning objective 1
-- Learning objective 2
-- Learning objective 3
+- Outcome 1
+- Outcome 2
+- Outcome 3
+
+---
+
+## The Problem
+
+The pain point before this existed. Make it relatable.
+
+---
+
+## How AI Helped
+
+What AI contributed — discovery, architecture, debugging. Honest, specific.
+Frame as capability multiplier, not replacement.
+
+---
+
+## Architecture
+
+```mermaid
+flowchart TB
+    A["Component A"] --> B["Component B"]
+```
 
 ---
 
 ## Prerequisites
 
-- Prerequisite or tool 1
-- Prerequisite or tool 2
-- Prerequisite or tool 3
+- [ ] Requirement 1
+- [ ] Requirement 2
 
 ---
 
-## Materials & Tools
+## Step 1: Title
 
-### Hardware (if applicable)
-- Component 1 with specifications
-- Component 2 with specifications
-- Component 3 with specifications
-
-### Software (if applicable)
-- Software/library 1 with version
-- Software/library 2 with version
-- Software/library 3 with version
-
----
-
-## Step-by-Step Guide
-
-### Step 1: Setup
-
-Detailed instructions for the first step of the project.
+Instructions.
 
 ```bash
-# Example code or command
-example_command --flag
+example command
 ```
 
-### Step 2: Implementation
+## Step 2: Title
 
-Detailed instructions for the second step of the project.
-
-```python
-# Example code snippet
-def example_function():
-    print("Hello, World!")
-```
-
-### Step 3: Testing & Validation
-
-How to verify the project is working correctly.
-
-??? "Click to expand troubleshooting"
-    **Problem:** Issue encountered
-    
-    **Solution:** How to fix it
+Instructions.
 
 ---
 
-## Results & Outcomes
+## Results
 
-Describe what the completed project looks like or how it performs.
+Show actual output, screenshots, or conversation examples.
 
----
-
-## Common Issues & Troubleshooting
-
-### Issue 1
-**Problem:** Description of the issue
-**Solution:** Steps to resolve
-
-### Issue 2
-**Problem:** Description of the issue
-**Solution:** Steps to resolve
+<!-- TODO: Add screenshot: docs/assets/homelab/post-slug/result.png -->
 
 ---
 
-## Next Steps
+## Troubleshooting
 
-- Extension idea 1
-- Extension idea 2
-- Related project you could try
-
----
-
-## Resources & References
-
-- [Resource Title](https://example.com) - Brief description
-- [Documentation](https://docs.example.com) - Official documentation
-- [Related Project](link) - Similar project for reference
+**Problem:** What breaks  
+**Fix:** How to solve it
 
 ---
 
-## Project Files
+## What's Next
 
-All project files and source code are available below:
+What this foundation enables.
 
-- `example_file.py` - Main project file
-- `config.json` - Configuration file
-- `README.md` - Additional documentation
+- Possibility 1
+- Possibility 2
 
----
-
-## Notes for Future Development
-
-!!! note "Maintainer Notes"
-    - Consider adding video walkthrough in future
-    - Update prerequisites when new versions are released
-    - Request: Add advanced variation of this project
-    - Known limitation: Works best with X, Y, Z
+!!! question "What's your setup?"
+    Engaging question for the reader.
 
 ---
 
-## Feedback
+## Related
 
-Have improvements or questions? Consider:
-- Creating an issue on GitHub
-- Reaching out with suggestions
-- Sharing your variation of this project
-
+- [Post Title](../section/post.md)
