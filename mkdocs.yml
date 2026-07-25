@@ -26,78 +26,12 @@ nav:
       - Multi-Agent Instructions: ai/multi-agent-instructions.md
       - WakaTime with OpenCode: ai/wakatime-opencode-setup.md
       - AI That Writes About What It Built: ai/openclaw-automated-blog-posts.md
+      - AI Agent Harness Workflow: ai/agent-harness-workflow.md
 
 
-# Material theme configuration
+# Ivory theme configuration
 theme:
-  name: material
-  
-  # Custom color palette - Indigo/Yellow scheme for bold, upbeat feel
-  palette:
-    # Dark Mode - Indigo with Yellow accents
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: indigo
-      accent: yellow
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
-    # Light Mode - Indigo with Amber accents
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      accent: amber
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-
-  # Typography - Modern, readable fonts
-  font:
-    text: Inter
-    code: JetBrains Mono
-
-  # Custom branding
-  icon:
-    logo: material/code-braces-box
-    repo: fontawesome/brands/github
-    admonition:
-      note: fontawesome/solid/note-sticky
-      tip: fontawesome/solid/lightbulb
-      warning: fontawesome/solid/triangle-exclamation
-      danger: fontawesome/solid/skull
-
-  # Feature flags for enhanced UX
-  features:
-    # Navigation
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.sections
-    - navigation.expand
-    - navigation.path
-    - navigation.top
-    - navigation.footer
-    - navigation.tracking
-    - navigation.instant
-    - navigation.instant.prefetch
-    - navigation.instant.progress
-    
-    # Table of contents
-    - toc.follow
-    
-    # Search
-    - search.highlight
-    - search.share
-    - search.suggest
-    
-    # Content
-    - content.code.copy
-    - content.code.annotate
-    - content.tabs.link
-    - content.tooltips
-    
-    # Header
-    - header.autohide
-    - announce.dismiss
+  name: ivory
 
 # Markdown extensions for rich content
 markdown_extensions:
@@ -146,8 +80,8 @@ markdown_extensions:
   
   # Emoji support
   - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
   
   # Task lists
   - pymdownx.tasklist:
@@ -157,10 +91,6 @@ markdown_extensions:
 plugins:
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
-  - meta
-  - tags:
-      tags_slugify_format: "tag:{slug}"
-      tags_sort_reverse: true
 
 # Extra configuration
 extra:
