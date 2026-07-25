@@ -1,4 +1,4 @@
-# MkDocs and Ivory theme - pinned to known working versions
+# MkDocs and Bootswatch Superhero theme - pinned to known working versions
 mkdocs==1.6.1
-mkdocs-ivory==0.4.6
+mkdocs-bootswatch==1.1
 pymdown-extensions==10.15

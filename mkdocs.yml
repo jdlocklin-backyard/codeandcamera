@@ -29,9 +29,9 @@ nav:
       - AI Agent Harness Workflow: ai/agent-harness-workflow.md
 
 
-# Ivory theme configuration
+# Bootswatch Superhero theme configuration
 theme:
-  name: ivory
+  name: superhero
 
 # Markdown extensions for rich content
 markdown_extensions:
