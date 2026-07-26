@@ -28,9 +28,9 @@ nav:
       - AI Agent Harness Workflow: ai/agent-harness-workflow.md
 
 
-# Bootswatch Flatly theme configuration
+# MkDocs default theme configuration
 theme:
-  name: flatly
+  name: mkdocs
 
 # Markdown extensions for rich content
 markdown_extensions:
