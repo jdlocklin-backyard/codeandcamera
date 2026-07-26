@@ -3,8 +3,6 @@ site_name: Code and Camera
 site_author: J Lock
 site_url: https://codeandcamera.me/
 site_description: Where Technology Meets Hands-On Innovation - Gardening, Home Lab, Automation, and AI
-repo_url: https://github.com/jdlocklin-backyard/codeandcamera
-repo_name: jdlocklin-backyard/codeandcamera
 edit_uri: ""
 
 # Main navigation menu for the documentation site

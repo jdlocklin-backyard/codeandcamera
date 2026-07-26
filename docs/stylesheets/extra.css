@@ -317,6 +317,28 @@ body {
 }
 
 /* ----------------------------------------------------------------------------
+   Bootswatch Navbar Layout Tuning
+   ---------------------------------------------------------------------------- */
+@media (min-width: 992px) {
+  #navbar-collapse {
+    display: flex !important;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #navbar-collapse .navbar-nav {
+    flex-wrap: nowrap;
+  }
+
+  #navbar-collapse .nav-link {
+    white-space: nowrap;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
+}
+
+/* ----------------------------------------------------------------------------
    Print Styles - Clean Output
    ---------------------------------------------------------------------------- */
 @media print {
