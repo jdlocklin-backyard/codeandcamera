@@ -1,4 +1,4 @@
-# MkDocs and Bootswatch Superhero theme - pinned to known working versions
+# MkDocs and Bootswatch Flatly theme - pinned to known working versions
 mkdocs==1.6.1
 mkdocs-bootswatch==1.1
 pymdown-extensions==10.15

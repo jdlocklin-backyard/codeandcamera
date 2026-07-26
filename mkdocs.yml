@@ -1,10 +1,11 @@
 # MkDocs configuration for Code and Camera documentation site
 site_name: Code and Camera
-site_author: JD Locklin
+site_author: J Lock
 site_url: https://codeandcamera.me/
 site_description: Where Technology Meets Hands-On Innovation - Gardening, Home Lab, Automation, and AI
 repo_url: https://github.com/jdlocklin-backyard/codeandcamera
 repo_name: jdlocklin-backyard/codeandcamera
+edit_uri: ""
 
 # Main navigation menu for the documentation site
 nav:
@@ -29,9 +30,9 @@ nav:
       - AI Agent Harness Workflow: ai/agent-harness-workflow.md
 
 
-# Bootswatch Superhero theme configuration
+# Bootswatch Flatly theme configuration
 theme:
-  name: superhero
+  name: flatly
 
 # Markdown extensions for rich content
 markdown_extensions:
@@ -107,5 +108,5 @@ extra_css:
   - stylesheets/extra.css
 
 # Copyright notice
-copyright: Copyright &copy; 2026 Code and Camera | JD Locklin
+copyright: Copyright &copy; 2026 Code and Camera | J Lock
 
