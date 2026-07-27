@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="J Lock">
+        <link rel="canonical" href="https://codeandcamera.me/ai/wakatime-opencode-setup/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>WakaTime with OpenCode - Code and Camera</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../stylesheets/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Code and Camera</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Start Here</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../.." class="dropdown-item">Home</a>
+</li>
+                                    
+<li>
+    <a href="../" class="dropdown-item">AI & Machine Learning</a>
+</li>
+                                    
+<li>
+    <a href="../../automation/" class="dropdown-item">Automation</a>
+</li>
+                                    
+<li>
+    <a href="../../homelab/" class="dropdown-item">Home Lab</a>
+</li>
+                                    
+<li>
+    <a href="../../gardening/" class="dropdown-item">Gardening & Growing</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Case Studies</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../agent-harness-workflow/" class="dropdown-item">AI Agent Harness Workflow</a>
+</li>
+                                    
+<li>
+    <a href="../../homelab/mcp-proxmox-infrastructure/" class="dropdown-item">AI-Powered Proxmox MCP</a>
+</li>
+                                    
+<li>
+    <a href="../../automation/slack-block-kit-upgrade/" class="dropdown-item">Upgrading to Slack Block Kit</a>
+</li>
+                                    
+<li>
+    <a href="../../automation/n8n-scheduled-proxmox-updates/" class="dropdown-item">Scheduled Proxmox Updates</a>
+</li>
+                                    
+<li>
+    <a href="../../homelab/proxmox-slack-bot/" class="dropdown-item">Proxmox Slack Bot</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Guides & Runbooks</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../homelab/proxmox-mcp-setup/" class="dropdown-item">ProxmoxMCP-Plus Setup Guide</a>
+</li>
+                                    
+<li>
+    <a href="../../homelab/proxmox-api-token/" class="dropdown-item">Proxmox API Tokens</a>
+</li>
+                                    
+<li>
+    <a href="../../automation/docker-desktop-cleanup-runbook/" class="dropdown-item">Docker Desktop Cleanup Reference</a>
+</li>
+                                    
+<li>
+    <a href="../multi-agent-instructions/" class="dropdown-item">Multi-Agent Instructions</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">WakaTime with OpenCode</a>
+</li>
+                                    
+<li>
+    <a href="../openclaw-automated-blog-posts/" class="dropdown-item">AI That Writes About What It Built</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Explore by Domain</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">AI</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">AI & Machine Learning</a>
+</li>
+            
+<li>
+    <a href="../agent-harness-workflow/" class="dropdown-item">AI Agent Harness Workflow</a>
+</li>
+            
+<li>
+    <a href="../multi-agent-instructions/" class="dropdown-item">Multi-Agent Instructions</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">WakaTime with OpenCode</a>
+</li>
+            
+<li>
+    <a href="../openclaw-automated-blog-posts/" class="dropdown-item">AI That Writes About What It Built</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Automation</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../automation/" class="dropdown-item">Automation</a>
+</li>
+            
+<li>
+    <a href="../../automation/docker-desktop-cleanup-runbook/" class="dropdown-item">Docker Desktop Cleanup Reference</a>
+</li>
+            
+<li>
+    <a href="../../automation/slack-block-kit-upgrade/" class="dropdown-item">Upgrading to Slack Block Kit</a>
+</li>
+            
+<li>
+    <a href="../../automation/n8n-scheduled-proxmox-updates/" class="dropdown-item">Scheduled Proxmox Updates</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Home Lab</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../homelab/" class="dropdown-item">Home Lab</a>
+</li>
+            
+<li>
+    <a href="../../homelab/mcp-proxmox-infrastructure/" class="dropdown-item">AI-Powered Proxmox MCP</a>
+</li>
+            
+<li>
+    <a href="../../homelab/proxmox-mcp-setup/" class="dropdown-item">ProxmoxMCP-Plus Setup Guide</a>
+</li>
+            
+<li>
+    <a href="../../homelab/proxmox-api-token/" class="dropdown-item">Proxmox API Tokens</a>
+</li>
+            
+<li>
+    <a href="../../homelab/proxmox-slack-bot/" class="dropdown-item">Proxmox Slack Bot</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Gardening</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../gardening/" class="dropdown-item">Gardening & Growing</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../multi-agent-instructions/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../openclaw-automated-blog-posts/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#automatic-time-tracking-with-wakatime-and-opencode" class="nav-link">Automatic Time Tracking with WakaTime and OpenCode</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#project-details" class="nav-link">Project Details</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#what-youll-learn" class="nav-link">What You'll Learn</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#the-manual-alternative" class="nav-link">The Manual Alternative</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#what-wakatime-tracks" class="nav-link">What WakaTime Tracks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#prerequisites" class="nav-link">Prerequisites</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-by-step-setup" class="nav-link">Step-by-Step Setup</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#verifying-it-works" class="nav-link">Verifying It Works</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#what-the-dashboard-shows-you" class="nav-link">What the Dashboard Shows You</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#privacy-data" class="nav-link">Privacy &amp; Data</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#results" class="nav-link">Results</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#troubleshooting" class="nav-link">Troubleshooting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#whats-next" class="nav-link">What's Next</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#resources" class="nav-link">Resources</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="automatic-time-tracking-with-wakatime-and-opencode">Automatic Time Tracking with WakaTime and OpenCode<a class="headerlink" href="#automatic-time-tracking-with-wakatime-and-opencode" title="Link to this section">&para;</a></h1>
+<p>How much time do you actually spend coding each day? Not "at your desk" time — actual keyboard-to-screen time. What languages dominate your workweek? Which projects consume your focus?</p>
+<p>I couldn't answer these questions until I added WakaTime to OpenCode. Now every keystroke is tracked automatically. No timers, no manual logging, no forgetting to clock in. Just transparent insight into where my coding time actually goes.</p>
+<div class="admonition success">
+<p class="admonition-title">The Result</p>
+<p><strong>BEFORE:</strong> Vague guesses about time spent coding ("probably 4 hours today?")</p>
+<p><strong>AFTER:</strong> Precise metrics showing language breakdown, project distribution, and actual coding time</p>
+<p><strong>Setup time:</strong> 5 minutes</p>
+</div>
+<hr />
+<h2 id="project-details">Project Details<a class="headerlink" href="#project-details" title="Link to this section">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Detail</th>
+<th>Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Difficulty</strong></td>
+<td>Beginner</td>
+</tr>
+<tr>
+<td><strong>Time Required</strong></td>
+<td>5 minutes</td>
+</tr>
+<tr>
+<td><strong>Category</strong></td>
+<td>AI &amp; Productivity</td>
+</tr>
+<tr>
+<td><strong>Last Updated</strong></td>
+<td>April 2026</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Technologies:</strong> WakaTime, OpenCode, automatic time tracking</p>
+<hr />
+<h2 id="what-youll-learn">What You'll Learn<a class="headerlink" href="#what-youll-learn" title="Link to this section">&para;</a></h2>
+<ul>
+<li>How to install the WakaTime plugin for OpenCode</li>
+<li>Where to find and configure your WakaTime API key</li>
+<li>What metrics WakaTime tracks automatically</li>
+<li>How to interpret your WakaTime dashboard</li>
+</ul>
+<hr />
+<h2 id="the-manual-alternative">The Manual Alternative<a class="headerlink" href="#the-manual-alternative" title="Link to this section">&para;</a></h2>
+<p>Before automatic time tracking, you had two options:</p>
+<ol>
+<li><strong>Manual time logging</strong> — Start a timer when you code, stop when you context-switch. Forget constantly. Lose accuracy.</li>
+<li><strong>Educated guessing</strong> — "I worked on that Python project for... 3 hours? Maybe 4?"</li>
+</ol>
+<pre class="mermaid"><code>flowchart LR
+    subgraph manual["⛔ Manual Tracking"]
+        direction TB
+        M1["Start coding"] --&gt; M2["Remember to&lt;br/&gt;start timer"]
+        M2 --&gt; M3["Context switch"] --&gt; M4["Forget to stop"]
+        M4 --&gt; M5["Inaccurate data"]
+    end
+
+    subgraph auto["✅ Automatic Tracking"]
+        direction TB
+        A1["Start coding"] --&gt; A2["WakaTime tracks&lt;br/&gt;automatically"]
+        A2 --&gt; A3["Switch projects"] --&gt; A4["Tracking continues&lt;br/&gt;seamlessly"]
+        A4 --&gt; A5["Perfect accuracy"]
+    end
+
+    manual ~~~ auto</code></pre>
+<hr />
+<h2 id="what-wakatime-tracks">What WakaTime Tracks<a class="headerlink" href="#what-wakatime-tracks" title="Link to this section">&para;</a></h2>
+<p>WakaTime runs in the background and captures:</p>
+<ul>
+<li><strong>Time spent coding</strong> — Actual keyboard activity, not idle time</li>
+<li><strong>Languages used</strong> — Python, JavaScript, YAML, Markdown, etc.</li>
+<li><strong>Projects worked on</strong> — Broken down by directory/repository</li>
+<li><strong>Editors used</strong> — OpenCode, VS Code, Vim, etc.</li>
+<li><strong>Operating system</strong> — Windows, macOS, Linux</li>
+<li><strong>Daily patterns</strong> — When you're most productive</li>
+</ul>
+<p>All of this happens <strong>completely automatically</strong>. You don't start or stop anything. Just code, and WakaTime records it.</p>
+<hr />
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this section">&para;</a></h2>
+<ul>
+<li>OpenCode installed and running</li>
+<li>A WakaTime account (free at <a href="https://wakatime.com/">wakatime.com</a>)</li>
+<li>Your WakaTime API key (found in your WakaTime account settings)</li>
+</ul>
+<hr />
+<h2 id="step-by-step-setup">Step-by-Step Setup<a class="headerlink" href="#step-by-step-setup" title="Link to this section">&para;</a></h2>
+<h3 id="step-1-get-your-wakatime-api-key">Step 1: Get Your WakaTime API Key<a class="headerlink" href="#step-1-get-your-wakatime-api-key" title="Link to this section">&para;</a></h3>
+<ol>
+<li>Go to <a href="https://wakatime.com/">wakatime.com</a> and sign up (or log in)</li>
+<li>Navigate to <strong>Settings</strong> → <strong>API Key</strong></li>
+<li>Copy your API key (format: <code>waka_XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</code>)</li>
+</ol>
+<h3 id="step-2-install-the-opencode-wakatime-plugin">Step 2: Install the OpenCode WakaTime Plugin<a class="headerlink" href="#step-2-install-the-opencode-wakatime-plugin" title="Link to this section">&para;</a></h3>
+<p>Open your OpenCode configuration file:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label><label for="__tabbed_1_2">macOS/Linux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="highlight"><code class="language-plaintext">C:\Users\&lt;your-username&gt;\.config\opencode\opencode.json</code></pre>
+</div>
+<div class="tabbed-block">
+<pre class="highlight"><code class="language-plaintext">~/.config/opencode/opencode.json</code></pre>
+</div>
+</div>
+</div>
+<p>Add the WakaTime plugin to the <code>plugin</code> array:</p>
+<pre class="highlight"><code class="language-json">{
+  "plugin": [
+    "opencode-wakatime"
+  ]
+}</code></pre>
+<p>If you already have plugins listed, just add <code>"opencode-wakatime"</code> to the array:</p>
+<pre class="highlight"><code class="language-json">{
+  "plugin": [
+    "some-other-plugin",
+    "opencode-wakatime"
+  ]
+}</code></pre>
+<h3 id="step-3-configure-your-api-key">Step 3: Configure Your API Key<a class="headerlink" href="#step-3-configure-your-api-key" title="Link to this section">&para;</a></h3>
+<p>Create (or edit) your WakaTime configuration file:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Windows</label><label for="__tabbed_2_2">macOS/Linux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="highlight"><code class="language-plaintext">C:\Users\&lt;your-username&gt;\.wakatime.cfg</code></pre>
+</div>
+<div class="tabbed-block">
+<pre class="highlight"><code class="language-plaintext">~/.wakatime.cfg</code></pre>
+</div>
+</div>
+</div>
+<p>Add your API key:</p>
+<pre class="highlight"><code class="language-ini">[settings]
+api_key = waka_XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</code></pre>
+<p>Replace <code>waka_XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</code> with your actual API key from Step 1.</p>
+<h3 id="step-4-restart-opencode">Step 4: Restart OpenCode<a class="headerlink" href="#step-4-restart-opencode" title="Link to this section">&para;</a></h3>
+<p>Close and reopen OpenCode to activate the WakaTime plugin.</p>
+<p>That's it. WakaTime is now tracking your coding activity automatically.</p>
+<hr />
+<h2 id="verifying-it-works">Verifying It Works<a class="headerlink" href="#verifying-it-works" title="Link to this section">&para;</a></h2>
+<p>After coding for a few minutes in OpenCode:</p>
+<ol>
+<li>Go to your <a href="https://wakatime.com/dashboard">WakaTime dashboard</a></li>
+<li>You should see recent activity appearing</li>
+<li>Check the <strong>Languages</strong>, <strong>Projects</strong>, and <strong>Editors</strong> tabs to see the breakdown</li>
+</ol>
+<!-- TODO: Add screenshot of WakaTime dashboard -->
+<!-- File: docs/assets/ai/wakatime-opencode-setup/wakatime-dashboard.png -->
+
+<p>If nothing appears after 10-15 minutes of active coding, double-check:</p>
+<ul>
+<li>API key is correct in <code>.wakatime.cfg</code></li>
+<li>Plugin is listed in <code>opencode.json</code></li>
+<li>You restarted OpenCode after making the changes</li>
+</ul>
+<hr />
+<h2 id="what-the-dashboard-shows-you">What the Dashboard Shows You<a class="headerlink" href="#what-the-dashboard-shows-you" title="Link to this section">&para;</a></h2>
+<p>The WakaTime dashboard gives you insights you can't get any other way:</p>
+<p><strong>Daily/Weekly/Monthly Summaries:</strong>
+- Total coding time
+- Most-used languages
+- Most active projects
+- Coding hours by day of week</p>
+<p><strong>Project Breakdown:</strong>
+- How much time you spent on each codebase
+- Language distribution per project</p>
+<p><strong>Productivity Patterns:</strong>
+- When you code most (morning vs afternoon vs evening)
+- Which days you're most active</p>
+<p><strong>Editor Usage:</strong>
+- If you use multiple editors (OpenCode, VS Code, Vim), see the breakdown</p>
+<p>This data helps you:
+- Understand where your time actually goes
+- Identify patterns (e.g., "I'm most productive 9-11 AM")
+- Track how much time you spend on personal projects vs work
+- Show concrete proof of your coding activity (useful for freelancers or time-based billing)</p>
+<hr />
+<h2 id="privacy-data">Privacy &amp; Data<a class="headerlink" href="#privacy-data" title="Link to this section">&para;</a></h2>
+<p>WakaTime tracks:
+- ✅ File names, languages, projects, time spent
+- ✅ Editor used, operating system</p>
+<p>WakaTime <strong>does NOT</strong> track:
+- ❌ The actual code you write
+- ❌ File contents
+- ❌ Keystrokes beyond activity detection</p>
+<p>All data is private by default. You control who sees your stats (public profiles are opt-in).</p>
+<hr />
+<h2 id="results">Results<a class="headerlink" href="#results" title="Link to this section">&para;</a></h2>
+<p>Since installing WakaTime, I've learned:</p>
+<ul>
+<li>I spend ~60% of my time in Python, 25% in YAML (n8n workflows), 15% in Markdown (documentation)</li>
+<li>My most productive hours are 8-10 AM</li>
+<li>I context-switch between projects more than I realized (average 4-5 projects per day)</li>
+<li>My actual coding time is about 4 hours/day, not the 6-8 I thought</li>
+</ul>
+<p>This isn't about maximizing every minute. It's about <strong>seeing reality clearly</strong> so you can make better decisions about your time.</p>
+<!-- TODO: Add screenshot showing language breakdown -->
+<!-- File: docs/assets/ai/wakatime-opencode-setup/language-breakdown.png -->
+
+<hr />
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this section">&para;</a></h2>
+<h3 id="no-activity-showing-up">No Activity Showing Up<a class="headerlink" href="#no-activity-showing-up" title="Link to this section">&para;</a></h3>
+<p><strong>Problem:</strong> Dashboard still empty after 30 minutes of coding</p>
+<p><strong>Fix:</strong></p>
+<ol>
+<li>Check that <code>.wakatime.cfg</code> exists and has your API key</li>
+<li>Verify <code>opencode-wakatime</code> is in <code>opencode.json</code></li>
+<li>Restart OpenCode</li>
+<li>Check WakaTime logs (if available) for errors</li>
+</ol>
+<h3 id="wrong-projects-being-tracked">Wrong Projects Being Tracked<a class="headerlink" href="#wrong-projects-being-tracked" title="Link to this section">&para;</a></h3>
+<p><strong>Problem:</strong> WakaTime is grouping files from different projects together</p>
+<p><strong>Fix:</strong> WakaTime detects projects based on <code>.git</code> directories and other project files. If you're working in a subdirectory without clear project markers, it might misattribute time. Add a <code>.wakatime-project</code> file to the root of your project with the project name:</p>
+<pre class="highlight"><code class="language-plaintext">my-project-name</code></pre>
+<h3 id="opencode-doesnt-load-plugin">OpenCode Doesn't Load Plugin<a class="headerlink" href="#opencode-doesnt-load-plugin" title="Link to this section">&para;</a></h3>
+<p><strong>Problem:</strong> Plugin listed in <code>opencode.json</code> but not loading</p>
+<p><strong>Fix:</strong> Ensure the JSON syntax is valid (no trailing commas, proper quotes). Use a JSON validator if needed.</p>
+<hr />
+<h2 id="whats-next">What's Next<a class="headerlink" href="#whats-next" title="Link to this section">&para;</a></h2>
+<p>Automatic time tracking opens up possibilities:</p>
+<ul>
+<li><strong>Billing automation</strong> — Generate invoices based on tracked project time</li>
+<li><strong>Productivity analytics</strong> — Correlate coding patterns with external factors (sleep, coffee intake, meeting load)</li>
+<li><strong>Team insights</strong> — Aggregate WakaTime data across a team for project estimation</li>
+<li><strong>Habit tracking</strong> — Set coding time goals and track progress</li>
+</ul>
+<p>I'm exploring how WakaTime data can feed into a personal dashboard that shows not just coding metrics, but how they correlate with other productivity signals. Could you predict your most productive days based on sleep and coding patterns? Maybe.</p>
+<div class="admonition question">
+<p class="admonition-title">What Would You Track?</p>
+<p>Beyond time and languages, what coding metrics would you want to see? File churn rate? Refactor vs new code ratio? Error density?</p>
+</div>
+<hr />
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Link to this section">&para;</a></h2>
+<ul>
+<li><a href="https://wakatime.com/">WakaTime Website</a></li>
+<li><a href="https://github.com/angristan/opencode-wakatime">OpenCode WakaTime Plugin</a></li>
+<li><a href="https://wakatime.com/help">WakaTime Documentation</a></li>
+<li><a href="https://opencode.ai/docs">OpenCode Documentation</a></li>
+</ul>
+<hr />
+<p><strong>Difficulty</strong>: Beginner | <strong>Time</strong>: 5 minutes</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2026 Code and Camera | J Lock</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="J Lock">
+        <link rel="canonical" href="https://codeandcamera.me/homelab/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Home Lab - Code and Camera</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../stylesheets/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Code and Camera</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Start Here</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href=".." class="dropdown-item">Home</a>
+</li>
+                                    
+<li>
+    <a href="../ai/" class="dropdown-item">AI & Machine Learning</a>
+</li>
+                                    
+<li>
+    <a href="../automation/" class="dropdown-item">Automation</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Home Lab</a>
+</li>
+                                    
+<li>
+    <a href="../gardening/" class="dropdown-item">Gardening & Growing</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Case Studies</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../ai/agent-harness-workflow/" class="dropdown-item">AI Agent Harness Workflow</a>
+</li>
+                                    
+<li>
+    <a href="mcp-proxmox-infrastructure/" class="dropdown-item">AI-Powered Proxmox MCP</a>
+</li>
+                                    
+<li>
+    <a href="../automation/slack-block-kit-upgrade/" class="dropdown-item">Upgrading to Slack Block Kit</a>
+</li>
+                                    
+<li>
+    <a href="../automation/n8n-scheduled-proxmox-updates/" class="dropdown-item">Scheduled Proxmox Updates</a>
+</li>
+                                    
+<li>
+    <a href="proxmox-slack-bot/" class="dropdown-item">Proxmox Slack Bot</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Guides & Runbooks</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="proxmox-mcp-setup/" class="dropdown-item">ProxmoxMCP-Plus Setup Guide</a>
+</li>
+                                    
+<li>
+    <a href="proxmox-api-token/" class="dropdown-item">Proxmox API Tokens</a>
+</li>
+                                    
+<li>
+    <a href="../automation/docker-desktop-cleanup-runbook/" class="dropdown-item">Docker Desktop Cleanup Reference</a>
+</li>
+                                    
+<li>
+    <a href="../ai/multi-agent-instructions/" class="dropdown-item">Multi-Agent Instructions</a>
+</li>
+                                    
+<li>
+    <a href="../ai/wakatime-opencode-setup/" class="dropdown-item">WakaTime with OpenCode</a>
+</li>
+                                    
+<li>
+    <a href="../ai/openclaw-automated-blog-posts/" class="dropdown-item">AI That Writes About What It Built</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Explore by Domain</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">AI</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../ai/" class="dropdown-item">AI & Machine Learning</a>
+</li>
+            
+<li>
+    <a href="../ai/agent-harness-workflow/" class="dropdown-item">AI Agent Harness Workflow</a>
+</li>
+            
+<li>
+    <a href="../ai/multi-agent-instructions/" class="dropdown-item">Multi-Agent Instructions</a>
+</li>
+            
+<li>
+    <a href="../ai/wakatime-opencode-setup/" class="dropdown-item">WakaTime with OpenCode</a>
+</li>
+            
+<li>
+    <a href="../ai/openclaw-automated-blog-posts/" class="dropdown-item">AI That Writes About What It Built</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Automation</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../automation/" class="dropdown-item">Automation</a>
+</li>
+            
+<li>
+    <a href="../automation/docker-desktop-cleanup-runbook/" class="dropdown-item">Docker Desktop Cleanup Reference</a>
+</li>
+            
+<li>
+    <a href="../automation/slack-block-kit-upgrade/" class="dropdown-item">Upgrading to Slack Block Kit</a>
+</li>
+            
+<li>
+    <a href="../automation/n8n-scheduled-proxmox-updates/" class="dropdown-item">Scheduled Proxmox Updates</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Home Lab</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Home Lab</a>
+</li>
+            
+<li>
+    <a href="mcp-proxmox-infrastructure/" class="dropdown-item">AI-Powered Proxmox MCP</a>
+</li>
+            
+<li>
+    <a href="proxmox-mcp-setup/" class="dropdown-item">ProxmoxMCP-Plus Setup Guide</a>
+</li>
+            
+<li>
+    <a href="proxmox-api-token/" class="dropdown-item">Proxmox API Tokens</a>
+</li>
+            
+<li>
+    <a href="proxmox-slack-bot/" class="dropdown-item">Proxmox Slack Bot</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Gardening</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../gardening/" class="dropdown-item">Gardening & Growing</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../automation/n8n-scheduled-proxmox-updates/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="mcp-proxmox-infrastructure/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#home-lab" class="nav-link">Home Lab</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#why-this-section-matters" class="nav-link">Why this section matters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#start-with-these" class="nav-link">Start with these</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#what-you-will-find-here" class="nav-link">What you will find here</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#next-action" class="nav-link">Next action</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#projects" class="nav-link">Projects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="home-lab">Home Lab<a class="headerlink" href="#home-lab" title="Link to this section">&para;</a></h1>
+<p>Infrastructure, servers, and self-hosted systems with an emphasis on practical operations.</p>
+<h2 id="why-this-section-matters">Why this section matters<a class="headerlink" href="#why-this-section-matters" title="Link to this section">&para;</a></h2>
+<p>Homelab work is where architecture decisions become operational reality. These projects show how AI and automation reduce friction while keeping control and safety in human hands.</p>
+<h2 id="start-with-these">Start with these<a class="headerlink" href="#start-with-these" title="Link to this section">&para;</a></h2>
+<ul>
+<li><strong><a href="mcp-proxmox-infrastructure/">AI-Powered Proxmox MCP</a></strong> - dual-transport MCP architecture for natural-language infrastructure operations.</li>
+<li><strong><a href="proxmox-mcp-setup/">ProxmoxMCP-Plus Setup Guide</a></strong> - implementation guide for reproducing the stack.</li>
+<li><strong><a href="proxmox-slack-bot/">Proxmox Slack Bot</a></strong> - self-service monitoring and control from Slack.</li>
+</ul>
+<h2 id="what-you-will-find-here">What you will find here<a class="headerlink" href="#what-you-will-find-here" title="Link to this section">&para;</a></h2>
+<ul>
+<li>architecture diagrams and service boundaries,</li>
+<li>setup and configuration guides,</li>
+<li>failure-mode troubleshooting notes,</li>
+<li>operational improvements that reduce context switching.</li>
+</ul>
+<h2 id="next-action">Next action<a class="headerlink" href="#next-action" title="Link to this section">&para;</a></h2>
+<div class="admonition success">
+<p class="admonition-title">Start with architecture</p>
+<p>Read <a href="mcp-proxmox-infrastructure/">AI-Powered Proxmox MCP</a> for the full system design and operational workflow shift.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Then implement</p>
+<p>Follow <a href="proxmox-mcp-setup/">ProxmoxMCP-Plus Setup Guide</a> to stand up the same dual-transport pattern.</p>
+</div>
+<h2 id="projects">Projects<a class="headerlink" href="#projects" title="Link to this section">&para;</a></h2>
+<ul>
+<li><strong><a href="mcp-proxmox-infrastructure/">AI-Powered Proxmox MCP</a></strong> — Managing my Proxmox home lab using natural language from Claude, VS Code, and GitHub Copilot through a universal MCP infrastructure</li>
+<li><strong><a href="proxmox-mcp-setup/">ProxmoxMCP-Plus Setup Guide</a></strong> — Step-by-step installation and configuration guide for dual-transport ProxmoxMCP-Plus with Docker</li>
+<li><strong><a href="proxmox-slack-bot/">Proxmox Slack Bot</a></strong> — Real-time cluster monitoring and control through Slack slash commands with n8n automation</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2026 Code and Camera | J Lock</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

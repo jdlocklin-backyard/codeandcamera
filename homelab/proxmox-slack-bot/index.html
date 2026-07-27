@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="J Lock">
+        <link rel="canonical" href="https://codeandcamera.me/homelab/proxmox-slack-bot/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Proxmox Slack Bot - Code and Camera</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../stylesheets/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Code and Camera</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Start Here</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../.." class="dropdown-item">Home</a>
+</li>
+                                    
+<li>
+    <a href="../../ai/" class="dropdown-item">AI & Machine Learning</a>
+</li>
+                                    
+<li>
+    <a href="../../automation/" class="dropdown-item">Automation</a>
+</li>
+                                    
+<li>
+    <a href="../" class="dropdown-item">Home Lab</a>
+</li>
+                                    
+<li>
+    <a href="../../gardening/" class="dropdown-item">Gardening & Growing</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Case Studies</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../ai/agent-harness-workflow/" class="dropdown-item">AI Agent Harness Workflow</a>
+</li>
+                                    
+<li>
+    <a href="../mcp-proxmox-infrastructure/" class="dropdown-item">AI-Powered Proxmox MCP</a>
+</li>
+                                    
+<li>
+    <a href="../../automation/slack-block-kit-upgrade/" class="dropdown-item">Upgrading to Slack Block Kit</a>
+</li>
+                                    
+<li>
+    <a href="../../automation/n8n-scheduled-proxmox-updates/" class="dropdown-item">Scheduled Proxmox Updates</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Proxmox Slack Bot</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Guides & Runbooks</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../proxmox-mcp-setup/" class="dropdown-item">ProxmoxMCP-Plus Setup Guide</a>
+</li>
+                                    
+<li>
+    <a href="../proxmox-api-token/" class="dropdown-item">Proxmox API Tokens</a>
+</li>
+                                    
+<li>
+    <a href="../../automation/docker-desktop-cleanup-runbook/" class="dropdown-item">Docker Desktop Cleanup Reference</a>
+</li>
+                                    
+<li>
+    <a href="../../ai/multi-agent-instructions/" class="dropdown-item">Multi-Agent Instructions</a>
+</li>
+                                    
+<li>
+    <a href="../../ai/wakatime-opencode-setup/" class="dropdown-item">WakaTime with OpenCode</a>
+</li>
+                                    
+<li>
+    <a href="../../ai/openclaw-automated-blog-posts/" class="dropdown-item">AI That Writes About What It Built</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Explore by Domain</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">AI</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../ai/" class="dropdown-item">AI & Machine Learning</a>
+</li>
+            
+<li>
+    <a href="../../ai/agent-harness-workflow/" class="dropdown-item">AI Agent Harness Workflow</a>
+</li>
+            
+<li>
+    <a href="../../ai/multi-agent-instructions/" class="dropdown-item">Multi-Agent Instructions</a>
+</li>
+            
+<li>
+    <a href="../../ai/wakatime-opencode-setup/" class="dropdown-item">WakaTime with OpenCode</a>
+</li>
+            
+<li>
+    <a href="../../ai/openclaw-automated-blog-posts/" class="dropdown-item">AI That Writes About What It Built</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Automation</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../automation/" class="dropdown-item">Automation</a>
+</li>
+            
+<li>
+    <a href="../../automation/docker-desktop-cleanup-runbook/" class="dropdown-item">Docker Desktop Cleanup Reference</a>
+</li>
+            
+<li>
+    <a href="../../automation/slack-block-kit-upgrade/" class="dropdown-item">Upgrading to Slack Block Kit</a>
+</li>
+            
+<li>
+    <a href="../../automation/n8n-scheduled-proxmox-updates/" class="dropdown-item">Scheduled Proxmox Updates</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Home Lab</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">Home Lab</a>
+</li>
+            
+<li>
+    <a href="../mcp-proxmox-infrastructure/" class="dropdown-item">AI-Powered Proxmox MCP</a>
+</li>
+            
+<li>
+    <a href="../proxmox-mcp-setup/" class="dropdown-item">ProxmoxMCP-Plus Setup Guide</a>
+</li>
+            
+<li>
+    <a href="../proxmox-api-token/" class="dropdown-item">Proxmox API Tokens</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Proxmox Slack Bot</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Gardening</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../gardening/" class="dropdown-item">Gardening & Growing</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../proxmox-api-token/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../gardening/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#proxmox-slack-bot-slash-commands-for-real-time-cluster-control" class="nav-link">Proxmox Slack Bot: Slash Commands for Real-Time Cluster Control</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#overview" class="nav-link">Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#project-details" class="nav-link">Project Details</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#what-youll-learn" class="nav-link">What You'll Learn</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#the-problem-context-switching-kills-flow" class="nav-link">The Problem: Context Switching Kills Flow</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#how-ai-helped" class="nav-link">How AI Helped</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#architecture-overview" class="nav-link">Architecture Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#prerequisites" class="nav-link">Prerequisites</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-by-step-setup" class="nav-link">Step-by-Step Setup</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#available-commands" class="nav-link">Available Commands</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#troubleshooting-the-cloudflare-waf-issue" class="nav-link">Troubleshooting: The Cloudflare WAF Issue</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#n8n-workflow-structure" class="nav-link">n8n Workflow Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#results-real-world-usage" class="nav-link">Results &amp; Real-World Usage</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#security-considerations" class="nav-link">Security Considerations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#whats-next" class="nav-link">What's Next</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="proxmox-slack-bot-slash-commands-for-real-time-cluster-control">Proxmox Slack Bot: Slash Commands for Real-Time Cluster Control<a class="headerlink" href="#proxmox-slack-bot-slash-commands-for-real-time-cluster-control" title="Link to this section">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Link to this section">&para;</a></h2>
+<p>I wanted a way to check my Proxmox cluster status without leaving Slack. Instead of context-switching to a terminal or browser, I could type <code>/proxmox status</code> and get instant cluster information right in my workspace.</p>
+<p>I built a Slack bot powered by n8n that connects Slack's slash command interface directly to the Proxmox API. Now I can check VM status, view container lists, monitor storage, and control VMs—all from any Slack channel with natural commands.</p>
+<p>The real breakthrough was discovering why the bot wasn't working: Cloudflare's WAF was blocking Slack's webhook requests. Once I understood the "known bots" classification, the solution was straightforward.</p>
+<div class="admonition success">
+<p class="admonition-title">The Transformation</p>
+<p><strong>BEFORE:</strong> Open browser → Proxmox UI → navigate menus → check status → <em>2+ minutes</em></p>
+<p><strong>AFTER:</strong> Type <code>/proxmox status</code> → instant response in Slack → <em>5 seconds</em></p>
+</div>
+<hr />
+<h2 id="project-details">Project Details<a class="headerlink" href="#project-details" title="Link to this section">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Detail</th>
+<th>Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Difficulty</strong></td>
+<td>Intermediate</td>
+</tr>
+<tr>
+<td><strong>Time Required</strong></td>
+<td>3-4 hours</td>
+</tr>
+<tr>
+<td><strong>Category</strong></td>
+<td>Home Lab + Automation</td>
+</tr>
+<tr>
+<td><strong>Last Updated</strong></td>
+<td>March 2026</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Technologies:</strong> n8n, Proxmox VE API, Slack API, Cloudflare WAF, Docker, LXC</p>
+<hr />
+<h2 id="what-youll-learn">What You'll Learn<a class="headerlink" href="#what-youll-learn" title="Link to this section">&para;</a></h2>
+<ul>
+<li>How n8n workflows process Slack slash commands</li>
+<li>Configuring Slack apps with OAuth scopes and slash commands</li>
+<li>Connecting Proxmox API authentication with n8n</li>
+<li>Debugging webhook connectivity through Cloudflare WAF</li>
+<li>Building async response patterns for Slack integrations</li>
+</ul>
+<hr />
+<h2 id="the-problem-context-switching-kills-flow">The Problem: Context Switching Kills Flow<a class="headerlink" href="#the-problem-context-switching-kills-flow" title="Link to this section">&para;</a></h2>
+<p>Here's my typical morning check: I want to see if all my VMs came up after a power outage. </p>
+<p><strong>The old way:</strong></p>
+<ol>
+<li>Open browser to <code>https://10.0.0.130:8006</code></li>
+<li>Wait for Proxmox UI to load</li>
+<li>Check cluster status across nodes</li>
+<li>Open separate terminal for <code>pct list</code> and <code>qm list</code></li>
+<li>Check storage usage across pools</li>
+</ol>
+<p>That's 5+ minutes of context switching before I even know my cluster is healthy.</p>
+<p>What I wanted: <code>/proxmox status</code> → instant response in Slack, where I'm already working.</p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph before["⛔ BEFORE: Context Switching"]
+        direction TB
+        B1["Need cluster&lt;br/&gt;status"] --&gt; B2["Open browser&lt;br/&gt;or terminal"]
+        B2 --&gt; B3["Navigate to&lt;br/&gt;Proxmox UI"]
+        B3 --&gt; B4["Wait for&lt;br/&gt;pages to load"]
+        B4 --&gt; B5["Run commands&lt;br/&gt;or check boxes"]
+    end
+
+    subgraph after["✅ AFTER: Direct in Slack"]
+        direction TB
+        A1["Need cluster&lt;br/&gt;status"] --&gt; A2["Type /proxmox status"]
+        A2 --&gt; A3["Get instant&lt;br/&gt;response"]
+    end
+
+    before ~~~ after</code></pre>
+<hr />
+<h2 id="how-ai-helped">How AI Helped<a class="headerlink" href="#how-ai-helped" title="Link to this section">&para;</a></h2>
+<p>I used AI to accelerate the n8n workflow development. The heavy lifting was understanding the Slack API's async response requirements and debugging the Cloudflare WAF interaction.</p>
+<p>Key contributions:
+- Designing the workflow node structure for command routing
+- Identifying the <code>responseMode: "onReceived"</code> requirement for Slack compatibility
+- Debugging the WAF "known bots" rule blocking Slack's webhook requests</p>
+<p>The AI didn't replace understanding the underlying APIs—it helped me work through the integration patterns faster.</p>
+<hr />
+<h2 id="architecture-overview">Architecture Overview<a class="headerlink" href="#architecture-overview" title="Link to this section">&para;</a></h2>
+<pre class="mermaid"><code>flowchart TB
+    subgraph slack["Slack Workspace"]
+        U["User"] --&gt; S["/proxmox command"]
+        S --&gt; SA["Slack API"]
+    end
+
+    subgraph cloudflare["Cloudflare"]
+        SA --&gt; CF["WAF Check"]
+        CF --&gt; CFN["KnownBots Rule&lt;br/&gt;/webhook exception"]
+    end
+
+    subgraph homelab["Home Lab Network"]
+        CFN --&gt; N8N["n8n LXC&lt;br/&gt;10.0.0.218"]
+        N8N --&gt; PVE["Proxmox API&lt;br/&gt;10.0.0.130:8006"]
+    end
+
+    subgraph response["Response Path"]
+        PVE --&gt; N8NR["Format Response"]
+        N8NR --&gt; SP["Slack API&lt;br/&gt;chat.postMessage"]
+        SP --&gt; CH["#proxmox channel"]
+    end
+
+    style cloudflare fill:#3f51b5,color:#fff
+    style homelab fill:#4caf50,color:#fff
+    style response fill:#ff9800,color:#fff</code></pre>
+<hr />
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this section">&para;</a></h2>
+<ul>
+<li>Proxmox VE cluster with API access</li>
+<li>n8n instance (I run it in an LXC container)</li>
+<li>Cloudflare domain with WAF access</li>
+<li>Slack workspace with admin privileges</li>
+</ul>
+<hr />
+<h2 id="step-by-step-setup">Step-by-Step Setup<a class="headerlink" href="#step-by-step-setup" title="Link to this section">&para;</a></h2>
+<h3 id="1-create-proxmox-api-token">1. Create Proxmox API Token<a class="headerlink" href="#1-create-proxmox-api-token" title="Link to this section">&para;</a></h3>
+<ol>
+<li>Log into Proxmox Web UI</li>
+<li>Navigate to <strong>Datacenter → Permissions → API Tokens</strong></li>
+<li>Click <strong>Add</strong></li>
+<li>Configure:</li>
+<li><strong>Token ID:</strong> <code>opencode</code></li>
+<li><strong>User:</strong> <code>root@pam</code></li>
+<li><strong>Privileges:</strong> PVEAuditor, PVEPVMAuthor, PVEStorageAdmin</li>
+<li>Copy the token immediately (format: <code>root@pam!opencode=...</code>)</li>
+</ol>
+<h3 id="2-create-slack-app">2. Create Slack App<a class="headerlink" href="#2-create-slack-app" title="Link to this section">&para;</a></h3>
+<ol>
+<li>Go to https://api.slack.com/apps</li>
+<li>Click <strong>Create New App → From scratch</strong></li>
+<li>Name it "Proxmox Bot"</li>
+</ol>
+<p><strong>OAuth Scopes:</strong>
+<pre class="highlight"><code>- chat:write
+- chat:write.public
+- commands
+- channels:read</code></pre></p>
+<ol>
+<li>Click <strong>Install to Workspace</strong></li>
+<li>Copy the <strong>Bot User OAuth Token</strong> (starts with <code>xoxb-</code>)</li>
+</ol>
+<h3 id="3-create-slash-command">3. Create Slash Command<a class="headerlink" href="#3-create-slash-command" title="Link to this section">&para;</a></h3>
+<ol>
+<li>In Slack App settings, click <strong>Slash Commands</strong></li>
+<li>Click <strong>Create New Command</strong></li>
+<li>Configure:</li>
+<li><strong>Command:</strong> <code>/proxmox</code></li>
+<li><strong>Request URL:</strong> <code>https://YOUR_DOMAIN/webhook/proxmox-status</code></li>
+<li><strong>Short Description:</strong> Control and monitor Proxmox cluster</li>
+</ol>
+<h3 id="4-configure-n8n-webhook">4. Configure n8n Webhook<a class="headerlink" href="#4-configure-n8n-webhook" title="Link to this section">&para;</a></h3>
+<p>Create a new n8n workflow with:</p>
+<ol>
+<li><strong>Webhook Node:</strong></li>
+<li>Path: <code>proxmox-status</code></li>
+<li>HTTP Method: POST</li>
+<li>
+<p><strong>Response Mode: <code>onReceived</code></strong> ← Critical for Slack</p>
+</li>
+<li>
+<p><strong>HTTP Request Node (Proxmox):</strong></p>
+</li>
+<li>Method: GET</li>
+<li>URL: <code>https://10.0.0.130:8006/api2/json/nodes/pve/status</code></li>
+<li>
+<p>Headers: <code>Authorization: PVEAPIToken=root@pam!opencode=YOUR_TOKEN</code></p>
+</li>
+<li>
+<p><strong>Slack Node:</strong></p>
+</li>
+<li>Operation: Post Message</li>
+<li>Channel: Your channel ID</li>
+<li>Bot Token: Your Slack bot token</li>
+</ol>
+<h3 id="5-configure-cloudflare-waf-exception">5. Configure Cloudflare WAF Exception<a class="headerlink" href="#5-configure-cloudflare-waf-exception" title="Link to this section">&para;</a></h3>
+<p><strong>This is the step that fixed my bot.</strong></p>
+<ol>
+<li>Go to Cloudflare Dashboard → Security → WAF → Custom rules</li>
+<li>Find the <strong>KnownBots</strong> rule</li>
+<li>Edit it to add exception:</li>
+</ol>
+<pre class="highlight"><code class="language-yaml">Expression: (cf.client.bot) and (http.request.uri.path ne "/webhook/proxmox-status")</code></pre>
+<p>This allows Slack's webhook requests through while blocking other bot traffic.</p>
+<hr />
+<h2 id="available-commands">Available Commands<a class="headerlink" href="#available-commands" title="Link to this section">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/proxmox status</code></td>
+<td>Full cluster status (VMs, containers, CPU, RAM)</td>
+</tr>
+<tr>
+<td><code>/proxmox vms</code></td>
+<td>List all virtual machines</td>
+</tr>
+<tr>
+<td><code>/proxmox containers</code></td>
+<td>List all containers</td>
+</tr>
+<tr>
+<td><code>/proxmox storage</code></td>
+<td>Storage usage across pools</td>
+</tr>
+<tr>
+<td><code>/proxmox start &lt;id&gt;</code></td>
+<td>Start a VM or container</td>
+</tr>
+<tr>
+<td><code>/proxmox stop &lt;id&gt;</code></td>
+<td>Stop a VM or container</td>
+</tr>
+<tr>
+<td><code>/proxmox restart &lt;id&gt;</code></td>
+<td>Restart a VM or container</td>
+</tr>
+<tr>
+<td><code>/proxmox help</code></td>
+<td>Show command reference</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="troubleshooting-the-cloudflare-waf-issue">Troubleshooting: The Cloudflare WAF Issue<a class="headerlink" href="#troubleshooting-the-cloudflare-waf-issue" title="Link to this section">&para;</a></h2>
+<p>When I first set this up, the slash command showed "something went wrong" in Slack. The webhook worked via curl, but Slack's requests never reached n8n.</p>
+<p><strong>The diagnostic process:</strong></p>
+<ol>
+<li><strong>Tested webhook directly</strong> - worked perfectly</li>
+<li><strong>Checked n8n executions</strong> - no new executions from Slack</li>
+<li><strong>Reviewed Cloudflare Security Events</strong> - found blocked requests from Slack IP 54.198.78.177</li>
+</ol>
+<p><strong>Root cause:</strong> Cloudflare's WAF classified Slack's webhook requests as "known bots" (they identify as <code>Slackbot 1.0</code>). The <code>KnownBots</code> rule was blocking them.</p>
+<p><strong>Solution:</strong> Add a path-based exception to allow Slack's requests through:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Operator</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>URI Path</td>
+<td>does not equal</td>
+<td><code>/webhook/proxmox-status</code></td>
+</tr>
+</tbody>
+</table>
+<p>This exception is added with AND logic, so requests to <code>/webhook/proxmox-status</code> bypass the block while all other bot traffic is still stopped.</p>
+<hr />
+<h2 id="n8n-workflow-structure">n8n Workflow Structure<a class="headerlink" href="#n8n-workflow-structure" title="Link to this section">&para;</a></h2>
+<pre class="mermaid"><code>flowchart TB
+    WH["Webhook&lt;br/&gt;proxmox-status"] --&gt; PC["Parse Command&lt;br/&gt;Extract /text"]
+    PC --&gt; RC["Route Command&lt;br/&gt;Switch Node"]
+
+    RC --&gt;|"status"| GH["Get Nodes Status"]
+    RC --&gt;|"vms"| GV["Get VMs"]
+    RC --&gt;|"containers"| GC["Get Containers"]
+    RC --&gt;|"storage"| GS["Get Storage"]
+    RC --&gt;|"start/stop/restart"| GA["VM Action"]
+    RC --&gt;|"default"| GHlp["Format Help"]
+
+    GH --&gt; FSH["Format Status"]
+    GV --&gt; FVM["Format VMs"]
+    GC --&gt; FCT["Format Containers"]
+    GS --&gt; FST["Format Storage"]
+    GA --&gt; FAR["Format Action Result"]
+
+    FSH --&gt; PS["Post to Slack"]
+    FVM --&gt; PS
+    FCT --&gt; PS
+    FST --&gt; PS
+    FAR --&gt; PS
+    GHlp --&gt; PS
+
+    style WH fill:#3f51b5,color:#fff
+    style PS fill:#ff9800,color:#fff</code></pre>
+<hr />
+<h2 id="results-real-world-usage">Results &amp; Real-World Usage<a class="headerlink" href="#results-real-world-usage" title="Link to this section">&para;</a></h2>
+<p>Now I start every morning with:</p>
+<pre class="highlight"><code>/proxmox status</code></pre>
+<p>And get instant cluster health:</p>
+<pre class="highlight"><code>CLUSTER STATUS: pve
+
+Node: pve
+Status: Online
+Uptime: 15 days, 7 hours
+
+CPU: 8 cores @ 23% usage
+Memory: 24.5 GB / 32 GB (76% used)
+
+VMs Running: 5
+Containers Running: 3
+
+Overall Health: ✅ Healthy</code></pre>
+<p>When something needs attention:</p>
+<pre class="highlight"><code>/proxmox vms</code></pre>
+<p>Shows me exactly which VMs are running or stopped.</p>
+<p>The best part: it's all in Slack, where I'm already working.</p>
+<hr />
+<h2 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Link to this section">&para;</a></h2>
+<ul>
+<li>Bot token stored securely in n8n credentials (encrypted)</li>
+<li>Proxmox API token uses least-privilege permissions</li>
+<li>Cloudflare WAF configured to allow only specific webhook paths</li>
+<li>All credentials excluded from version control</li>
+</ul>
+<hr />
+<h2 id="whats-next">What's Next<a class="headerlink" href="#whats-next" title="Link to this section">&para;</a></h2>
+<p>I'm exploring adding proactive alerting:</p>
+<ul>
+<li>Alert when CPU &gt; 90% sustained</li>
+<li>Alert when storage &gt; 85%</li>
+<li>Alert when VMs go down unexpectedly</li>
+</ul>
+<p>The MCP infrastructure and this Slack bot are complementary—I use MCP for deep interactions and complex queries, while the Slack bot provides quick status checks throughout the day.</p>
+<hr />
+<div class="admonition question">
+<p class="admonition-title">Similar Integration?</p>
+<p>Do you use any other Slack integrations for your home lab? I'm curious what other services people connect to their Proxmox clusters.</p>
+</div></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2026 Code and Camera | J Lock</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

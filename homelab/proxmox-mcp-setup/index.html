@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="J Lock">
+        <link rel="canonical" href="https://codeandcamera.me/homelab/proxmox-mcp-setup/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>ProxmoxMCP-Plus Setup Guide - Code and Camera</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../stylesheets/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Code and Camera</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Start Here</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../.." class="dropdown-item">Home</a>
+</li>
+                                    
+<li>
+    <a href="../../ai/" class="dropdown-item">AI & Machine Learning</a>
+</li>
+                                    
+<li>
+    <a href="../../automation/" class="dropdown-item">Automation</a>
+</li>
+                                    
+<li>
+    <a href="../" class="dropdown-item">Home Lab</a>
+</li>
+                                    
+<li>
+    <a href="../../gardening/" class="dropdown-item">Gardening & Growing</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Case Studies</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../ai/agent-harness-workflow/" class="dropdown-item">AI Agent Harness Workflow</a>
+</li>
+                                    
+<li>
+    <a href="../mcp-proxmox-infrastructure/" class="dropdown-item">AI-Powered Proxmox MCP</a>
+</li>
+                                    
+<li>
+    <a href="../../automation/slack-block-kit-upgrade/" class="dropdown-item">Upgrading to Slack Block Kit</a>
+</li>
+                                    
+<li>
+    <a href="../../automation/n8n-scheduled-proxmox-updates/" class="dropdown-item">Scheduled Proxmox Updates</a>
+</li>
+                                    
+<li>
+    <a href="../proxmox-slack-bot/" class="dropdown-item">Proxmox Slack Bot</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Guides & Runbooks</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">ProxmoxMCP-Plus Setup Guide</a>
+</li>
+                                    
+<li>
+    <a href="../proxmox-api-token/" class="dropdown-item">Proxmox API Tokens</a>
+</li>
+                                    
+<li>
+    <a href="../../automation/docker-desktop-cleanup-runbook/" class="dropdown-item">Docker Desktop Cleanup Reference</a>
+</li>
+                                    
+<li>
+    <a href="../../ai/multi-agent-instructions/" class="dropdown-item">Multi-Agent Instructions</a>
+</li>
+                                    
+<li>
+    <a href="../../ai/wakatime-opencode-setup/" class="dropdown-item">WakaTime with OpenCode</a>
+</li>
+                                    
+<li>
+    <a href="../../ai/openclaw-automated-blog-posts/" class="dropdown-item">AI That Writes About What It Built</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Explore by Domain</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">AI</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../ai/" class="dropdown-item">AI & Machine Learning</a>
+</li>
+            
+<li>
+    <a href="../../ai/agent-harness-workflow/" class="dropdown-item">AI Agent Harness Workflow</a>
+</li>
+            
+<li>
+    <a href="../../ai/multi-agent-instructions/" class="dropdown-item">Multi-Agent Instructions</a>
+</li>
+            
+<li>
+    <a href="../../ai/wakatime-opencode-setup/" class="dropdown-item">WakaTime with OpenCode</a>
+</li>
+            
+<li>
+    <a href="../../ai/openclaw-automated-blog-posts/" class="dropdown-item">AI That Writes About What It Built</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Automation</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../automation/" class="dropdown-item">Automation</a>
+</li>
+            
+<li>
+    <a href="../../automation/docker-desktop-cleanup-runbook/" class="dropdown-item">Docker Desktop Cleanup Reference</a>
+</li>
+            
+<li>
+    <a href="../../automation/slack-block-kit-upgrade/" class="dropdown-item">Upgrading to Slack Block Kit</a>
+</li>
+            
+<li>
+    <a href="../../automation/n8n-scheduled-proxmox-updates/" class="dropdown-item">Scheduled Proxmox Updates</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Home Lab</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">Home Lab</a>
+</li>
+            
+<li>
+    <a href="../mcp-proxmox-infrastructure/" class="dropdown-item">AI-Powered Proxmox MCP</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">ProxmoxMCP-Plus Setup Guide</a>
+</li>
+            
+<li>
+    <a href="../proxmox-api-token/" class="dropdown-item">Proxmox API Tokens</a>
+</li>
+            
+<li>
+    <a href="../proxmox-slack-bot/" class="dropdown-item">Proxmox Slack Bot</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Gardening</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../gardening/" class="dropdown-item">Gardening & Growing</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../mcp-proxmox-infrastructure/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../proxmox-api-token/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#setting-up-proxmoxmcp-plus-a-complete-installation-guide" class="nav-link">Setting Up ProxmoxMCP-Plus: A Complete Installation Guide</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#overview" class="nav-link">Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#project-details" class="nav-link">Project Details</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#what-youll-learn" class="nav-link">What You'll Learn</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#prerequisites" class="nav-link">Prerequisites</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-1-create-the-proxmox-api-token" class="nav-link">Step 1: Create the Proxmox API Token</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-2-create-the-directory-structure" class="nav-link">Step 2: Create the Directory Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-3-clone-and-configure-proxmoxmcp-plus" class="nav-link">Step 3: Clone and Configure ProxmoxMCP-Plus</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-4-set-up-docker-compose" class="nav-link">Step 4: Set Up Docker Compose</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-5-connect-your-ai-tools" class="nav-link">Step 5: Connect Your AI Tools</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-6-create-the-health-check-script" class="nav-link">Step 6: Create the Health Check Script</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-7-auto-start-on-boot" class="nav-link">Step 7: Auto-Start on Boot</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#testing-it-out" class="nav-link">Testing It Out</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#troubleshooting" class="nav-link">Troubleshooting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#complete-file-reference" class="nav-link">Complete File Reference</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#whats-next" class="nav-link">What's Next</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#resources" class="nav-link">Resources</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="setting-up-proxmoxmcp-plus-a-complete-installation-guide">Setting Up ProxmoxMCP-Plus: A Complete Installation Guide<a class="headerlink" href="#setting-up-proxmoxmcp-plus-a-complete-installation-guide" title="Link to this section">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Link to this section">&para;</a></h2>
+<p>This is the hands-on setup guide for getting ProxmoxMCP-Plus running on your machine with dual-transport Docker deployment. When you're done, you'll have two endpoints — REST on port 8811 for VS Code/Copilot and SSE on port 8812 for Claude — both talking to your Proxmox server, auto-starting on boot, with health monitoring built in.</p>
+<p>If you want the backstory on <em>why</em> this architecture exists and how AI helped design it, read the companion post: <a href="../mcp-proxmox-infrastructure/">AI-Powered Proxmox MCP Infrastructure</a>. This post is purely the "shut up and show me how."</p>
+<div class="admonition success">
+<p class="admonition-title">What You'll End Up With</p>
+<p><strong>Two Docker containers</strong> running side-by-side, giving every major AI tool natural language access to your Proxmox environment — VMs, containers, snapshots, storage, monitoring. 31 tools total, zero manual steps after reboot.</p>
+</div>
+<hr />
+<h2 id="project-details">Project Details<a class="headerlink" href="#project-details" title="Link to this section">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Detail</th>
+<th>Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Difficulty</strong></td>
+<td>Intermediate</td>
+</tr>
+<tr>
+<td><strong>Time Required</strong></td>
+<td>1-2 hours</td>
+</tr>
+<tr>
+<td><strong>Category</strong></td>
+<td>Home Lab + AI</td>
+</tr>
+<tr>
+<td><strong>Last Updated</strong></td>
+<td>February 2026</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Technologies:</strong> Docker, Docker Compose, ProxmoxMCP-Plus, MCP Protocol, PowerShell</p>
+<hr />
+<h2 id="what-youll-learn">What You'll Learn<a class="headerlink" href="#what-youll-learn" title="Link to this section">&para;</a></h2>
+<ul>
+<li>How to structure an MCP server installation with clean separation of code, config, and logs</li>
+<li>How to create a Proxmox API token for secure, passwordless automation</li>
+<li>How to set up dual-transport Docker containers (REST + SSE) from a single codebase</li>
+<li>How to write health checks for SSE streaming endpoints</li>
+<li>How to connect Claude Code, Claude Desktop, and VS Code/Copilot to your MCP server</li>
+<li>How to build a health monitoring script that validates everything at a glance</li>
+</ul>
+<hr />
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this section">&para;</a></h2>
+<p>You'll need all of these before starting:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Docker Desktop</strong> installed and running (with Docker Compose)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Proxmox VE</strong> instance accessible on your network (I use <code>10.0.0.130:8006</code>)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Admin access</strong> to Proxmox (to create an API token)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Git</strong> installed</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>PowerShell</strong> (Windows) or bash (Linux/Mac)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>At least one AI tool</strong>: Claude Code, Claude Desktop, or VS Code with GitHub Copilot</li>
+</ul>
+<hr />
+<h2 id="step-1-create-the-proxmox-api-token">Step 1: Create the Proxmox API Token<a class="headerlink" href="#step-1-create-the-proxmox-api-token" title="Link to this section">&para;</a></h2>
+<p>Before touching any code, you need a Proxmox API token. This lets the MCP server authenticate without storing your password.</p>
+<ol>
+<li>Log into the Proxmox web UI (<code>https://YOUR_PROXMOX_IP:8006</code>)</li>
+<li>Navigate to <strong>Datacenter → Permissions → API Tokens</strong></li>
+<li>Click <strong>Add</strong></li>
+<li>Configure the token:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>User</strong></td>
+<td><code>root@pam</code> (or your admin user)</td>
+</tr>
+<tr>
+<td><strong>Token ID</strong></td>
+<td>Something descriptive — I used <code>opencode</code></td>
+</tr>
+<tr>
+<td><strong>Privilege Separation</strong></td>
+<td><strong>Uncheck this</strong> (the token needs full access)</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Click <strong>Add</strong> and <strong>immediately copy the token value</strong> — you won't see it again</li>
+</ol>
+<p>You'll end up with two pieces of information:</p>
+<pre class="highlight"><code>User:        root@pam
+Token Name:  opencode
+Token Value:  xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Save That Token Value</p>
+<p>Proxmox only shows the token value once. If you lose it, you'll need to delete the token and create a new one. Store it somewhere safe — you'll need it in Step 3.</p>
+</div>
+<hr />
+<h2 id="step-2-create-the-directory-structure">Step 2: Create the Directory Structure<a class="headerlink" href="#step-2-create-the-directory-structure" title="Link to this section">&para;</a></h2>
+<p>The key design decision: <strong>separate concerns</strong>. Source code stays in its own git repo. Config files with credentials stay local. Logs go to their own directory. Nothing crosses the streams.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows (PowerShell)</label><label for="__tabbed_1_2">Linux / macOS (bash)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="highlight"><code class="language-powershell"># Create the root directory and subdirectories
+New-Item -ItemType Directory -Path "D:\MCP-SERVERS" -Force
+Set-Location D:\MCP-SERVERS
+"installations", "config", "logs", "scripts" | ForEach-Object {
+    New-Item -ItemType Directory -Path $_ -Force
+}</code></pre>
+</div>
+<div class="tabbed-block">
+<pre class="highlight"><code class="language-bash"># Create the root directory and subdirectories
+mkdir -p ~/mcp-servers/{installations,config,logs,scripts}
+cd ~/mcp-servers</code></pre>
+</div>
+</div>
+</div>
+<p>The resulting structure:</p>
+<pre class="highlight"><code>MCP-SERVERS/
+├── installations/     # Upstream git repos (keep clean)
+├── config/            # Credentials &amp; settings (NOT in git)
+├── logs/              # Runtime logs
+├── scripts/           # Management scripts
+├── mcp-registry.json  # Master registry of all servers
+└── status.ps1         # Health check script</code></pre>
+<div class="admonition tip">
+<p class="admonition-title">Why This Structure?</p>
+<p>Keeping config separate from the installation means you can <code>git pull</code> to update the upstream code without worrying about overwriting your credentials. It also means your API tokens never accidentally end up in a git repo.</p>
+</div>
+<hr />
+<h2 id="step-3-clone-and-configure-proxmoxmcp-plus">Step 3: Clone and Configure ProxmoxMCP-Plus<a class="headerlink" href="#step-3-clone-and-configure-proxmoxmcp-plus" title="Link to this section">&para;</a></h2>
+<p>Clone the upstream repo:</p>
+<pre class="highlight"><code class="language-bash">cd installations  # or Set-Location installations on Windows
+git clone https://github.com/RekklesNA/ProxmoxMCP-Plus.git proxmox-mcp-plus</code></pre>
+<p>Create the config and log directories:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Windows (PowerShell)</label><label for="__tabbed_2_2">Linux / macOS (bash)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="highlight"><code class="language-powershell">New-Item -ItemType Directory -Path "D:\MCP-SERVERS\config\proxmox-mcp-plus" -Force
+New-Item -ItemType Directory -Path "D:\MCP-SERVERS\logs\proxmox-mcp-plus" -Force</code></pre>
+</div>
+<div class="tabbed-block">
+<pre class="highlight"><code class="language-bash">mkdir -p ~/mcp-servers/config/proxmox-mcp-plus
+mkdir -p ~/mcp-servers/logs/proxmox-mcp-plus</code></pre>
+</div>
+</div>
+</div>
+<p>Now create two config files. They're nearly identical — the difference is the transport mode.</p>
+<p><strong>REST config</strong> (used by the API container, served through <code>mcpo</code> on port 8811):</p>
+<pre class="highlight"><code class="language-json">{
+    "proxmox": {
+        "host": "YOUR_PROXMOX_IP",
+        "port": 8006,
+        "verify_ssl": false,
+        "service": "PVE"
+    },
+    "auth": {
+        "user": "root@pam",
+        "token_name": "YOUR_TOKEN_NAME",
+        "token_value": "YOUR_TOKEN_VALUE"
+    },
+    "logging": {
+        "level": "DEBUG",
+        "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        "file": "/app/logs/proxmox_mcp.log"
+    },
+    "mcp": {
+        "host": "127.0.0.1",
+        "port": 8000,
+        "transport": "STDIO"
+    }
+}</code></pre>
+<p><strong>SSE config</strong> (used by the SSE container on port 8812):</p>
+<pre class="highlight"><code class="language-json">{
+    "proxmox": {
+        "host": "YOUR_PROXMOX_IP",
+        "port": 8006,
+        "verify_ssl": false,
+        "service": "PVE"
+    },
+    "auth": {
+        "user": "root@pam",
+        "token_name": "YOUR_TOKEN_NAME",
+        "token_value": "YOUR_TOKEN_VALUE"
+    },
+    "logging": {
+        "level": "INFO",
+        "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        "file": "/app/logs/proxmox_mcp_sse.log"
+    },
+    "mcp": {
+        "host": "0.0.0.0",
+        "port": 8812,
+        "transport": "SSE"
+    }
+}</code></pre>
+<p>Replace <code>YOUR_PROXMOX_IP</code>, <code>YOUR_TOKEN_NAME</code>, and <code>YOUR_TOKEN_VALUE</code> with the values from Step 1.</p>
+<div class="admonition note">
+<p class="admonition-title">Spot the Differences</p>
+<p>The REST config uses <code>transport: "STDIO"</code> because <code>mcpo</code> wraps the server as a REST API. The SSE config uses <code>transport: "SSE"</code> and binds to <code>0.0.0.0:8812</code> so Docker can expose the port. The REST config has <code>DEBUG</code> logging for troubleshooting; SSE uses <code>INFO</code> to keep logs quieter.</p>
+</div>
+<hr />
+<h2 id="step-4-set-up-docker-compose">Step 4: Set Up Docker Compose<a class="headerlink" href="#step-4-set-up-docker-compose" title="Link to this section">&para;</a></h2>
+<p>Create or verify the <code>docker-compose.yml</code> in the installation directory. This runs two services from the same Dockerfile — one per transport mode:</p>
+<pre class="highlight"><code class="language-yaml">services:
+  # REST/OpenAPI via mcpo - for VS Code, Copilot (port 8811)
+  proxmox-mcp-api:
+    build: .
+    ports:
+      - "8811:8811"
+    volumes:
+      - ../../config/proxmox-mcp-plus:/app/proxmox-config:ro
+      - ../../logs/proxmox-mcp-plus:/app/logs
+    environment:
+      - PROXMOX_MCP_CONFIG=/app/proxmox-config/config.json
+      - API_HOST=0.0.0.0
+      - API_PORT=8811
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8811/openapi.json"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - proxmox-network
+
+  # Native MCP SSE - for Claude Code, Claude Desktop (port 8812)
+  proxmox-mcp-sse:
+    build: .
+    ports:
+      - "8812:8812"
+    volumes:
+      - ../../config/proxmox-mcp-plus:/app/proxmox-config:ro
+      - ../../logs/proxmox-mcp-plus:/app/logs
+    environment:
+      - PROXMOX_MCP_CONFIG=/app/proxmox-config/config-sse.json
+    command: ["python", "-m", "proxmox_mcp.server"]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL",
+        "curl -s --max-time 3 http://localhost:8812/sse | grep -q 'endpoint'"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - proxmox-network
+
+networks:
+  proxmox-network:
+    driver: bridge</code></pre>
+<p>Key things to understand:</p>
+<ul>
+<li><strong><code>../../config</code></strong> — the relative paths reach back to the shared <code>config/</code> directory. This is why the directory structure matters</li>
+<li><strong><code>:ro</code></strong> — config is mounted read-only. The containers can't modify your credentials</li>
+<li><strong><code>restart: unless-stopped</code></strong> — containers come back automatically after a reboot (as long as Docker Desktop auto-starts)</li>
+<li><strong>SSE health check</strong> — SSE streams never close, so a normal <code>curl -f</code> will always timeout. The trick: stream for 3 seconds (<code>--max-time 3</code>) and check if the server sent its initial <code>endpoint</code> event</li>
+</ul>
+<p>Build and start both containers:</p>
+<pre class="highlight"><code class="language-bash">cd installations/proxmox-mcp-plus
+docker compose up -d --build</code></pre>
+<p>Verify they're running:</p>
+<pre class="highlight"><code class="language-bash">docker compose ps</code></pre>
+<p>You should see both containers with status <code>Up</code> and eventually <code>(healthy)</code>:</p>
+<pre class="highlight"><code>NAME                    STATUS                 PORTS
+proxmox-mcp-api         Up 2 minutes (healthy) 0.0.0.0:8811-&gt;8811/tcp
+proxmox-mcp-sse         Up 2 minutes (healthy) 0.0.0.0:8812-&gt;8812/tcp</code></pre>
+<div class="admonition tip">
+<p class="admonition-title">First Build Takes a While</p>
+<p>The initial <code>docker compose up --build</code> downloads base images and installs Python dependencies. Expect 2-5 minutes. Subsequent starts are fast since the image is cached.</p>
+</div>
+<hr />
+<h2 id="step-5-connect-your-ai-tools">Step 5: Connect Your AI Tools<a class="headerlink" href="#step-5-connect-your-ai-tools" title="Link to this section">&para;</a></h2>
+<p>Each AI tool speaks a different protocol. Here's how to connect each one:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Claude Code</label><label for="__tabbed_3_2">Claude Desktop</label><label for="__tabbed_3_3">VS Code / GitHub Copilot</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Claude Code runs inside Docker itself, so <code>localhost</code> doesn't work — it points to Claude's own container. Use <code>host.docker.internal</code> instead:</p>
+<pre class="highlight"><code class="language-bash">claude mcp add -s user --transport sse proxmox http://host.docker.internal:8812/sse</code></pre>
+<p>Verify it connected:</p>
+<pre class="highlight"><code class="language-bash">claude mcp list</code></pre>
+<p>You should see:</p>
+<pre class="highlight"><code>proxmox: ✓ Connected (SSE, 31 tools)</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Common Mistake: Using localhost</p>
+<p>If you see <code>✗ Failed to connect</code>, you probably used <code>localhost</code> instead of <code>host.docker.internal</code>. Claude Code runs in a Docker container — <code>localhost</code> inside that container is itself, not your Windows host.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<p>Edit your Claude Desktop config file:</p>
+<p><strong>Windows:</strong> <code>C:\Users\&lt;username&gt;\AppData\Roaming\Claude\claude_desktop_config.json</code></p>
+<p><strong>macOS:</strong> <code>~/Library/Application Support/Claude/claude_desktop_config.json</code></p>
+<p>Add the Proxmox server:</p>
+<pre class="highlight"><code class="language-json">{
+  "mcpServers": {
+    "proxmox": {
+      "type": "sse",
+      "url": "http://localhost:8812/sse"
+    }
+  }
+}</code></pre>
+<p>Restart Claude Desktop to pick up the change. Claude Desktop runs natively (not in Docker), so <code>localhost</code> works fine here.</p>
+</div>
+<div class="tabbed-block">
+<p>Edit your VS Code MCP config:</p>
+<p><strong>Windows:</strong> <code>C:\Users\&lt;username&gt;\AppData\Roaming\Code\User\mcp.json</code></p>
+<p><strong>macOS:</strong> <code>~/Library/Application Support/Code/User/mcp.json</code></p>
+<p>Add to the <code>servers</code> object:</p>
+<pre class="highlight"><code class="language-json">{
+  "servers": {
+    "proxmox": {
+      "type": "http",
+      "url": "http://localhost:8811"
+    }
+  }
+}</code></pre>
+<p>Note: VS Code uses port <strong>8811</strong> (REST/HTTP), not 8812. It speaks OpenAPI, not SSE.</p>
+</div>
+</div>
+</div>
+<p>Quick reference for which tool uses which endpoint:</p>
+<table>
+<thead>
+<tr>
+<th>AI Tool</th>
+<th>Port</th>
+<th>Transport</th>
+<th>Endpoint URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude Code</td>
+<td>8812</td>
+<td>SSE</td>
+<td><code>http://host.docker.internal:8812/sse</code></td>
+</tr>
+<tr>
+<td>Claude Desktop</td>
+<td>8812</td>
+<td>SSE</td>
+<td><code>http://localhost:8812/sse</code></td>
+</tr>
+<tr>
+<td>VS Code / Copilot</td>
+<td>8811</td>
+<td>HTTP</td>
+<td><code>http://localhost:8811</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="step-6-create-the-health-check-script">Step 6: Create the Health Check Script<a class="headerlink" href="#step-6-create-the-health-check-script" title="Link to this section">&para;</a></h2>
+<p>You want a single command that tells you if everything is working. This script checks both endpoints and gives you a clear pass/fail:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Windows (PowerShell)</label><label for="__tabbed_4_2">Linux / macOS (bash)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="highlight"><code class="language-powershell">$ErrorActionPreference = "Continue"
+
+Write-Host ""
+Write-Host "MCP Server Status" -ForegroundColor Cyan
+Write-Host "=================" -ForegroundColor Cyan
+Write-Host (Get-Date -Format "yyyy-MM-dd HH:mm:ss")
+Write-Host ""
+
+$allGood = $true
+
+# Check Docker containers
+$containers = docker ps --filter "name=proxmox-mcp" `
+              --format "{{.Names}}: {{.Status}}" 2&gt;$null
+if ($containers) {
+    $containers | ForEach-Object {
+        Write-Host "  OK  $_" -ForegroundColor Green
+    }
+} else {
+    Write-Host "  DOWN  No Proxmox MCP containers running" -ForegroundColor Red
+    $allGood = $false
+}
+
+Write-Host ""
+
+# Check REST endpoint (VS Code / Copilot)
+$restOk = $false
+try {
+    $null = Invoke-RestMethod `
+        -Uri "http://localhost:8811/openapi.json" -TimeoutSec 5
+    $restOk = $true
+} catch {}
+
+if ($restOk) {
+    Write-Host "  OK  REST  http://localhost:8811  [VS Code / Copilot]" `
+        -ForegroundColor Green
+} else {
+    Write-Host "  FAIL  REST  not responding on port 8811" `
+        -ForegroundColor Red
+    $allGood = $false
+}
+
+# Check SSE endpoint (Claude Code / Desktop)
+$sseOk = $false
+$sseOutput = &amp; curl.exe -s --max-time 3 `
+             http://localhost:8812/sse 2&gt;$null
+if ($sseOutput -match "endpoint") { $sseOk = $true }
+
+if ($sseOk) {
+    Write-Host "  OK  SSE   http://localhost:8812  [Claude Code / Desktop]" `
+        -ForegroundColor Green
+} else {
+    Write-Host "  FAIL  SSE   not responding on port 8812" `
+        -ForegroundColor Red
+    $allGood = $false
+}
+
+Write-Host ""
+if ($allGood) {
+    Write-Host "All MCP servers healthy." -ForegroundColor Green
+} else {
+    Write-Host "One or more servers need attention." -ForegroundColor Red
+}
+Write-Host ""</code></pre>
+</div>
+<div class="tabbed-block">
+<pre class="highlight"><code class="language-bash">#!/bin/bash
+
+echo ""
+echo "MCP Server Status"
+echo "================="
+date "+%Y-%m-%d %H:%M:%S"
+echo ""
+
+ALL_GOOD=true
+
+# Check Docker containers
+CONTAINERS=$(docker ps --filter "name=proxmox-mcp" \
+             --format "{{.Names}}: {{.Status}}" 2&gt;/dev/null)
+if [ -n "$CONTAINERS" ]; then
+    echo "$CONTAINERS" | while read line; do
+        echo "  OK  $line"
+    done
+else
+    echo "  DOWN  No Proxmox MCP containers running"
+    ALL_GOOD=false
+fi
+
+echo ""
+
+# Check REST endpoint
+if curl -sf --max-time 5 http://localhost:8811/openapi.json &gt; /dev/null 2&gt;&amp;1; then
+    echo "  OK  REST  http://localhost:8811  [VS Code / Copilot]"
+else
+    echo "  FAIL  REST  not responding on port 8811"
+    ALL_GOOD=false
+fi
+
+# Check SSE endpoint
+if curl -s --max-time 3 http://localhost:8812/sse 2&gt;/dev/null | \
+   grep -q "endpoint"; then
+    echo "  OK  SSE   http://localhost:8812  [Claude Code / Desktop]"
+else
+    echo "  FAIL  SSE   not responding on port 8812"
+    ALL_GOOD=false
+fi
+
+echo ""
+if [ "$ALL_GOOD" = true ]; then
+    echo "All MCP servers healthy."
+else
+    echo "One or more servers need attention."
+fi
+echo ""</code></pre>
+</div>
+</div>
+</div>
+<p>Run it and you should see:</p>
+<pre class="highlight"><code>MCP Server Status
+=================
+2026-02-21 14:30:00
+
+  OK  proxmox-mcp-api: Up 3 hours (healthy)
+  OK  proxmox-mcp-sse: Up 3 hours (healthy)
+
+  OK  REST  http://localhost:8811  [VS Code / Copilot]
+  OK  SSE   http://localhost:8812  [Claude Code / Desktop]
+
+All MCP servers healthy.</code></pre>
+<!-- TODO: Add screenshot of status script output -->
+
+<hr />
+<h2 id="step-7-auto-start-on-boot">Step 7: Auto-Start on Boot<a class="headerlink" href="#step-7-auto-start-on-boot" title="Link to this section">&para;</a></h2>
+<p>The goal: zero manual steps after a reboot. You turn on your machine and the MCP server is just <em>there</em>.</p>
+<p><strong>Docker Desktop</strong> handles most of this:</p>
+<ol>
+<li>Open Docker Desktop → <strong>Settings → General</strong></li>
+<li>Enable <strong>"Start Docker Desktop when you sign in"</strong></li>
+<li>The <code>restart: unless-stopped</code> policy in <code>docker-compose.yml</code> means both containers restart automatically when Docker starts</li>
+</ol>
+<p>That's it. Docker starts on login, containers restart, AI tools reconnect to the endpoints they already have configured.</p>
+<div class="admonition tip">
+<p class="admonition-title">Verify After a Reboot</p>
+<p>After your next restart, run the status script to confirm everything came back on its own. If a container didn't restart, check <code>docker compose logs</code> in the installation directory for errors.</p>
+</div>
+<hr />
+<h2 id="testing-it-out">Testing It Out<a class="headerlink" href="#testing-it-out" title="Link to this section">&para;</a></h2>
+<p>Once everything is connected, try these from any of your AI tools:</p>
+<blockquote>
+<p>"What containers are running on my Proxmox server?"</p>
+<p>"How much memory is my Proxmox node using?"</p>
+<p>"Create a snapshot of container 112 called pre-update"</p>
+<p>"Show me the storage usage on local-lvm"</p>
+</blockquote>
+<p>You should get real answers from your actual Proxmox server. If you don't, check the <a href="#troubleshooting">Troubleshooting</a> section below.</p>
+<hr />
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this section">&para;</a></h2>
+<h3 id="containers-wont-start">Containers won't start<a class="headerlink" href="#containers-wont-start" title="Link to this section">&para;</a></h3>
+<p><strong>Check the logs:</strong></p>
+<pre class="highlight"><code class="language-bash">cd installations/proxmox-mcp-plus
+docker compose logs proxmox-mcp-api
+docker compose logs proxmox-mcp-sse</code></pre>
+<p><strong>Common causes:</strong></p>
+<ul>
+<li>Config file not found — verify the volume mount paths are correct and the config files exist</li>
+<li>Proxmox unreachable — make sure your Proxmox IP is correct and accessible from your Docker host</li>
+<li>Port already in use — check if something else is using 8811 or 8812: <code>netstat -an | findstr "8811"</code></li>
+</ul>
+<h3 id="sse-container-shows-unhealthy">SSE container shows "unhealthy"<a class="headerlink" href="#sse-container-shows-unhealthy" title="Link to this section">&para;</a></h3>
+<p>SSE connections are long-lived streams that never close. A standard health check waits for the response to complete, hits the timeout, and reports failure. Make sure your health check uses the streaming approach:</p>
+<pre class="highlight"><code class="language-yaml">healthcheck:
+  test: ["CMD-SHELL",
+    "curl -s --max-time 3 http://localhost:8812/sse | grep -q 'endpoint'"]</code></pre>
+<h3 id="claude-code-says-failed-to-connect">Claude Code says "Failed to connect"<a class="headerlink" href="#claude-code-says-failed-to-connect" title="Link to this section">&para;</a></h3>
+<p>Claude Code runs inside Docker. <code>localhost</code> inside Claude's container points to itself, not your Windows host.</p>
+<p><strong>Fix:</strong> Use <code>host.docker.internal</code>:</p>
+<pre class="highlight"><code class="language-bash">claude mcp add -s user --transport sse proxmox http://host.docker.internal:8812/sse</code></pre>
+<h3 id="rest-endpoint-returns-errors-but-sse-works-or-vice-versa">REST endpoint returns errors but SSE works (or vice versa)<a class="headerlink" href="#rest-endpoint-returns-errors-but-sse-works-or-vice-versa" title="Link to this section">&para;</a></h3>
+<p>The two containers are independent. Check the logs for the specific container that's failing:</p>
+<pre class="highlight"><code class="language-bash">docker compose logs proxmox-mcp-api   # REST issues
+docker compose logs proxmox-mcp-sse   # SSE issues</code></pre>
+<p>Also verify the correct config file is being used — <code>config.json</code> for REST, <code>config-sse.json</code> for SSE.</p>
+<h3 id="api-token-authentication-fails">API token authentication fails<a class="headerlink" href="#api-token-authentication-fails" title="Link to this section">&para;</a></h3>
+<p>Verify your token is correct by testing directly against Proxmox:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">PowerShell</label><label for="__tabbed_5_2">curl</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="highlight"><code class="language-powershell">$headers = @{
+    Authorization = "PVEAPIToken=root@pam!YOUR_TOKEN_NAME=YOUR_TOKEN_VALUE"
+}
+Invoke-RestMethod -Uri "https://YOUR_PROXMOX_IP:8006/api2/json/version" `
+    -SkipCertificateCheck -Headers $headers</code></pre>
+</div>
+<div class="tabbed-block">
+<pre class="highlight"><code class="language-bash">curl -k -H "Authorization: PVEAPIToken=root@pam!YOUR_TOKEN_NAME=YOUR_TOKEN_VALUE" \
+    https://YOUR_PROXMOX_IP:8006/api2/json/version</code></pre>
+</div>
+</div>
+</div>
+<p>If this fails, the token is wrong or Proxmox isn't reachable. Go back to Step 1 and create a new token.</p>
+<h3 id="powershell-curl-doesnt-work-like-real-curl">PowerShell <code>curl</code> doesn't work like real curl<a class="headerlink" href="#powershell-curl-doesnt-work-like-real-curl" title="Link to this section">&para;</a></h3>
+<p>PowerShell aliases <code>curl</code> to <code>Invoke-WebRequest</code>, which has completely different syntax. Use <code>curl.exe</code> explicitly:</p>
+<pre class="highlight"><code class="language-powershell"># This fails — PowerShell's Invoke-WebRequest
+curl -s http://localhost:8812/sse
+
+# This works — actual curl
+curl.exe -s http://localhost:8812/sse</code></pre>
+<hr />
+<h2 id="complete-file-reference">Complete File Reference<a class="headerlink" href="#complete-file-reference" title="Link to this section">&para;</a></h2>
+<p>When you're done, your directory should look like this:</p>
+<pre class="highlight"><code>MCP-SERVERS/
+├── installations/
+│   └── proxmox-mcp-plus/          # Git clone of upstream repo
+│       ├── docker-compose.yml      # Dual-service container config
+│       ├── Dockerfile              # From upstream
+│       └── src/                    # Server source code
+├── config/
+│   └── proxmox-mcp-plus/
+│       ├── config.json             # REST transport config
+│       └── config-sse.json         # SSE transport config
+├── logs/
+│   └── proxmox-mcp-plus/
+│       ├── proxmox_mcp.log         # REST service logs
+│       └── proxmox_mcp_sse.log     # SSE service logs
+├── scripts/
+│   ├── start-proxmox-docker.ps1    # Start containers
+│   ├── stop-proxmox.ps1            # Stop containers
+│   └── test-proxmox-connection.ps1 # Full diagnostic test
+├── mcp-registry.json               # Server registry (for status.ps1)
+└── status.ps1                      # Health check script</code></pre>
+<hr />
+<h2 id="whats-next">What's Next<a class="headerlink" href="#whats-next" title="Link to this section">&para;</a></h2>
+<p>With the MCP server running, you have natural language access to your entire Proxmox environment. From here you might explore:</p>
+<ul>
+<li>Adding more MCP servers for other services (monitoring, DNS, backups)</li>
+<li>Building automation workflows that chain multiple MCP tools together</li>
+<li>Creating scheduled health reports that run the status script and alert on failures</li>
+<li>Extending the registry pattern to manage multiple MCP servers from a single dashboard</li>
+</ul>
+<p>For the bigger picture on why this architecture was designed the way it was — and how AI helped at every step — see <a href="../mcp-proxmox-infrastructure/">AI-Powered Proxmox MCP Infrastructure</a>.</p>
+<div class="admonition question">
+<p class="admonition-title">What's Your Setup Look Like?</p>
+<p>Running Proxmox? A different hypervisor? I'm curious what home lab setups people are managing with AI tools. What would you point an MCP server at first?</p>
+</div>
+<hr />
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Link to this section">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/RekklesNA/ProxmoxMCP-Plus">ProxmoxMCP-Plus on GitHub</a> — The open-source MCP server</li>
+<li><a href="https://modelcontextprotocol.io/">Model Context Protocol Specification</a> — How MCP works under the hood</li>
+<li><a href="https://docs.docker.com/compose/">Docker Compose Documentation</a> — Reference for the container setup</li>
+<li><a href="https://pve.proxmox.com/pve-docs/api-viewer/">Proxmox API Documentation</a> — Full API reference for what the MCP server can do</li>
+<li><a href="../mcp-proxmox-infrastructure/">AI-Powered Proxmox MCP Infrastructure</a> — The companion post covering architecture and design decisions</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2026 Code and Camera | J Lock</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

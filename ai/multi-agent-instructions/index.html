@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="J Lock">
+        <link rel="canonical" href="https://codeandcamera.me/ai/multi-agent-instructions/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Multi-Agent Instructions - Code and Camera</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../stylesheets/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Code and Camera</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Start Here</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../.." class="dropdown-item">Home</a>
+</li>
+                                    
+<li>
+    <a href="../" class="dropdown-item">AI & Machine Learning</a>
+</li>
+                                    
+<li>
+    <a href="../../automation/" class="dropdown-item">Automation</a>
+</li>
+                                    
+<li>
+    <a href="../../homelab/" class="dropdown-item">Home Lab</a>
+</li>
+                                    
+<li>
+    <a href="../../gardening/" class="dropdown-item">Gardening & Growing</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Case Studies</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../agent-harness-workflow/" class="dropdown-item">AI Agent Harness Workflow</a>
+</li>
+                                    
+<li>
+    <a href="../../homelab/mcp-proxmox-infrastructure/" class="dropdown-item">AI-Powered Proxmox MCP</a>
+</li>
+                                    
+<li>
+    <a href="../../automation/slack-block-kit-upgrade/" class="dropdown-item">Upgrading to Slack Block Kit</a>
+</li>
+                                    
+<li>
+    <a href="../../automation/n8n-scheduled-proxmox-updates/" class="dropdown-item">Scheduled Proxmox Updates</a>
+</li>
+                                    
+<li>
+    <a href="../../homelab/proxmox-slack-bot/" class="dropdown-item">Proxmox Slack Bot</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Guides & Runbooks</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../homelab/proxmox-mcp-setup/" class="dropdown-item">ProxmoxMCP-Plus Setup Guide</a>
+</li>
+                                    
+<li>
+    <a href="../../homelab/proxmox-api-token/" class="dropdown-item">Proxmox API Tokens</a>
+</li>
+                                    
+<li>
+    <a href="../../automation/docker-desktop-cleanup-runbook/" class="dropdown-item">Docker Desktop Cleanup Reference</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Multi-Agent Instructions</a>
+</li>
+                                    
+<li>
+    <a href="../wakatime-opencode-setup/" class="dropdown-item">WakaTime with OpenCode</a>
+</li>
+                                    
+<li>
+    <a href="../openclaw-automated-blog-posts/" class="dropdown-item">AI That Writes About What It Built</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Explore by Domain</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">AI</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../" class="dropdown-item">AI & Machine Learning</a>
+</li>
+            
+<li>
+    <a href="../agent-harness-workflow/" class="dropdown-item">AI Agent Harness Workflow</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Multi-Agent Instructions</a>
+</li>
+            
+<li>
+    <a href="../wakatime-opencode-setup/" class="dropdown-item">WakaTime with OpenCode</a>
+</li>
+            
+<li>
+    <a href="../openclaw-automated-blog-posts/" class="dropdown-item">AI That Writes About What It Built</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Automation</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../automation/" class="dropdown-item">Automation</a>
+</li>
+            
+<li>
+    <a href="../../automation/docker-desktop-cleanup-runbook/" class="dropdown-item">Docker Desktop Cleanup Reference</a>
+</li>
+            
+<li>
+    <a href="../../automation/slack-block-kit-upgrade/" class="dropdown-item">Upgrading to Slack Block Kit</a>
+</li>
+            
+<li>
+    <a href="../../automation/n8n-scheduled-proxmox-updates/" class="dropdown-item">Scheduled Proxmox Updates</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Home Lab</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../homelab/" class="dropdown-item">Home Lab</a>
+</li>
+            
+<li>
+    <a href="../../homelab/mcp-proxmox-infrastructure/" class="dropdown-item">AI-Powered Proxmox MCP</a>
+</li>
+            
+<li>
+    <a href="../../homelab/proxmox-mcp-setup/" class="dropdown-item">ProxmoxMCP-Plus Setup Guide</a>
+</li>
+            
+<li>
+    <a href="../../homelab/proxmox-api-token/" class="dropdown-item">Proxmox API Tokens</a>
+</li>
+            
+<li>
+    <a href="../../homelab/proxmox-slack-bot/" class="dropdown-item">Proxmox Slack Bot</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Gardening</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../gardening/" class="dropdown-item">Gardening & Growing</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../agent-harness-workflow/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../wakatime-opencode-setup/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#teaching-ai-to-work-your-way-building-instruction-files-for-multi-agent-development" class="nav-link">Teaching AI to Work Your Way: Building Instruction Files for Multi-Agent Development</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#overview" class="nav-link">Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#project-details" class="nav-link">Project Details</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#what-youll-learn" class="nav-link">What You'll Learn</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#the-problem-ai-amnesia" class="nav-link">The Problem: AI Amnesia</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#how-ai-tools-read-instructions" class="nav-link">How AI Tools Read Instructions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#what-belongs-in-an-instruction-file" class="nav-link">What Belongs in an Instruction File</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-by-step-guide" class="nav-link">Step-by-Step Guide</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#results-what-this-actually-looks-like" class="nav-link">Results: What This Actually Looks Like</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#common-issues-troubleshooting" class="nav-link">Common Issues &amp; Troubleshooting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#whats-next" class="nav-link">What's Next</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#resources-references" class="nav-link">Resources &amp; References</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="teaching-ai-to-work-your-way-building-instruction-files-for-multi-agent-development">Teaching AI to Work Your Way: Building Instruction Files for Multi-Agent Development<a class="headerlink" href="#teaching-ai-to-work-your-way-building-instruction-files-for-multi-agent-development" title="Link to this section">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Link to this section">&para;</a></h2>
+<p>If you use more than one AI coding assistant, you've probably noticed they each have their own personality. Claude Code is thorough but verbose. GitHub Copilot is fast but makes assumptions. They all start from zero every time you open a new session — no memory of your preferences, your project's conventions, or the mistakes they made last time.</p>
+<p>I solved this by building a system of instruction files that teach every AI assistant my project's rules, my writing preferences, and the technical gotchas they need to avoid. Now when I open any AI tool in my project, it already knows how I work.</p>
+<div class="admonition success">
+<p class="admonition-title">The Transformation</p>
+<p><strong>BEFORE:</strong> Every new AI session starts from scratch. Repeat yourself constantly. Fix the same mistakes over and over.</p>
+<p><strong>AFTER:</strong> AI assistants read your instruction files automatically. Your preferences, conventions, and hard-won lessons are preserved across every session and every tool.</p>
+</div>
+<hr />
+<h2 id="project-details">Project Details<a class="headerlink" href="#project-details" title="Link to this section">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Detail</th>
+<th>Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Difficulty</strong></td>
+<td>Intermediate</td>
+</tr>
+<tr>
+<td><strong>Time Required</strong></td>
+<td>1-2 hours</td>
+</tr>
+<tr>
+<td><strong>Category</strong></td>
+<td>AI &amp; Machine Learning</td>
+</tr>
+<tr>
+<td><strong>Last Updated</strong></td>
+<td>February 2026</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Technologies:</strong> Claude Code (CLAUDE.md), GitHub Copilot (.github/copilot-instructions.md), MkDocs, Markdown</p>
+<hr />
+<h2 id="what-youll-learn">What You'll Learn<a class="headerlink" href="#what-youll-learn" title="Link to this section">&para;</a></h2>
+<ul>
+<li>How different AI tools discover and read instruction files</li>
+<li>How to structure instruction files that actually change AI behavior</li>
+<li>How to capture lessons learned so mistakes don't repeat</li>
+<li>A practical system for keeping multiple AI assistants aligned on the same standards</li>
+<li>How to build these instructions iteratively from real project experience</li>
+</ul>
+<hr />
+<h2 id="the-problem-ai-amnesia">The Problem: AI Amnesia<a class="headerlink" href="#the-problem-ai-amnesia" title="Link to this section">&para;</a></h2>
+<p>Here's the scenario that drove me to build this: I'm working on my documentation site (<a href="https://codeandcamera.me/">codeandcamera.me</a>) and I ask an AI assistant to create a new post with Mermaid diagrams. The AI:</p>
+<ol>
+<li>Hardcodes dark background colors into every diagram — looks great in dark mode, completely unreadable in light mode</li>
+<li>Uses <code>\n</code> for line breaks in Mermaid node labels — renders as literal backslash-n text instead of actual line breaks</li>
+<li>Writes the post in a tone that doesn't match my site</li>
+<li>Forgets to update the navigation in <code>mkdocs.yml</code></li>
+<li>Sets <code>published: true</code> and deploys a draft to production</li>
+</ol>
+<p>I fix all of this. Next session, different AI tool — same mistakes. Every. Single. Time.</p>
+<p>The problem isn't that the AI is bad. The problem is that it has no context about my project's specific requirements, my preferences, or the lessons we've already learned together.</p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph without["⛔ Without Instructions"]
+        direction TB
+        W1["New AI session"] --&gt; W2["No project context"]
+        W2 --&gt; W3["Makes assumptions"]
+        W3 --&gt; W4["Repeats known mistakes"]
+        W4 --&gt; W5["You fix and explain again"]
+        W5 --&gt; W1
+    end
+
+    subgraph with["✅ With Instructions"]
+        direction TB
+        I1["New AI session"] --&gt; I2["Reads instruction files"]
+        I2 --&gt; I3["Knows your preferences"]
+        I3 --&gt; I4["Follows conventions"]
+        I4 --&gt; I5["Gets it right the first time"]
+    end
+
+    without ~~~ with</code></pre>
+<hr />
+<h2 id="how-ai-tools-read-instructions">How AI Tools Read Instructions<a class="headerlink" href="#how-ai-tools-read-instructions" title="Link to this section">&para;</a></h2>
+<p>Different AI tools look for instruction files in different places. The good news: they all use simple markdown files that live in your repo.</p>
+<pre class="mermaid"><code>flowchart TB
+    subgraph repo["📁 Your Repository"]
+        CLAUDE["CLAUDE.md&lt;br/&gt;(project root)"]
+        COPILOT[".github/copilot-instructions.md"]
+        AGENTS["AGENTS.md&lt;br/&gt;(project root)"]
+    end
+
+    subgraph tools["🤖 AI Tools"]
+        CC["Claude Code"]
+        CD["Claude Desktop"]
+        GC["GitHub Copilot"]
+        OC["OpenCode / Other"]
+    end
+
+    CC --&gt; CLAUDE
+    CD --&gt; CLAUDE
+    GC --&gt; COPILOT
+    OC --&gt; AGENTS
+
+    CC -.-&gt;|"also reads"| AGENTS
+    GC -.-&gt;|"also reads"| AGENTS</code></pre>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Location</th>
+<th>Read By</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CLAUDE.md</code></td>
+<td>Project root</td>
+<td>Claude Code, Claude Desktop</td>
+<td>Comprehensive project guide</td>
+</tr>
+<tr>
+<td><code>.github/copilot-instructions.md</code></td>
+<td><code>.github/</code> directory</td>
+<td>GitHub Copilot</td>
+<td>Copilot-specific instructions</td>
+</tr>
+<tr>
+<td><code>AGENTS.md</code></td>
+<td>Project root</td>
+<td>Multiple tools</td>
+<td>General-purpose agent instructions</td>
+</tr>
+</tbody>
+</table>
+<p>The key insight: <strong>you don't have to maintain completely separate files for each tool.</strong> Create one comprehensive guide (<code>CLAUDE.md</code>), then create a compact version for other tools that points back to the main one.</p>
+<hr />
+<h2 id="what-belongs-in-an-instruction-file">What Belongs in an Instruction File<a class="headerlink" href="#what-belongs-in-an-instruction-file" title="Link to this section">&para;</a></h2>
+<p>Not everything belongs in these files. They need to be <strong>specific enough to change behavior</strong> but not so long that the AI ignores the important parts.</p>
+<h3 id="the-right-content">The Right Content<a class="headerlink" href="#the-right-content" title="Link to this section">&para;</a></h3>
+<p><strong>Project-specific technical rules</strong> — things the AI can't infer from the code alone:</p>
+<pre class="highlight"><code class="language-markdown">## Mermaid Diagram Rules
+
+### CRITICAL: Do NOT Hardcode Colors
+Material for MkDocs automatically themes Mermaid diagrams. 
+NEVER add style directives with hardcoded fill/stroke colors.
+
+### CRITICAL: Line Breaks in Node Labels
+Use &lt;br/&gt; for line breaks inside node labels, NOT \n.
+\n renders as literal text in Mermaid.</code></pre>
+<p><strong>Your preferences and voice</strong> — how you want content to read:</p>
+<pre class="highlight"><code class="language-markdown">## Writing Voice
+- Conversational but technical
+- Honest about challenges — don't make things sound easy
+- Before/After framing to demonstrate value
+- Practical over theoretical</code></pre>
+<p><strong>Hard-won lessons</strong> — mistakes that were painful to debug:</p>
+<pre class="highlight"><code class="language-markdown">## Common Issues
+- PowerShell aliases `curl` to `Invoke-WebRequest` — use `curl.exe`
+- Claude Code runs in Docker — use `host.docker.internal` not `localhost`
+- SSE health checks need `--max-time` because streams never close</code></pre>
+<p><strong>Checklists for complex tasks</strong> — so steps don't get skipped:</p>
+<pre class="highlight"><code class="language-markdown">## Creating a New Post (Checklist)
+1. Create asset directory
+2. Create post file with `published: false`
+3. Follow the standard post structure
+4. Update navigation in mkdocs.yml
+5. Update the section index page
+6. Commit and push</code></pre>
+<h3 id="the-wrong-content">The Wrong Content<a class="headerlink" href="#the-wrong-content" title="Link to this section">&para;</a></h3>
+<ul>
+<li>❌ <strong>General programming knowledge</strong> — The AI already knows how to write Python</li>
+<li>❌ <strong>Obvious conventions</strong> — "Use descriptive variable names" doesn't help</li>
+<li>❌ <strong>Information in the code</strong> — If it's in <code>package.json</code> or <code>mkdocs.yml</code>, the AI can read it</li>
+<li>❌ <strong>Entire file contents</strong> — Link to files instead of copying them into the instructions</li>
+</ul>
+<hr />
+<h2 id="step-by-step-guide">Step-by-Step Guide<a class="headerlink" href="#step-by-step-guide" title="Link to this section">&para;</a></h2>
+<h3 id="step-1-start-with-what-you-know">Step 1: Start With What You Know<a class="headerlink" href="#step-1-start-with-what-you-know" title="Link to this section">&para;</a></h3>
+<p>Don't try to write the perfect instruction file from day one. Start with the basics and build from experience.</p>
+<p>Create <code>CLAUDE.md</code> in your project root:</p>
+<pre class="highlight"><code class="language-markdown"># Project Guide for AI Assistants
+
+## Project Overview
+[What this project is — 2-3 sentences]
+
+## Technology Stack
+[List your key technologies]
+
+## Repository Structure
+[Directory tree showing where things live]
+
+## Important Rules
+[Start with rules you already know about]</code></pre>
+<p>This alone will prevent the most common AI mistakes — wrong assumptions about your stack, files created in the wrong directories, missing context about what the project does.</p>
+<h3 id="step-2-capture-lessons-as-they-happen">Step 2: Capture Lessons As They Happen<a class="headerlink" href="#step-2-capture-lessons-as-they-happen" title="Link to this section">&para;</a></h3>
+<p>This is where the real value builds up. Every time an AI assistant makes a mistake that you have to correct, <strong>add it to the instruction file immediately.</strong></p>
+<p>The pattern:</p>
+<ol>
+<li>AI makes a mistake</li>
+<li>You fix it and explain why</li>
+<li>You add the rule to <code>CLAUDE.md</code> so it never happens again</li>
+</ol>
+<p>Real example from my project:</p>
+<pre class="highlight"><code class="language-markdown">## Mermaid Diagram Rules
+
+### CRITICAL: Do NOT Hardcode Colors
+Material for MkDocs automatically themes Mermaid diagrams using 
+the site's CSS variables. Diagrams adapt for both dark and light mode.
+
+NEVER add style directives with hardcoded colors:
+
+&lt;!-- BAD --&gt;
+style myNode fill:#1a1a2e,stroke:#e94560,color:#eee
+
+&lt;!-- GOOD - let the theme handle it --&gt;
+(no style directive needed)</code></pre>
+<pre class="highlight"><code class="language-markdown">### CRITICAL: Line Breaks in Node Labels
+Use &lt;br/&gt; for line breaks, NOT \n:
+
+&lt;!-- BAD - renders as literal "\n" text --&gt;
+A["First line\nSecond line"]
+
+&lt;!-- GOOD - renders as actual line break --&gt;
+A["First line&lt;br/&gt;Second line"]</code></pre>
+<p>Over time, your instruction file becomes a <strong>living knowledge base</strong> of everything an AI needs to know about your project — far more valuable than anything you could write from scratch.</p>
+<h3 id="step-3-add-your-preferences">Step 3: Add Your Preferences<a class="headerlink" href="#step-3-add-your-preferences" title="Link to this section">&para;</a></h3>
+<p>Beyond technical rules, capture <em>how</em> you want the AI to work. This is what turns generic AI output into something that feels like yours.</p>
+<pre class="highlight"><code class="language-markdown">## Content Voice
+
+### Core Narrative: AI as a Capability Multiplier
+The overarching message: AI doesn't just make you faster — it 
+expands what you're capable of building.
+
+When writing about projects involving AI:
+- Use the narrative: "I couldn't have built this easily without AI"
+- Show specific examples of what AI contributed
+- Frame AI as a learning accelerator
+- Never position AI as doing all the work
+
+### Post Structure
+Every post should serve two audiences:
+1. Recruiters/professionals who skim headings and diagrams
+2. Builders who want the full step-by-step walkthrough
+
+### Future Post Teasers
+- Keep vague but compelling — no commitments or timelines
+- End with a question that invites reader engagement</code></pre>
+<h3 id="step-4-create-the-compact-version-for-copilot">Step 4: Create the Compact Version for Copilot<a class="headerlink" href="#step-4-create-the-compact-version-for-copilot" title="Link to this section">&para;</a></h3>
+<p>GitHub Copilot reads <code>.github/copilot-instructions.md</code>. Rather than duplicating everything, create a compact version with the critical rules and a pointer to the full guide:</p>
+<pre class="highlight"><code class="language-markdown"># Copilot Instructions
+
+Full instructions in CLAUDE.md at the project root.
+
+## Critical Rules
+1. Mermaid diagrams: NEVER hardcode colors. Use &lt;br/&gt; for 
+   line breaks, NOT \n.
+2. New posts: Always set published: false in frontmatter.
+3. Navigation: Update mkdocs.yml AND the section index.md.
+4. Assets: Store images in docs/assets/&lt;section&gt;/&lt;post-slug&gt;/
+5. Voice: AI as capability multiplier, honest about challenges.</code></pre>
+<h3 id="step-5-structure-for-scannability">Step 5: Structure for Scannability<a class="headerlink" href="#step-5-structure-for-scannability" title="Link to this section">&para;</a></h3>
+<p>AI assistants read these files in full, but they prioritize clearly structured content. Use formatting that makes rules impossible to miss:</p>
+<ul>
+<li><strong>Bold "CRITICAL" labels</strong> for rules that cause real breakage</li>
+<li><strong>Code examples</strong> showing BAD vs GOOD patterns (AI learns best from examples)</li>
+<li><strong>Checklists</strong> for multi-step processes</li>
+<li><strong>Tables</strong> for reference data (color values, file locations, etc.)</li>
+<li><strong>Short paragraphs</strong> — walls of text get deprioritized</li>
+</ul>
+<details class="tip">
+<summary>Example: Color Reference Table</summary>
+<pre class="highlight"><code class="language-markdown">| Purpose | Light Mode | Dark Mode | CSS Variable |
+|---------|-----------|-----------|-------------|
+| Primary | #3f51b5 | #3f51b5 | --md-primary-fg-color |
+| Accent | #ffc107 | #ffeb3b | --md-accent-fg-color |
+| Background | #ffffff | #0d1117 | --md-default-bg-color |</code></pre>
+</details>
+<hr />
+<h2 id="results-what-this-actually-looks-like">Results: What This Actually Looks Like<a class="headerlink" href="#results-what-this-actually-looks-like" title="Link to this section">&para;</a></h2>
+<p>With instruction files in place, here's the difference:</p>
+<h3 id="before-instructions">Before Instructions<a class="headerlink" href="#before-instructions" title="Link to this section">&para;</a></h3>
+<blockquote>
+<p><strong>Me:</strong> "Create a new blog post about my MCP infrastructure with Mermaid diagrams."</p>
+<p><strong>AI:</strong> Creates post with hardcoded dark colors in diagrams, uses <code>\n</code> for line breaks, sets <code>published: true</code>, forgets to update navigation, writes in a generic tutorial voice.</p>
+<p><strong>Me:</strong> <em>Spends 30 minutes fixing all of it, then explains each issue.</em></p>
+</blockquote>
+<h3 id="after-instructions">After Instructions<a class="headerlink" href="#after-instructions" title="Link to this section">&para;</a></h3>
+<blockquote>
+<p><strong>Me:</strong> "Create a new blog post about my MCP infrastructure with Mermaid diagrams."</p>
+<p><strong>AI:</strong> Creates post with theme-aware diagrams using <code>&lt;br/&gt;</code> for line breaks, sets <code>published: false</code>, updates <code>mkdocs.yml</code> and the section index, writes in the established voice with before/after framing and a compelling future teaser.</p>
+<p><strong>Me:</strong> <em>Reviews and publishes.</em></p>
+</blockquote>
+<p>The instruction file for my documentation site grew from ~80 lines to ~370 lines over the course of a few sessions. Every line was earned by a real mistake or a real preference that needed capturing. That's 370 lines of context that every AI assistant gets for free, in every session, forever.</p>
+<!-- TODO: Add screenshot showing CLAUDE.md in project root -->
+<!-- ![CLAUDE.md in the project directory](../assets/ai/multi-agent-instructions/claude-md-in-project.png) -->
+
+<hr />
+<h2 id="common-issues-troubleshooting">Common Issues &amp; Troubleshooting<a class="headerlink" href="#common-issues-troubleshooting" title="Link to this section">&para;</a></h2>
+<h3 id="ai-ignores-certain-instructions">AI Ignores Certain Instructions<a class="headerlink" href="#ai-ignores-certain-instructions" title="Link to this section">&para;</a></h3>
+<p><strong>Problem:</strong> You added a rule but the AI still makes the mistake.</p>
+<p><strong>Fix:</strong> Make the instruction more prominent. Use <code>### CRITICAL:</code> headers, show BAD vs GOOD code examples, and move the most important rules near the top of the file. AI assistants weigh content near the beginning of instruction files more heavily.</p>
+<h3 id="instruction-file-getting-too-long">Instruction File Getting Too Long<a class="headerlink" href="#instruction-file-getting-too-long" title="Link to this section">&para;</a></h3>
+<p><strong>Problem:</strong> Your <code>CLAUDE.md</code> is 1000+ lines and feels unwieldy.</p>
+<p><strong>Fix:</strong> Keep the instruction file focused on <em>rules that change behavior</em>. Move reference documentation (API endpoints, full config files) into separate docs and link to them. The instruction file should be a set of rules and preferences, not a knowledge base.</p>
+<h3 id="different-ai-tools-behave-differently">Different AI Tools Behave Differently<a class="headerlink" href="#different-ai-tools-behave-differently" title="Link to this section">&para;</a></h3>
+<p><strong>Problem:</strong> Claude Code follows your instructions perfectly but Copilot still makes mistakes.</p>
+<p><strong>Fix:</strong> Ensure <code>.github/copilot-instructions.md</code> contains the most critical rules directly (not just a pointer to <code>CLAUDE.md</code>). Different tools have different instruction file discovery and some may not follow cross-references. Put the rules that cause the most breakage directly in each tool's instruction file.</p>
+<h3 id="instructions-become-stale">Instructions Become Stale<a class="headerlink" href="#instructions-become-stale" title="Link to this section">&para;</a></h3>
+<p><strong>Problem:</strong> Your project evolved but the instruction file still references old patterns.</p>
+<p><strong>Fix:</strong> Update instructions as part of your workflow. When you refactor code or change conventions, update the instruction files in the same commit. Treat them like documentation — they're only useful if they're current.</p>
+<hr />
+<h2 id="whats-next">What's Next<a class="headerlink" href="#whats-next" title="Link to this section">&para;</a></h2>
+<p>Instruction files are a starting point. Once you have AI assistants that understand your project, there are interesting directions to explore:</p>
+<ul>
+<li><strong>Cross-project instruction inheritance</strong> — shared conventions that apply across all your repos, with project-specific overrides</li>
+<li><strong>Automated instruction generation</strong> — could an AI analyze your commit history and PR feedback to draft instruction rules?</li>
+<li><strong>Team-scale instruction files</strong> — maintaining shared AI conventions across a team, versioned and reviewed like code</li>
+<li><strong>Dynamic context injection</strong> — loading different instruction sets based on what part of the codebase you're working in</li>
+</ul>
+<p>The tools for configuring AI assistants are evolving fast. What's a manual markdown file today could become a structured configuration system tomorrow. But the core idea will stay the same: <strong>the more context you give your AI tools, the better they work for you.</strong></p>
+<div class="admonition question">
+<p class="admonition-title">What Rules Would You Write First?</p>
+<p>If you were starting an instruction file for your project today, what's the first rule you'd add? What mistake have you corrected the most times? That's where to start.</p>
+</div>
+<hr />
+<h2 id="resources-references">Resources &amp; References<a class="headerlink" href="#resources-references" title="Link to this section">&para;</a></h2>
+<ul>
+<li><a href="https://docs.anthropic.com/en/docs/claude-code/memory#claudemd">Claude Code CLAUDE.md Documentation</a> — How Claude Code discovers and reads instruction files</li>
+<li><a href="https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot">GitHub Copilot Custom Instructions</a> — Copilot's instruction file spec</li>
+<li><a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a> — The documentation framework used in this post's examples</li>
+<li><a href="https://mermaid.js.org/syntax/flowchart.html">Mermaid Diagram Syntax</a> — Reference for the diagram examples</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2026 Code and Camera | J Lock</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
