@@ -33,6 +33,6 @@ Moved Slack bot output from plain text to structured Block Kit and used AI-assis
 
 ## Start here
 
-- **Recruiters and hiring managers:** start with [AI & Machine Learning](ai/index.md) for practical workflow examples.
-- **Technical peers:** jump to [Home Lab](homelab/index.md) and [Automation](automation/index.md) for implementation details.
-- **Cross-domain work:** see [Gardening & Growing](gardening/index.md) for applied automation outside pure software projects.
+- **Quick proof of impact:** start with [AI & Machine Learning](ai/index.md) for practical workflow case studies.
+- **Implementation details:** jump to [Home Lab](homelab/index.md) and [Automation](automation/index.md) for architecture and runbooks.
+- **Applied systems thinking:** see [Gardening & Growing](gardening/index.md) for automation patterns outside pure software projects.
