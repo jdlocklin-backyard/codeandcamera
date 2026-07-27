@@ -16,7 +16,7 @@ estimated_time: "1-2 hours"
 
 # AI Agent Harness Workflow
 
-Most AI demos stop at the model. Real work starts one layer above, where tools, instructions, context, and repeatable workflows either make the model useful or turn it into noise. This project is about building a cleaner agent harness around day-to-day work so AI can be used as a practical multiplier instead of a novelty.
+Most AI demos stop at the model. Real value shows up one layer above it: the instructions, tool wiring, and operating rules that make output repeatable. This project focused on building that harness so AI supports daily work instead of creating process noise.
 
 !!! success "The Transformation"
 
@@ -33,7 +33,7 @@ Most AI demos stop at the model. Real work starts one layer above, where tools, 
 
 ## Why this matters
 
-As the number of tools, repos, command patterns, and agent contexts grows, the working environment gets harder to manage.
+As the number of tools, repos, and command patterns grows, the environment gets harder to maintain.
 
 Without structure, the same problems show up quickly:
 
@@ -42,11 +42,11 @@ Without structure, the same problems show up quickly:
 - project context gets lost,
 - and every update turns into manual cleanup.
 
-That kind of sprawl slows everything down and makes the environment harder to trust.
+That sprawl slows delivery and makes the workflow harder to trust.
 
 ## Problem
 
-Before standardizing the setup, the environment relied more on scattered instructions, repeated updates, and tool-specific behavior.
+Before standardization, the setup relied on scattered instruction files, repeated updates, and tool-specific drift.
 
 That meant:
 
@@ -55,17 +55,22 @@ That meant:
 - project-specific rules were mixed in with global rules,
 - and the overall setup became harder to reason about over time.
 
-The system still worked, but it required more memory, more cleanup, and more manual correction than it should have.
+The system worked, but it required too much manual correction to stay reliable.
 
 ## Previous workflow
 
-The previous approach worked but lacked structure. Instructions lived in ad-hoc locations. Command patterns had to be updated independently for each tool. Global and project-level rules shared the same space, making it hard to tell what applied where.
+The previous workflow looked like this:
 
-Every change meant checking multiple files, remembering what lived where, and hoping nothing was missed.
+1. Add or update guidance in one tool.
+2. Repeat the same update in other tool-specific files.
+3. Re-check global and repo-local rules manually.
+4. Fix drift after behavior diverged.
+
+Every update depended on memory and manual reconciliation.
 
 ## New workflow
 
-The updated workflow uses a layered instruction model designed to reduce duplication and make the environment easier to maintain.
+The new workflow uses a layered instruction model to separate concerns and reduce duplication.
 
 The structure now separates concerns more cleanly:
 
@@ -74,40 +79,40 @@ The structure now separates concerns more cleanly:
 - **shared slash commands** live in one canonical location,
 - **tool-specific command folders** point back to that shared source via symlinks.
 
-That creates a more predictable setup across tools while keeping local context close to the code it belongs to.
+This creates a predictable model across tools while keeping project context close to the repo.
 
 ## Tools used
 
-- AGENTS.md
+- `AGENTS.md` instruction files (global + repo-local)
 - Claude Code
 - OpenCode
 - PowerShell
 - Markdown
-- Symlinks
+- Symlinks for shared slash-command routing
 
 ## AI role
 
-AI helped accelerate the design and cleanup of the harness in several ways:
+AI accelerated the harness work in specific places:
 
 - turning rough goals into a cleaner instruction structure,
-- identifying redundancy between global and repo-local guidance,
-- helping rewrite bloated instruction files into more focused versions,
+- flagging redundancy between global and repo-local guidance,
+- helping rewrite bloated instruction files into focused versions,
 - generating reusable templates for project content,
-- and translating implementation choices into clearer documentation.
+- translating implementation choices into clearer documentation.
 
-The value was not just faster writing. The value was faster iteration on the surrounding workflow that makes the tools usable at scale.
+The gain was not just faster writing. It was faster iteration on the operating model around the tools.
 
 ## Human review and safeguards
 
-This was not an autopilot exercise.
+This was not autopilot.
 
-The final structure, naming, paths, and operating rules were reviewed manually before being adopted. Decisions about what belonged in global instructions versus repo-local instructions were made deliberately, not accepted blindly.
+Final structure, naming, paths, and operating rules were reviewed manually before adoption. Scope decisions (global vs repo-local), command ownership, and naming conventions were explicitly validated.
 
-The goal was to use AI to accelerate the thinking and drafting, while keeping control of the actual operating model.
+AI accelerated drafting and analysis. Human review controlled the final operating model.
 
 ## Outcome
 
-The result is a cleaner multi-tool setup with several practical improvements:
+The result is a cleaner multi-tool setup with practical improvements:
 
 - less duplicated instruction content,
 - shared command definitions across tools,
@@ -115,15 +120,15 @@ The result is a cleaner multi-tool setup with several practical improvements:
 - easier maintenance when updating prompts or conventions,
 - and a stronger foundation for future project documentation and content generation.
 
-Just as important, the environment is easier to explain. That matters because a workflow that cannot be explained clearly usually does not scale cleanly either.
+The environment is also easier to explain, which makes it easier to scale.
 
 ## Key takeaway
 
-AI fluency is not just about writing prompts. It is about designing the harness around the model so the output becomes repeatable, maintainable, and useful in real work.
+AI fluency is not just prompting. It is designing the harness so output is repeatable, maintainable, and useful in real work.
 
 ## Next improvement
 
-The next step is to build on this foundation by generating stronger project write-ups, reusable content patterns, and workflow-specific documentation that can feed directly into the website and future portfolio content.
+Build on this foundation by standardizing more project write-ups, expanding reusable content patterns, and tightening workflow-specific documentation for faster publishing.
 
 !!! question "Ready to clean up your workflow?"
 

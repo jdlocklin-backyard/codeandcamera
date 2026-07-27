@@ -17,13 +17,7 @@ estimated_time: "2 hours"
 
 # Upgrading Slack Bot Messages: From Plain Text to Block Kit
 
-My Proxmox Slack bot worked fine but looked ugly. The messages were plain text that looked like terminal dumps. I wanted to upgrade to Slack's Block Kit framework for better formatting.
-
-I converted all six message formatters to Block Kit. Deployed. Tested.
-
-Nothing happened. No error, no message—just silent failure.
-
-This post covers what Block Kit is, how to implement it in n8n, and the debugging issue that almost killed the project.
+This upgrade turned a functional but hard-to-scan Slack bot into a structured status interface that teams can read quickly. The implementation looked straightforward until a serialization issue caused a silent failure.
 
 ---
 
@@ -34,33 +28,63 @@ This post covers what Block Kit is, how to implement it in n8n, and the debuggin
 
 ---
 
-## What This Covers
+## Why this matters
 
-- Block Kit basics for Slack bots
-- Before/after code comparison
-- The n8n serialization bug that broke everything
-- How AI helped debug it
+Operational bots succeed or fail on readability. If status messages look like terminal dumps, people ignore them. Structured messages reduce scan time and lower support friction when someone needs fast infrastructure context.
 
----
+## Problem
 
-## Block Kit Basics
+The bot posted plain text blocks with weak hierarchy. Important values were present, but the format made it harder to parse under time pressure.
 
-Slack's Block Kit is a UI framework for bot messages. Instead of plain text, you build messages from components:
+After converting formatters to Block Kit, Slack stopped rendering messages entirely because the payload shape was wrong.
 
-- **Headers**: Large titles
-- **Sections**: Text blocks with optional fields (creates columns)
-- **Dividers**: Visual separators
-- **Context**: Small metadata text
+## Previous workflow
 
-Here's the workflow:
+1. Run a slash command such as `/proxmox status`.
+2. Receive plain text output with minimal visual structure.
+3. Manually scan lines to find cluster state, node metrics, and uptime.
+4. Troubleshoot failures through n8n logs when formatting changes broke output.
+
+## New workflow
+
+1. Slash command triggers n8n webhook.
+2. Formatter returns a valid `blocks` array.
+3. Slack renders structured Block Kit sections (header, fields, divider, context).
+4. Operators scan core metrics faster and act with less ambiguity.
 
 ```mermaid
 flowchart LR
     A[Slack Command] --> B[n8n Webhook]
     B --> C[Format with<br/>Block Kit]
-    C --> D[Post to Slack]
-    D --> E[Slack API]
+    C --> D[Post JSON to Slack]
+    D --> E[Slack API renders<br/>structured message]
 ```
+
+## Tools used
+
+- Slack Block Kit
+- n8n
+- Slack Web API
+- JavaScript formatters
+- Proxmox API data source
+
+## AI role
+
+AI helped in targeted areas:
+
+- mapping plain-text output to Block Kit structure,
+- reviewing payload formatting quickly,
+- narrowing the failure to `invalid_blocks_format`,
+- identifying body-mode mismatch in n8n.
+
+## Human review and safeguards
+
+Final payload behavior was validated manually in n8n execution logs and Slack responses. The fix was accepted only after confirming:
+
+- Slack returned valid message output,
+- `blocks` remained a JSON array end-to-end,
+- all six command formatters rendered correctly,
+- fallback `text` remained present for compatibility.
 
 ## Before/After Code
 
@@ -162,7 +186,7 @@ return { blocks };
 3. Context block for metadata
 4. Slack date formatting renders in user's timezone
 
-## The Bug: Silent Failure
+## The bug and fix
 
 After deploying the Block Kit code, the bot stopped working. No error in n8n, no message in Slack.
 
@@ -205,16 +229,21 @@ The workflow showed green because the HTTP request succeeded (200 OK), but Slack
 
 That's it. The `blocks` array now passes through as actual JSON instead of being stringified.
 
-## Results
+## Outcome
 
-<!-- TODO: Screenshot of old plain text message in Slack -->
-<!-- File: before-plain-text.png -->
+- Migrated six command formatters from plain text to Block Kit.
+- Resolved silent message failures by fixing JSON body mode.
+- Reduced visual noise and improved scanability for status checks.
+- Preserved existing command surface:
+  `/proxmox status`, `/proxmox vms`, `/proxmox containers`, `/proxmox storage`, `/proxmox backups`, `/proxmox help`.
 
+## Key takeaway
 
-<!-- TODO: Screenshot of new Block Kit message in Slack -->
-<!-- File: after-block-kit.png -->
+AI is most useful here as a debugging accelerant: quick pattern recognition plus human verification in logs and payloads.
 
-Commands: `/proxmox status`, `/proxmox vms`, `/proxmox containers`, `/proxmox storage`, `/proxmox backups`, `/proxmox help`
+## Next improvement
+
+Add screenshot-based regression checks for key Slack message layouts so rendering issues are caught before deployment.
 
 ---
 

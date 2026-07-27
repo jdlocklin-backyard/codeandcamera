@@ -17,13 +17,13 @@ estimated_time: "2-3 hours"
 
 # AI-Powered Home Lab: Building a Universal MCP Infrastructure for Proxmox
 
-## Overview
+## Why this matters
 
-Managing a Proxmox home lab used to mean constant context switching — SSH sessions, web UI navigation, memorizing command flags. Every time I needed to check on a container or restart a VM, I'd break my flow to go somewhere else and do it manually.
+Managing a Proxmox home lab used to mean constant context switching: SSH sessions, web UI navigation, and memorizing command flags. Every time I needed to check a container or restart a VM, I had to break flow and switch tools.
 
-I built a universal MCP (Model Context Protocol) infrastructure that lets me manage my entire Proxmox environment using natural language from any AI tool — Claude Code, Claude Desktop, or VS Code with GitHub Copilot. Infrastructure management now happens *where I'm already working*, in plain English.
+I built a universal MCP (Model Context Protocol) infrastructure that lets me manage my Proxmox environment using natural language from any AI tool: Claude Code, Claude Desktop, or VS Code with GitHub Copilot. Infrastructure management now happens where I am already working.
 
-This isn't just a productivity win. It's a capability multiplier. AI didn't just help me build this faster — it helped me build something I wouldn't have tackled on my own.
+This is not only a productivity win. It is a capability multiplier. AI helped me build this faster and helped me attempt an architecture I would not have tackled as quickly on my own.
 
 !!! success "The Transformation"
     **BEFORE:** SSH → Proxmox UI → navigate menus → run commands → *5+ minutes per task*
@@ -45,17 +45,19 @@ This isn't just a productivity win. It's a capability multiplier. AI didn't just
 
 ---
 
-## What You'll Learn
+## Problem
 
-- How the Model Context Protocol (MCP) bridges AI tools and real infrastructure
-- How to set up dual-transport MCP servers (REST + SSE) for universal AI tool compatibility
-- Docker Compose patterns for multi-service MCP deployments
-- Health check strategies for streaming endpoints
-- How to make everything auto-start so it "just works" on boot
+Before this setup, common infrastructure tasks required repeated context switching between editor, terminal, and browser.
+
+That friction created three practical problems:
+
+- slow execution for routine checks and restarts,
+- higher error risk from manual repetition,
+- less frequent use of safer workflows (for example, snapshots before risky changes).
 
 ---
 
-## The Manual Workflow (What I Used to Do)
+## Previous workflow
 
 Here's the scenario: I'm deep in a coding session and I need to check if my WordPress container is running, maybe restart it.
 
@@ -70,9 +72,9 @@ Here's the scenario: I'm deep in a coding session and I need to check if my Word
 7. Click through: Datacenter → Node → Container → Status panel
 8. Right-click for actions
 
-Every. Single. Time.
+Every single time.
 
-The friction wasn't in any single step — it was the constant context switching. Leave my editor, open a terminal or browser, authenticate, navigate, act, come back. Multiply that by every VM check, every container restart, every "is that service still running?" question throughout the day.
+The friction was not in any single step. It was the constant context switching: leave the editor, open terminal or browser, authenticate, navigate, act, and switch back.
 
 ```mermaid
 flowchart LR
@@ -96,17 +98,37 @@ flowchart LR
 
 ---
 
-## How AI Helped Me Build This
+## New workflow
 
-I want to be honest about this: I *could* have built this infrastructure without AI. But it would have taken significantly longer and involved a lot more trial and error.
+The new workflow uses a dual-transport MCP setup so AI tools can query and act on Proxmox in place.
 
-Here's what AI actually contributed at each phase:
+1. Ask for status or actions in natural language from the tool already in use.
+2. Route requests through MCP services (SSE for Claude, HTTP for Copilot/VS Code).
+3. Execute against Proxmox API and return structured output quickly.
+
+This removes repeated context switching and lowers the effort required for safe operations.
+
+## Tools used
+
+- Proxmox VE API
+- ProxmoxMCP-Plus
+- MCP protocol (SSE + REST/OpenAPI)
+- Docker and Docker Compose
+- Claude Code and Claude Desktop
+- VS Code with GitHub Copilot
+- PowerShell and bash
+
+## AI role
+
+I could have built this without AI, but it would have taken longer with more trial and error.
+
+AI contributed in specific phases:
 
 ### Discovery
 
 I knew I wanted to control Proxmox from my AI tools. I didn't know MCP existed, or that there was already an open-source project ([ProxmoxMCP-Plus](https://github.com/RekklesNA/ProxmoxMCP-Plus)) that implemented it. AI helped me discover the project, understand the MCP protocol architecture, and figure out that different AI tools need different transport modes — a detail that would have cost me hours of confused debugging.
 
-### Architecture Design
+### Architecture design
 
 The key insight was that **two transport modes are required** for full coverage:
 
@@ -117,7 +139,7 @@ The key insight was that **two transport modes are required** for full coverage:
 
 AI designed the dual-service Docker Compose setup and explained *why* both are needed — VS Code speaks HTTP, Claude speaks SSE. Without that guidance, I'd have set up one endpoint and spent days wondering why half my tools couldn't connect.
 
-### Problem Solving
+### Problem solving
 
 Every project hits walls. AI helped me work through each one in real time instead of spending hours on Stack Overflow:
 
@@ -125,10 +147,23 @@ Every project hits walls. AI helped me work through each one in real time instea
 - **Claude Code can't reach `localhost`** because it runs inside Docker itself (needs `host.docker.internal`)
 - **PowerShell's `curl` isn't actually curl** — it's aliased to `Invoke-WebRequest`, breaking scripts silently
 
-Each of these would have been a multi-hour detour. With AI, they were 5-minute conversations.
+Each of these could have been a multi-hour detour. With AI, they were much shorter troubleshooting loops.
 
 !!! tip "The Capability Multiplier"
     AI didn't just make me faster. It let me work at a level of infrastructure complexity I wouldn't have attempted otherwise. The dual-transport architecture, Docker health check patterns for streaming endpoints, production-ready directory structures — these are patterns I *learned* while building, not patterns I already knew.
+
+---
+
+## Human review and safeguards
+
+AI-assisted drafts and troubleshooting were always validated before adoption.
+
+- configuration paths and hostnames were tested manually,
+- token handling stayed out of version control,
+- connectivity was verified per client (Claude, Copilot, desktop),
+- health checks and restart behavior were confirmed under real conditions.
+
+The operating model was accepted only after these checks passed.
 
 ---
 
@@ -450,7 +485,7 @@ Open Claude Code, VS Code, or Claude Desktop — Proxmox tools are there. Every 
 
 ---
 
-## Results: What This Actually Looks Like
+## Outcome
 
 With this infrastructure running, here's what day-to-day home lab management looks like now:
 
@@ -534,7 +569,11 @@ curl.exe -s http://localhost:8812/sse
 
 ---
 
-## What's Next
+## Key takeaway
+
+The biggest win is not just speed. It is removing enough friction that safer, better infrastructure habits become easy to execute.
+
+## Next improvement
 
 This MCP infrastructure is a foundation. Once you have natural language access to your home lab, the possibilities start compounding:
 
@@ -557,5 +596,4 @@ I'm actively exploring these ideas in my own lab. The intersection of AI tooling
 - [Docker MCP Gateway Docs](https://docs.docker.com/ai/mcp-catalog-and-toolkit/) — Docker's built-in MCP support
 - [Proxmox VE Documentation](https://pve.proxmox.com/pve-docs/) — Official Proxmox docs
 - [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) — What this site is built with
-
 
