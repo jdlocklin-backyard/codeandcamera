@@ -1,11 +1,30 @@
 ---
+title: "Automation"
+description: "Automation runbooks and implementation notes for repeatable operations, debugging, and reliability improvements."
 tags:
   - automation
 ---
 
 # Automation
 
-Scripts, workflows, and automation tools.
+Automation projects and runbooks designed to reduce manual effort and improve operational consistency.
+
+## Why this section matters
+
+Automation quality is not about script count. It is about safer defaults, reproducible steps, and clear rollback paths when something breaks.
+
+## Start with these
+
+- **[Docker Desktop Cleanup Reference](docker-desktop-cleanup-runbook.md)** - practical reclaim workflow with verified before/after metrics.
+- **[Upgrading to Slack Block Kit](slack-block-kit-upgrade.md)** - AI-assisted debugging on a real integration failure.
+- **[Scheduled Proxmox Updates](n8n-scheduled-proxmox-updates.md)** - proactive status distribution with scheduled workflows.
+
+## What you will find here
+
+- command-by-command runbooks,
+- architecture and data-flow examples,
+- troubleshooting patterns validated in production-like environments,
+- practical outcome summaries.
 
 ## Next action
 

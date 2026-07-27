@@ -1,6 +1,18 @@
+---
+title: "Code and Camera"
+description: "Practical AI workflow case studies, automation guides, and homelab runbooks focused on measurable improvements."
+tags:
+  - portfolio
+  - ai
+  - automation
+  - homelab
+---
+
 # Code and Camera
 
 Practical projects showing how AI improves real workflows, reduces cycle time, and keeps humans in control of quality.
+
+This site is organized for fast scanning: proof-first case studies, implementation guides, and reusable runbooks.
 
 ## Why this site exists
 
