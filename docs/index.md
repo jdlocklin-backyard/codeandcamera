@@ -36,3 +36,13 @@ Moved Slack bot output from plain text to structured Block Kit and used AI-assis
 - **Quick proof of impact:** start with [AI & Machine Learning](ai/index.md) for practical workflow case studies.
 - **Implementation details:** jump to [Home Lab](homelab/index.md) and [Automation](automation/index.md) for architecture and runbooks.
 - **Applied systems thinking:** see [Gardening & Growing](gardening/index.md) for automation patterns outside pure software projects.
+
+## Next action
+
+!!! success "Pick your path"
+    **Need fast proof?** Start with [AI Agent Harness Workflow](ai/agent-harness-workflow.md).<br/>
+    **Need infra depth?** Go to [AI-Powered Proxmox MCP](homelab/mcp-proxmox-infrastructure.md).<br/>
+    **Need practical debugging workflow?** Read [Upgrading to Slack Block Kit](automation/slack-block-kit-upgrade.md).
+
+!!! tip "See how the work is done"
+    Read [How I use AI in practical workflows](ai/index.md) and then jump to [Guides & Runbooks](automation/index.md) to reproduce the patterns.

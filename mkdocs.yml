@@ -8,24 +8,45 @@ edit_uri: ""
 # Main navigation menu for the documentation site
 nav:
   - Home: index.md
-  - Gardening & Growing: gardening/index.md
-  - Home Lab:
-      - homelab/index.md
+  - Start Here:
+      - Site Overview: index.md
+      - AI & Machine Learning: ai/index.md
+      - Automation: automation/index.md
+      - Home Lab: homelab/index.md
+      - Gardening & Growing: gardening/index.md
+  - Case Studies:
+      - AI Agent Harness Workflow: ai/agent-harness-workflow.md
       - AI-Powered Proxmox MCP: homelab/mcp-proxmox-infrastructure.md
-      - ProxmoxMCP-Plus Setup Guide: homelab/proxmox-mcp-setup.md
-      - Proxmox API Tokens: homelab/proxmox-api-token.md
-      - Proxmox Slack Bot: homelab/proxmox-slack-bot.md
-  - Automation:
-      - automation/index.md
-      - Docker Desktop Cleanup Reference: automation/docker-desktop-cleanup-runbook.md
       - Upgrading to Slack Block Kit: automation/slack-block-kit-upgrade.md
       - Scheduled Proxmox Updates: automation/n8n-scheduled-proxmox-updates.md
-  - AI & Machine Learning:
-      - ai/index.md
+      - Proxmox Slack Bot: homelab/proxmox-slack-bot.md
+  - Guides & Runbooks:
+      - ProxmoxMCP-Plus Setup Guide: homelab/proxmox-mcp-setup.md
+      - Proxmox API Tokens: homelab/proxmox-api-token.md
+      - Docker Desktop Cleanup Reference: automation/docker-desktop-cleanup-runbook.md
       - Multi-Agent Instructions: ai/multi-agent-instructions.md
       - WakaTime with OpenCode: ai/wakatime-opencode-setup.md
       - AI That Writes About What It Built: ai/openclaw-automated-blog-posts.md
-      - AI Agent Harness Workflow: ai/agent-harness-workflow.md
+  - Explore by Domain:
+      - AI:
+          - ai/index.md
+          - AI Agent Harness Workflow: ai/agent-harness-workflow.md
+          - Multi-Agent Instructions: ai/multi-agent-instructions.md
+          - WakaTime with OpenCode: ai/wakatime-opencode-setup.md
+          - AI That Writes About What It Built: ai/openclaw-automated-blog-posts.md
+      - Automation:
+          - automation/index.md
+          - Docker Desktop Cleanup Reference: automation/docker-desktop-cleanup-runbook.md
+          - Upgrading to Slack Block Kit: automation/slack-block-kit-upgrade.md
+          - Scheduled Proxmox Updates: automation/n8n-scheduled-proxmox-updates.md
+      - Home Lab:
+          - homelab/index.md
+          - AI-Powered Proxmox MCP: homelab/mcp-proxmox-infrastructure.md
+          - ProxmoxMCP-Plus Setup Guide: homelab/proxmox-mcp-setup.md
+          - Proxmox API Tokens: homelab/proxmox-api-token.md
+          - Proxmox Slack Bot: homelab/proxmox-slack-bot.md
+      - Gardening:
+          - gardening/index.md
 
 
 # MkDocs default theme configuration

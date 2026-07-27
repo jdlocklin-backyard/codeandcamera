@@ -7,6 +7,14 @@ tags:
 
 Scripts, workflows, and automation tools.
 
+## Next action
+
+!!! success "Start with a practical win"
+    Use [Docker Desktop Cleanup Reference](docker-desktop-cleanup-runbook.md) for immediate reclaim and measurable before/after results.
+
+!!! tip "Then level up"
+    Read [Upgrading to Slack Block Kit](slack-block-kit-upgrade.md) to see AI-assisted debugging applied to a production automation workflow.
+
 ## Recent Projects
 
 ### [Docker Desktop Cleanup Reference](docker-desktop-cleanup-runbook.md)
